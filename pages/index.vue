@@ -1,5 +1,8 @@
 <template>
-  <TheNav />
+  <div>
+    <TheNav />
+    <TheHero />
+  </div>
 </template>
 
 <script>

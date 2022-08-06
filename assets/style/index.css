@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap');
 :root {
   --primary-color: #2D2D2D;
+  --person-first-color: #2D2D2D;
+  --person-second-color: #5E95D9;
   --secondary-color: #2387FF;
   --bg-color: #FFF;
 }
 :root .dark-theme {
   --primary-color: #FFF;
+  --person-first-color: #D9D9D9;
+  --person-second-color: #5076A4;
   --secondary-color: #FAA16F;
   --bg-color: #202020;
 }
@@ -22,11 +26,15 @@
 /* @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #FFF;
+    --person-first-color: #D9D9D9;
+    --person-second-color: #5076A4;
     --secondary-color: #FAA16F;
     --bg-color: #202020;
   }
   :root .light-theme {
     --primary-color: #2D2D2D;
+    --person-first-color: #2D2D2D;
+    --person-second-color: #5E95D9;
     --secondary-color: #2387FF;
     --bg-color: #FFF;
   }
