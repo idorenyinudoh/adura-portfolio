@@ -2,6 +2,7 @@
   <div>
     <TheNav />
     <TheHero />
+    <TheProjects />
   </div>
 </template>
 

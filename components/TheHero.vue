@@ -80,6 +80,7 @@
   }
   .people-container {
     max-width: 500px;
+    opacity: 0.99;
   }
   section > p {
     font-size: 8px;
