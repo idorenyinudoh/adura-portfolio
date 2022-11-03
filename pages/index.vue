@@ -1,13 +1,5 @@
 <template>
   <div>
-    <TheNav />
-    <TheHero />
-    <TheProjects />
+    <NuxtWelcome />
   </div>
 </template>
-
-<script>
-export default {
-  name: 'IndexPage'
-}
-</script>
