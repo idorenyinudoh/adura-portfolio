@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('~/assets/fonts/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('~/assets/fonts/ClashDisplay-Extralight.otf') format('opentype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('~/assets/fonts/ClashDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('~/assets/fonts/ClashDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('~/assets/fonts/ClashDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('~/assets/fonts/ClashDisplay-Semibold.otf') format('opentype');
+  font-weight: 600;
+}
+
+@layer base {
+  html {
+    @apply font-clash-display;
+  }
+}
