@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       fontFamily: {
         'clash-display': ['Clash Display', 'sans-serif']
+      },
+      colors: {
+        'adura-purple': '#B0ABCB'
       }
     },
   },
