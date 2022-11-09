@@ -10,5 +10,8 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.1.3",
     "nuxt": "3.0.0-rc.11"
+  },
+  "dependencies": {
+    "gsap": "^3.11.3"
   }
 }
