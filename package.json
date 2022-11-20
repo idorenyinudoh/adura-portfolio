@@ -12,6 +12,7 @@
     "nuxt": "3.0.0-rc.11"
   },
   "dependencies": {
-    "gsap": "^3.11.3"
+    "gsap": "^3.11.3",
+    "split-type": "^0.3.3"
   }
 }
