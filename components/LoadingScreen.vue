@@ -35,6 +35,14 @@ onMounted(() => {
   for(let i = 0; i <= 100; i++) {
     setTimeout(() => {
       counter.value = i
+      if (i === 100) {
+        gsap.to('.loading-screen', {
+          duration: 2,
+          y: '-100%',
+          delay: 0.5,
+          ease: 'power3.out'
+        })
+      }
     }, i * 50)
   }
   SplitType.create('.counter-text', {
@@ -56,7 +64,7 @@ onMounted(() => {
       <div class="absolute top-0 left-0 h-full bg-adura-purple transition-all ease-linear duration-200" :style="{width: `${counter}%`}" />
     </div>
     <div class="relative font-bold text-white mt-9 ml-[8.3vw] text-8xl md:text-9xl h-24 md:h-32">
-      <Transition @enter="onTextEnter" @leave="onTextLeave">
+      <Transition :css="false" @enter="onTextEnter" @leave="onTextLeave">
         <p v-if="counter <= 10" class="counter-text absolute">0</p>
         <p v-else-if="counter > 10 && counter <= 20" class="counter-text absolute">10</p>
         <p v-else-if="counter > 20 && counter <= 30" class="counter-text absolute">20</p>
