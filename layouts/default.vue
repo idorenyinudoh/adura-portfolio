@@ -1,0 +1,4 @@
+<template>
+  <LoadingScreen />
+  <slot />
+</template>
