@@ -48,6 +48,17 @@ onMounted(() => {
   SplitType.create('.counter-text', {
     types: 'words, chars',
   })
+  const hangTight = new SplitType('.hang-tight', {
+    types: 'words, chars',
+  })
+  gsap.fromTo(hangTight.chars, { opacity: 0, y: 100 }, {
+    y: 0,
+    opacity: 1,
+    stagger: 0.05,
+    duration: 1,
+    delay: 0.5,
+    ease: 'power4.out',
+  })
 })
 </script>
 
@@ -78,12 +89,12 @@ onMounted(() => {
         <p v-else-if="counter === 100" class="counter-text absolute">100</p>
       </Transition>
     </div>
-    <p class="font-extralight text-white/50 mt-3 md:mt-5 ml-[calc(8.3vw+12px)] text-4xl md:text-5xl">Do hang tight...</p>
+    <p class="hang-tight font-extralight text-white/50 mt-3 md:mt-5 ml-[calc(8.3vw+12px)] text-4xl md:text-5xl">Do hang tight...</p>
   </div>
 </template>
 
 <style scoped>
-.counter-text {
+.counter-text, .hang-tight {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 </style>
