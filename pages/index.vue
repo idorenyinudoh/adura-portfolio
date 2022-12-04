@@ -1,3 +1,3 @@
 <template>
-  <LoadingScreen />
+  <p>bruh</p>
 </template>
