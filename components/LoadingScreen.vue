@@ -37,9 +37,9 @@ onMounted(() => {
       counter.value = i
       if (i === 100) {
         gsap.to('.loading-screen', {
-          duration: 2,
-          y: '-100%',
-          delay: 0.5,
+          duration: 1.5,
+          opacity: 0,
+          delay: 2,
           ease: 'power3.out'
         })
       }
