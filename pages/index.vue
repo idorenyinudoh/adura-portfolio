@@ -7,8 +7,8 @@
         alt="landscape background"
       />
     </div>
-    <div class="absolute">
-      <div class="font-bold text-white ml-[8.3vw] mt-24 md:mt-28 xl:mt-32 2xl:mt-40 text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
+    <div class="absolute pl-[8.3vw] pt-24 md:pt-28 xl:pt-32 2xl:pt-40">
+      <div class="font-bold text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
         <h1>ADURAGBEMI</h1>
         <div class="flex">
           <h1 class="w-max">ABIOLA</h1>
@@ -17,6 +17,13 @@
           </svg>
           <p class="hidden sm:block h-max self-center px-2.5 md:px-[18px] lg:px-6 py-[2px] md:py-1 -ml-[33px] lg:-ml-[30px] -mb-[10px] md:-mb-[15px] lg:-mb-5 lg:leading-8 rounded-2xl bg-adura-purple text-adura-black text-xs md:text-base font-normal">UX Designer</p>
         </div>
+      </div>
+      <div class="flex items-center gap-x-3 md:gap-x-4 lg:gap-x-[18px] mt-4 xl:mt-6">
+        <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.9999 11.1917C9.43584 11.1917 10.5999 10.0276 10.5999 8.59167C10.5999 7.15573 9.43584 5.99167 7.9999 5.99167C6.56396 5.99167 5.3999 7.15573 5.3999 8.59167C5.3999 10.0276 6.56396 11.1917 7.9999 11.1917Z" stroke="white" stroke-width="0.833333"/>
+          <path d="M1.2023 6.40834C2.84396 -0.808331 13.5356 -0.799998 15.169 6.41667C16.1273 10.65 13.494 14.2333 11.1856 16.45C9.51063 18.0667 6.86063 18.0667 5.1773 16.45C2.8773 14.2333 0.243963 10.6417 1.2023 6.40834Z" stroke="white" stroke-width="0.833333"/>
+        </svg>
+        <p class="text-white font-light text-sm md:text-base lg:text-lg xl:text-2xl">Lagos, Nigeria.</p>
       </div>
     </div>
   </div>
