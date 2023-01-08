@@ -7,7 +7,7 @@
         alt="landscape background"
       />
     </div>
-    <div class="absolute pl-[8.3vw] pt-24 md:pt-28 xl:pt-32 2xl:pt-40">
+    <div class="absolute px-[8.3vw] pt-24 md:pt-28 xl:pt-32 2xl:pt-40">
       <div class="font-bold text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
         <h1>ADURAGBEMI</h1>
         <div class="flex">
@@ -25,6 +25,11 @@
         </svg>
         <p class="text-white font-light text-sm md:text-base lg:text-lg xl:text-2xl">Lagos, Nigeria.</p>
       </div>
+      <p class="text-white text-base md:text-lg lg:text-2xl font-normal mt-12 lg:mt-16 pb-12 lg:pb-14 max-w-[90%] sm:max-w-[80%] lg:max-w-[60%]">
+        Welcome to my portfolio exhibition. In here, you'll find my process (how I solve real-world problems using design), testimonials from past and or current clients and a gallery to some of my past work, shots and case studies.
+        <br> <br>
+        I've always imagined my life to be a movie and so, I decided to make an exhibit of a portfolio. I hope you enjoy.
+      </p>
     </div>
   </div>
 </template>
