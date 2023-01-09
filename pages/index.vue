@@ -31,5 +31,6 @@
         I've always imagined my life to be a movie and so, I decided to make an exhibit of a portfolio. I hope you enjoy.
       </p>
     </div>
+    <TheMenu />
   </div>
 </template>
