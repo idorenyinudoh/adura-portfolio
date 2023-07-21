@@ -7,7 +7,8 @@ module.exports = {
         'clash-display': ['Clash Display', 'sans-serif']
       },
       colors: {
-        'adura-purple': '#B0ABCB'
+        'adura-purple': '#B0ABCB',
+        'adura-black': '#1A1A1A'
       }
     },
   },
