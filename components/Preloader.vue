@@ -4,6 +4,8 @@ import SplitType from 'split-type'
 
 let counter = ref(0)
 
+const emits = defineEmits(['ready'])
+
 const onTextEnter = (el, done) => {
   const split = new SplitType(el, {
     types: 'words, chars'
@@ -40,7 +42,9 @@ onMounted(() => {
           duration: 1.5,
           opacity: 0,
           delay: 2,
-          ease: 'power3.out'
+          ease: 'power3.out',
+          onCompleteParams: ['ready'],
+          onComplete: emits
         })
       }
     }, i * 50)
