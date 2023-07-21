@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: 'index'
+})
+</script>
+
 <template>
   <div class="h-screen w-full relative">
     <div class="fixed top-0 left-0 w-full h-full -z-10">
