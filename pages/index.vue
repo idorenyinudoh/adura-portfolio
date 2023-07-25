@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: 'index'
+})
+</script>
+
 <template>
   <div class="h-screen w-full relative">
     <div class="fixed top-0 left-0 w-full h-full -z-10">
@@ -7,7 +13,7 @@
         alt="landscape background"
       />
     </div>
-    <div class="absolute px-[8.3vw] pt-24 md:pt-28 xl:pt-32 2xl:pt-40">
+    <div class="absolute px-[8.3vw] xl:px-[120px] pt-16 md:pt-24">
       <div class="font-bold text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
         <h1>ADURAGBEMI</h1>
         <div class="flex">

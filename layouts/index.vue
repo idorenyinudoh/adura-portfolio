@@ -1,0 +1,4 @@
+<template>
+  <!-- <Preloader /> -->
+  <slot />
+</template>
