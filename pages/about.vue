@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const tableData = ref({
+const certificationsTable = ref({
   headers: [
     'course',
     'institution',
@@ -73,6 +73,30 @@ const skills = ref([
   'Interactive Prototyping',
   'Accessibility'
 ])
+const awardsTable = ref({
+  headers: [
+    'platform',
+    'award-or-article',
+    'year'
+  ],
+  rows: [
+    {
+      platform: 'UX Collective, Medium',
+      'award-or-article': 'Stories Are The Language Of The World',
+      year: '2022'
+    },
+    {
+      platform: 'UX Collective, Medium',
+      'award-or-article': 'I Found The Solution To Imposter Syndrome',
+      year: '2022'
+    },
+    {
+      platform: 'Junior Chambers International, FUNAAB',
+      'award-or-article': 'Most Promising Member',
+      year: '2018'
+    }
+  ]
+})
 </script>
 
 <template>
@@ -106,11 +130,13 @@ const skills = ref([
     If you believe I am good fit for your team or project, please reach out and let's have a chat. I can't wait to hear from you!
   </p>
   <TextBaseH2 text="CERTIFICATIONS" />
-  <BaseTable :table-data="tableData" />
+  <BaseTable :table-data="certificationsTable" />
   <TextBaseH2 text="SKILLS" />
   <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
     <p v-for="(skill, index) in skills" :key="index" class="px-3 py-1 md:px-6 md:py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-base md:text-lg lg:text-2xl font-normal">
       {{ skill }}
     </p>
   </div>
+  <TextBaseH2 text="AWARDS AND PUBLICATIONS" />
+  <BaseTable :table-data="awardsTable" />
 </template>

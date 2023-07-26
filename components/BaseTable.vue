@@ -9,7 +9,7 @@ const props = defineProps({
     <thead>
       <tr class="border-b border-solid border-adura-black">
         <th v-for="(header, index) in props.tableData?.headers" :key="index" class="text-left py-4 md:py-6 lg:py-8 pr-4 md:pr-14 text-adura-black text-base md:text-lg lg:text-2xl font-medium uppercase">
-          {{ header }}
+          {{ header.split('-').join(' ') }}
         </th>
       </tr>
     </thead>
