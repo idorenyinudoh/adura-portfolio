@@ -58,6 +58,21 @@ const tableData = ref({
     }
   ]
 })
+const skills = ref([
+  'Usability Testing',
+  'Strategy and Design',
+  'Mobile App and Web Design',
+  'Problem Solving',
+  'Critical Thinking',
+  'User Research',
+  'Design Systems',
+  'Wireframing and Mockup Designs',
+  'Design Thinking',
+  'User Experience Design',
+  'User Interface Design',
+  'Interactive Prototyping',
+  'Accessibility'
+])
 </script>
 
 <template>
@@ -92,4 +107,10 @@ const tableData = ref({
   </p>
   <TextBaseH2 text="CERTIFICATIONS" />
   <BaseTable :table-data="tableData" />
+  <TextBaseH2 text="SKILLS" />
+  <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
+    <p v-for="(skill, index) in skills" :key="index" class="px-3 py-1 md:px-6 md:py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-base md:text-lg lg:text-2xl font-normal">
+      {{ skill }}
+    </p>
+  </div>
 </template>
