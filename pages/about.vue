@@ -1,5 +1,67 @@
+<script setup lang="ts">
+const tableData = ref({
+  headers: [
+    'course',
+    'institution',
+    'year'
+  ],
+  rows: [
+    {
+      course: 'Mobile User Experience (UX) Design',
+      institution: 'Interaction Design Foundation (IxDF)',
+      year: '2022'
+    },
+    {
+      course: 'UI Patterns For Successful Software',
+      institution: 'Interaction Design Foundation (IxDF)',
+      year: '2022'
+    },
+    {
+      course: 'Design Thinking: The Ultimate Guide',
+      institution: 'Interaction Design Foundation (IxDF)',
+      year: '2022'
+    },
+    {
+      course: 'Human-Computer Interaction: The Foundation of UX Design',
+      institution: 'Interaction Design Foundation (IxDF)',
+      year: '2022'
+    },
+    {
+      course: 'User Experience: The Beginners Guide',
+      institution: 'Interaction Design Foundation (IxDF)',
+      year: '2022'
+    },
+    {
+      course: 'Soft Skills Training',
+      institution: 'Jobberman Nigeria',
+      year: '2022'
+    },
+    {
+      course: 'Introduction to User Experience Design',
+      institution: 'Georgia Institute of Technology',
+      year: '2022'
+    },
+    {
+      course: 'User Experience and User Interface Design',
+      institution: 'Creative Ferry Academy',
+      year: '2021 - 2022'
+    },
+    {
+      course: 'Introduction to Google Search Engine Optimization',
+      institution: 'University of California, Davies',
+      year: '2020 - 2021'
+    },
+    {
+      course: 'B.Sc Statistics',
+      institution: 'Federal University of Agriculture, Abeokuta',
+      year: '2016 - 2021'
+    }
+  ]
+})
+</script>
+
 <template>
-  <h1 class="md:mr-[5vw] xl:mr-[12vw] font-bold text-adura-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
+  <h1 class="font-bold text-adura-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
     ABOUT ME
   </h1>
   <p class="my-12 text-adura-black text-base md:text-lg lg:text-2xl font-light">
@@ -28,4 +90,6 @@
     <br>
     If you believe I am good fit for your team or project, please reach out and let's have a chat. I can't wait to hear from you!
   </p>
+  <TextBaseH2 text="CERTIFICATIONS" />
+  <BaseTable :table-data="tableData" />
 </template>
