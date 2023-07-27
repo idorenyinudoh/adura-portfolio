@@ -139,4 +139,18 @@ const awardsTable = ref({
   </div>
   <TextBaseH2 text="AWARDS AND PUBLICATIONS" />
   <BaseTable :table-data="awardsTable" />
+  <TextBaseH2 text="REACH OUT" />
+  <div class="mb-32 grid grid-cols-1 grid-rows-[max-content_1fr] md:grid-cols-[1fr_1.5fr] xl:grid-cols-2 gap-y-10 gap-x-8 xl:gap-x-16 justify-between">
+    <p>
+      <a href="mailto:abiolaaduragbemiaa@gmail.com"
+        class=" text-4xl md:text-5xl xl:text-6xl text-adura-black font-normal underline break-all">abiolaaduragbemiaa@gmail.com</a>
+    </p>
+    <div class="grid grid-cols-2 gap-x-3 gap-y-3 sm:gap-x-4 sm:gap-y-4 xl:gap-x-6 xl:gap-y-5">
+      <BaseOutboundLink title="Instagram" url="https://www.instagram.com/adura.ux/" class="col-start-1 col-end-3 sm:col-start-2 sm:col-end-3" />
+      <BaseOutboundLink title="Twitter" url="https://twitter.com/aduragbemi_aa" />
+      <BaseOutboundLink title="Medium" url="https://medium.com/@abiolaaduragbemiaa" />
+      <p class="text-base md:text-lg lg:text-2xl text-adura-black text-right font-normal self-center">I hear TikTok is <br> really fun these days</p>
+      <BaseOutboundLink title="TikTok" url="https://www.tiktok.com/@aduragbemi_aa" class="self-center" />
+    </div>
+  </div>
 </template>
