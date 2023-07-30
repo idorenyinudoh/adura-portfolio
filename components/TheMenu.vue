@@ -63,6 +63,15 @@ const showNav = () => {
   }
 }
 
+const onMenuButtonEnter = () => {
+  if (innerWidth.value < 1024) {
+    loadHamburgerAnimation()
+    if (navIsOpen.value === true) {
+      hamburgerAnimation.value.goToAndStop(15, true)
+    }
+  }
+}
+
 const onMenuButtonLeave = (el, done) => {
   gsap.to(el, {
     scale: 0.7,
@@ -95,7 +104,7 @@ const onNavLeave = (el, done) => {
 </script>
 
 <template>
-  <Transition @leave="onMenuButtonLeave">
+  <Transition @leave="onMenuButtonLeave" @enter="onMenuButtonEnter">
     <button v-if="innerWidth < 1024 || (innerWidth >= 1024 && !navIsOpen)" class="fixed z-10 bottom-10 lg:bottom-8 right-10 lg:right-0 lg:left-[8.3vw] xl:left-[120px] rounded-full bg-adura-purple grid grid-rows-[max-content_max-content] justify-center content-center w-16 h-16 lg:w-[130px] lg:h-[130px] font-semibold text-adura-black text-sm lg:text-base lg:hover:brightness-75 transition-all duration-300 ease-linear" @click="showNav">
       <div ref="hamburger" class="lg:hidden w-6 h-6" />
       <div class="hidden lg:block">
