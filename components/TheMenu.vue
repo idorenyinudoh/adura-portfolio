@@ -1,5 +1,6 @@
 <script setup>
 import { gsap } from 'gsap'
+import lottie from 'lottie-web'
 
 const links = ref([
   {
@@ -25,17 +26,48 @@ const links = ref([
 ])
 
 let navIsOpen = ref(false)
-const nav = ref()
+const hamburger = ref(null)
+const hamburgerAnimation = ref(null)
+const innerWidth = ref(0)
+
+const loadHamburgerAnimation = () => {
+  hamburgerAnimation.value = lottie.loadAnimation({
+    container: hamburger.value,
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: './json/hamburger-menu.json'
+  })
+  hamburgerAnimation.value.setSpeed(0.9)
+}
+
+onMounted(() => {
+  loadHamburgerAnimation()
+  innerWidth.value = window.innerWidth
+  window.addEventListener('resize', (e) => {
+    innerWidth.value = e.target.innerWidth
+  }, true)
+})
 
 const showNav = () => {
-  navIsOpen.value = true
+  if (window.innerWidth < 1024) {
+    if (navIsOpen.value === false) {
+      hamburgerAnimation.value.playSegments([4, 15], true)
+      navIsOpen.value = true
+    } else {
+      hamburgerAnimation.value.playSegments([20, 27], true)
+      navIsOpen.value = false
+    }
+  } else {
+    navIsOpen.value = true
+  }
 }
 
 const onMenuButtonLeave = (el, done) => {
   gsap.to(el, {
     scale: 0.7,
     opacity: 0,
-    duration: .5,
+    duration: .25,
     ease: 'power4.out',
     onComplete: done
   })
@@ -50,36 +82,49 @@ const onNavEnter = (el, done) => {
     onComplete: done
   })
 }
+
+const onNavLeave = (el, done) => {
+  gsap.fromTo(el, { y: 0, opacity: 1 }, {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: 'power4.out',
+    onComplete: done
+  })
+}
 </script>
 
 <template>
   <Transition @leave="onMenuButtonLeave">
-    <button v-if="!navIsOpen" class="fixed bottom-6 lg:bottom-8 left-[8.3vw] xl:left-[120px] rounded-full bg-adura-purple grid grid-rows-[max-content_max-content] justify-center content-center w-[90px] h-[90px] lg:w-[130px] lg:h-[130px] font-semibold text-adura-black text-sm lg:text-base hover:brightness-75 transition-all duration-300 ease-linear" @click="showNav">
-      <div class="relative flex items-center gap-x-1.5">
-        <p>Tap</p>
-        <svg class="absolute left-[33px] lg:left-[40px] bottom-[7px]" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14.0701 13.4299L11.0004 13.9999L8.00008 19.4999L5.00039 13.9999L1.5 13.43" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 1.5V18.33" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+    <button v-if="innerWidth < 1024 || (innerWidth >= 1024 && !navIsOpen)" class="fixed z-10 bottom-10 lg:bottom-8 right-10 lg:right-0 lg:left-[8.3vw] xl:left-[120px] rounded-full bg-adura-purple grid grid-rows-[max-content_max-content] justify-center content-center w-16 h-16 lg:w-[130px] lg:h-[130px] font-semibold text-adura-black text-sm lg:text-base lg:hover:brightness-75 transition-all duration-300 ease-linear" @click="showNav">
+      <div ref="hamburger" class="lg:hidden w-6 h-6" />
+      <div class="hidden lg:block">
+        <div class="relative flex items-center gap-x-1.5">
+          <p>Tap</p>
+          <svg class="absolute left-[33px] lg:left-[40px] bottom-[7px]" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.0701 13.4299L11.0004 13.9999L8.00008 19.4999L5.00039 13.9999L1.5 13.43" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 1.5V18.33" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>For Menu</p>
       </div>
-      <p>For Menu</p>
     </button>
   </Transition>
-  <Transition @enter="onNavEnter">
-    <nav v-if="navIsOpen" ref="nav" class="fixed bg-adura-black border border-black flex items-center justify-between w-[95.6%] left-[2.2%] bottom-4 rounded-[32px] px-10 py-8 xl:px-20 xl:py-10">
-      <a class="bg-white flex rounded-[18px] xl:rounded-3xl px-4 py-2 xl:px-8 xl:py-4 items-center gap-x-2" href="mailto:abiolaaduragbemiaa@gmail.com">
-        <p class="font-normal text-xl xl:text-2xl leading-[30px] text-adura-black">Get In Touch</p>
-        <svg class="w-7 h-7 xl:w-[34px] xl:h-[34px]" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <Transition @enter="onNavEnter" @leave="onNavLeave">
+    <nav v-if="navIsOpen" class="fixed bg-adura-black border border-black flex flex-col lg:flex-row gap-y-6 items-start lg:items-center justify-between w-[95.6%] h-[75vh] lg:h-max max-h-[750px] left-[2.2%] bottom-4 rounded-[32px] px-10 py-8 xl:px-20 xl:py-10">
+      <a class="bg-white flex rounded-[18px] xl:rounded-3xl px-5 py-3 lg:px-4 lg:py-2 xl:px-8 xl:py-4 items-center gap-x-2" href="mailto:abiolaaduragbemiaa@gmail.com">
+        <p class="font-normal text-2xl lg:text-xl xl:text-2xl leading-[30px] text-adura-black">Get In Touch</p>
+        <svg class="w-8 h-8 lg:w-7 lg:h-7 xl:w-[34px] xl:h-[34px]" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14.4263 10.9894L23.0105 10.9894L23.0105 19.5737" stroke="#1A1A1A" stroke-width="1.125" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M10.9897 23.0104L22.8904 11.1098" stroke="#1A1A1A" stroke-width="1.125" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-      <ul class="flex gap-x-7 xl:gap-x-10">
-        <li v-for="(link, index) in links" :key="index" class="font-light text-white text-xl xl:text-2xl leading-[30px] hover:text-adura-purple transition-all duration-150 ease-linear">
+      <ul class="flex flex-col lg:flex-row gap-y-8 gap-x-7 xl:gap-x-10">
+        <li v-for="(link, index) in links" :key="index" class="font-light text-white text-3xl lg:text-xl xl:text-2xl leading-[30px] hover:text-adura-purple transition-all duration-150 ease-linear">
           <NuxtLink :to="link.url">{{ link.title }}</NuxtLink>
         </li>
       </ul>
-      <ul class="flex gap-x-2 xl:gap-x-4">
+      <ul class="flex gap-x-3 lg:gap-x-2 xl:gap-x-4">
         <li class="bg-white flex justify-center items-center rounded-full w-10 h-10 xl:w-12 xl:h-12">
           <a href="" target="_blank">
             <svg class="w-5 h-5 xl:w-6 xl:h-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
