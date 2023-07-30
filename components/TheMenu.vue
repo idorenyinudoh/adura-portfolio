@@ -29,6 +29,16 @@ let navIsOpen = ref(false)
 const hamburger = ref(null)
 const hamburgerAnimation = ref(null)
 const innerWidth = ref(0)
+const route = useRoute()
+
+watch(route, () => {
+  if (navIsOpen.value === true) {
+    if (innerWidth.value < 1024) {
+      hamburgerAnimation.value.playSegments([20, 27], true)
+    }
+    navIsOpen.value = false
+  }
+})
 
 const loadHamburgerAnimation = () => {
   hamburgerAnimation.value = lottie.loadAnimation({
@@ -64,11 +74,9 @@ const showNav = () => {
 }
 
 const onMenuButtonEnter = () => {
-  if (innerWidth.value < 1024) {
-    loadHamburgerAnimation()
-    if (navIsOpen.value === true) {
-      hamburgerAnimation.value.goToAndStop(15, true)
-    }
+  loadHamburgerAnimation()
+  if (navIsOpen.value === true) {
+    hamburgerAnimation.value.goToAndStop(15, true)
   }
 }
 
