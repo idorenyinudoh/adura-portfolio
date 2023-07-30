@@ -105,12 +105,12 @@ const onNavLeave = (el, done) => {
 
 <template>
   <Transition @leave="onMenuButtonLeave" @enter="onMenuButtonEnter">
-    <button v-if="innerWidth < 1024 || (innerWidth >= 1024 && !navIsOpen)" class="fixed z-10 bottom-10 lg:bottom-8 right-10 lg:right-0 lg:left-[8.3vw] xl:left-[120px] rounded-full bg-adura-purple grid grid-rows-[max-content_max-content] justify-center content-center w-16 h-16 lg:w-[130px] lg:h-[130px] font-semibold text-adura-black text-sm lg:text-base lg:hover:brightness-75 transition-all duration-300 ease-linear" @click="showNav">
+    <button v-if="innerWidth < 1024 || (innerWidth >= 1024 && !navIsOpen)" class="fixed z-10 bottom-10 lg:bottom-8 right-10 lg:right-0 lg:left-[8.3vw] xl:left-[120px] rounded-full bg-adura-purple grid grid-rows-[max-content_max-content] justify-center content-center w-16 h-16 lg:w-[110px] lg:h-[110px] xl:w-[130px] xl:h-[130px] font-semibold text-adura-black text-sm xl:text-base lg:hover:brightness-75 transition-all duration-300 ease-linear" @click="showNav">
       <div ref="hamburger" class="lg:hidden w-6 h-6" />
       <div class="hidden lg:block">
         <div class="relative flex items-center gap-x-1.5">
           <p>Tap</p>
-          <svg class="absolute left-[33px] lg:left-[40px] bottom-[7px]" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="absolute left-[33px] xl:left-[40px] bottom-[7px]" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14.0701 13.4299L11.0004 13.9999L8.00008 19.4999L5.00039 13.9999L1.5 13.43" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M8 1.5V18.33" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -120,7 +120,7 @@ const onNavLeave = (el, done) => {
     </button>
   </Transition>
   <Transition @enter="onNavEnter" @leave="onNavLeave">
-    <nav v-if="navIsOpen" class="fixed bg-adura-black border border-black flex flex-col lg:flex-row gap-y-6 items-start lg:items-center justify-between w-[95.6%] h-[75vh] lg:h-max max-h-[750px] left-[2.2%] bottom-4 rounded-[32px] px-10 py-8 xl:px-20 xl:py-10">
+    <nav v-if="navIsOpen" class="fixed lg:z-20 bg-adura-black border border-black flex flex-col lg:flex-row gap-y-6 items-start lg:items-center justify-between w-[95.6%] h-[75vh] lg:h-max max-h-[750px] left-[2.2%] bottom-4 lg:bottom-8 rounded-[32px] px-10 py-8 xl:px-20 xl:py-10">
       <a class="bg-white flex rounded-[18px] xl:rounded-3xl px-5 py-3 lg:px-4 lg:py-2 xl:px-8 xl:py-4 items-center gap-x-2" href="mailto:abiolaaduragbemiaa@gmail.com">
         <p class="font-normal text-2xl lg:text-xl xl:text-2xl leading-[30px] text-adura-black">Get In Touch</p>
         <svg class="w-8 h-8 lg:w-7 lg:h-7 xl:w-[34px] xl:h-[34px]" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
