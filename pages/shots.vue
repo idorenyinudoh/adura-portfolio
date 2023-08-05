@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const images = [
   {
     url: 'sign-up-page.png',
@@ -145,6 +145,24 @@ const images = [
     alt: 'Fashion landing page'
   },
 ]
+
+onMounted(() => {
+  const mainContainer = document.querySelector('main');
+  const mainScrollWidth = mainContainer.scrollWidth;
+  const mainScrollHeight = mainContainer.scrollHeight;
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  const scrollTop = (mainScrollHeight - windowHeight) / 2;
+  const scrollLeft = (mainScrollWidth - windowWidth) / 2;
+
+  mainContainer.scrollTo({
+    top: scrollTop,
+    left: scrollLeft,
+    behavior: 'smooth'
+  });
+
+})
 </script>
 
 <template>
