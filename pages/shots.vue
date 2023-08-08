@@ -161,12 +161,20 @@ onMounted(() => {
     left: scrollLeft,
     behavior: 'smooth'
   });
-
 })
 </script>
 
 <template>
-  <main class="fixed inset-0 w-full h-full overflow-auto grid grid-cols-[repeat(6,_250px)] grid-rows-[repeat(6,_187.5px)] md:grid-cols-[repeat(6,_350px)] md:grid-rows-[repeat(6,_262.5px)] xl:grid-cols-[repeat(6,_400px)] xl:grid-rows-[repeat(6,_300px)] gap-4 xl:gap-6">
+  <main class="fixed inset-0 w-full h-full overflow-auto grid grid-cols-[repeat(6,_250px)] grid-rows-[repeat(6,_187.5px)] md:grid-cols-[repeat(6,_350px)] md:grid-rows-[repeat(6,_262.5px)] xl:grid-cols-[repeat(6,_400px)] xl:grid-rows-[repeat(6,_300px)] p-4 xl:p-6 gap-4 xl:gap-6">
     <ShotFigure v-for="(image, index) in images" :key="index" :="image" />
   </main>
 </template>
+
+<style scoped>
+main {
+  scrollbar-width: none;
+}
+main::-webkit-scrollbar { 
+  display: none;
+}
+</style>
