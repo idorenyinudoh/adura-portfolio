@@ -3,39 +3,68 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Clash Display';
-  src: url('~/assets/fonts/ClashDisplay-Bold.otf') format('opentype');
-  font-weight: 700;
-}
-@font-face {
-  font-family: 'Clash Display';
-  src: url('~/assets/fonts/ClashDisplay-Extralight.otf') format('opentype');
-  font-weight: 200;
-}
-@font-face {
-  font-family: 'Clash Display';
-  src: url('~/assets/fonts/ClashDisplay-Light.otf') format('opentype');
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-Light.otf') format('opentype');
   font-weight: 300;
 }
 @font-face {
-  font-family: 'Clash Display';
-  src: url('~/assets/fonts/ClashDisplay-Medium.otf') format('opentype');
-  font-weight: 500;
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
 }
 @font-face {
-  font-family: 'Clash Display';
-  src: url('~/assets/fonts/ClashDisplay-Regular.otf') format('opentype');
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-Regular.otf') format('opentype');
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Clash Display';
-  src: url('~/assets/fonts/ClashDisplay-Semibold.otf') format('opentype');
-  font-weight: 600;
+  font-family: 'Monument Extended';
+  src: url('~/assets/fonts/monument-extended/MonumentExtended-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Monument Extended';
+  src: url('~/assets/fonts/monument-extended/MonumentExtended-Ultrabold.otf') format('opentype');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-Black.otf') format('opentype');
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~/assets/fonts/satoshi/Satoshi-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
 }
 
 @layer base {
   html {
-    @apply font-clash-display;
+    @apply font-satoshi;
   }
 }
 
