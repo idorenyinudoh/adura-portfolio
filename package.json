@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "gsap": "^3.11.3",
-    "lottie-web": "^5.12.2",
     "split-type": "^0.3.3"
   }
 }

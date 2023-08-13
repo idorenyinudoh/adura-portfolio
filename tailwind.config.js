@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'clash-display': ['Clash Display', 'sans-serif']
+        'satoshi': ['Satoshi', 'sans-serif'],
+        'monument-extended': ['Monument Extended', 'sans-serif']
       },
       colors: {
         'adura-purple': '#B0ABCB',
