@@ -22,7 +22,7 @@ const links = ref([
 </script>
 
 <template>
-  <nav class="fixed bottom-6 md:bottom-10 xl:bottom-16 left-0 right-0 mx-auto w-max bg-adura-black border border-black rounded-[96px]">
+  <nav class="fixed bottom-6 md:bottom-10 xl:bottom-16 left-0 right-0 mx-auto w-max bg-adura-black border-[.5px] border-[#9E9E9E] rounded-[96px]">
     <ul class="max-[350px]:p-1 p-2 md:p-4 flex max-[350px]:gap-x-0 gap-x-1 md:gap-x-4 xl:gap-x-6">
       <li v-for="(link, index) in links" :key="index">
         <NuxtLink :to="link.url"
