@@ -69,6 +69,7 @@
 }
 
 .router-link-active {
-  font-weight: 600;
-  color: theme('colors.adura-purple');
+  font-weight: 500;
+  color: theme('colors.adura-black');
+  background-color: #E6E6E6;
 }
