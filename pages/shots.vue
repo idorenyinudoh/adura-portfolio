@@ -1,147 +1,147 @@
 <script setup>
 const images = [
   {
-    url: 'sign-up-page.png',
+    url: 'sign-up-page',
     alt: 'Sign up page design for web and mobile'
   },
   {
-    url: 'credit-card-checkout.png',
+    url: 'credit-card-checkout',
     alt: 'Credit card checkout'
   },
   {
-    url: 'settings-screen.png',
+    url: 'settings-screen',
     alt: 'Settings screen for web'
   },
   {
-    url: 'profile-menu.png',
+    url: 'profile-menu',
     alt: 'Profile menu for mobile'
   },
   {
-    url: 'loan-calculator.png',
+    url: 'loan-calculator',
     alt: 'Loan calculator for mobile'
   },
   {
-    url: 'edutech-landing-page.png',
+    url: 'edutech-landing-page',
     alt: 'Edutech landing page'
   },
   {
-    url: 'superhero-messaging-platform.png',
+    url: 'superhero-messaging-platform',
     alt: 'Superhero messaging platform'
   },
   {
-    url: 'ecommerce-mobile-app.png',
+    url: 'ecommerce-mobile-app',
     alt: 'Ecommerce mobile app'
   },
   {
-    url: 'smartwatch-productivity-app.png',
+    url: 'smartwatch-productivity-app',
     alt: 'Productivity app for smartwatch'
   },
   {
-    url: 'modals-for-web.png',
+    url: 'modals-for-web',
     alt: 'Modals for web'
   },
   {
-    url: 'spiderman-themed-toggle.png',
+    url: 'spiderman-themed-toggle',
     alt: 'Spiderman-themed on/off toggle'
   },
   {
-    url: 'share-modal.png',
+    url: 'share-modal',
     alt: 'Share modal for web podcasting platform'
   },
   {
-    url: 'online-learning-app.png',
+    url: 'online-learning-app',
     alt: 'Online learning mobile app'
   },
   {
-    url: 'interactive-music-player.png',
+    url: 'interactive-music-player',
     alt: 'Interactive music player for mobile'
   },
   {
-    url: 'podcasts-streaming-platform.png',
+    url: 'podcasts-streaming-platform',
     alt: 'Streaming platform for podcasts'
   },
   {
-    url: 'online-messaging-platform.png',
+    url: 'online-messaging-platform',
     alt: 'Online messaging platform'
   },
   {
-    url: 'airpods-tracker.png',
+    url: 'airpods-tracker',
     alt: 'AirPods tracker'
   },
   {
-    url: 'real-estate-landing-page.png',
+    url: 'real-estate-landing-page',
     alt: 'Real estate landing page'
   },
   {
-    url: 'agricultural-produce-onboarding.png',
+    url: 'agricultural-produce-onboarding',
     alt: 'Agricultural produce app onboarding'
   },
   {
-    url: 'fintech-mobile-app.png',
+    url: 'fintech-mobile-app',
     alt: 'Fintech mobile app'
   },
   {
-    url: 'healthcare-landing-page.png',
+    url: 'healthcare-landing-page',
     alt: 'Healthcare landing page'
   },
   {
-    url: 'dashboard-for-healthcare.png',
+    url: 'dashboard-for-healthcare',
     alt: 'Dashboard for healthcare'
   },
   {
-    url: 'crypto-trading-app.png',
+    url: 'crypto-trading-app',
     alt: 'Crypto-trading mobile app'
   },
   {
-    url: 'food-ordering-app.png',
+    url: 'food-ordering-app',
     alt: 'Food-ordering mobile app'
   },
   {
-    url: 'party-searching-app.png',
+    url: 'party-searching-app',
     alt: 'Party-searching mobile app'
   },
   {
-    url: 'travel-app.png',
+    url: 'travel-app',
     alt: 'Travel mobile app for Lagosians'
   },
   {
-    url: 'minimalistic-hero-page.png',
+    url: 'minimalistic-hero-page',
     alt: 'Minimalistic hero page'
   },
   {
-    url: 'skincare-ecommerce-app.png',
+    url: 'skincare-ecommerce-app',
     alt: 'Skincare e-commerce mobile app'
   },
   {
-    url: 'login-screen.png',
+    url: 'login-screen',
     alt: 'Login screen for men\'s mental health platform'
   },
   {
-    url: 'podcast-listening-app.png',
+    url: 'podcast-listening-app',
     alt: 'Podcast listening mobile app'
   },
   {
-    url: '404-error-page.png',
+    url: '404-error-page',
     alt: '404 error page for web'
   },
   {
-    url: 'email-receipt.png',
+    url: 'email-receipt',
     alt: 'Email receipt for shopping mart'
   },
   {
-    url: 'movie-streaming-dashboard.png',
+    url: 'movie-streaming-dashboard',
     alt: 'Movie streaming dashboard'
   },
   {
-    url: 'flash-messages-and-toasts.png',
+    url: 'flash-messages-and-toasts',
     alt: 'Flash messages and toasts for web'
   },
   {
-    url: 'analytics-dashboard.png',
+    url: 'analytics-dashboard',
     alt: 'Analytics dashboard overview for web'
   },
   {
-    url: 'fashion-landing-page.png',
+    url: 'fashion-landing-page',
     alt: 'Fashion landing page'
   },
 ]
