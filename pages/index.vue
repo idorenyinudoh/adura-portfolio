@@ -1,12 +1,5 @@
 <template>
-  <div class="fixed top-0 left-0 w-full h-full -z-10">
-    <img
-      class="w-full h-full object-cover"
-      src="~/assets/images/landscape-background.png"
-      alt="landscape background"
-    />
-  </div>
-  <div>
+  <div class="before:fixed before:inset-0 before:-z-10 before:bg-[url(~/assets/images/landscape-background.png)] before:bg-no-repeat before:bg-cover">
     <div class="font-extrabold font-monument-extended text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
       <h1>ADURAGBEMI</h1>
       <div class="flex">
