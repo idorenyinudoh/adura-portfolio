@@ -4,8 +4,15 @@ export default defineNuxtConfig({
     '~/assets/style/index.css',
   ],
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image'
   ],
+  image: {
+    provider: 'cloudinary',
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/'
+    }
+  },
   build: {
     transpile: [
       'gsap'
