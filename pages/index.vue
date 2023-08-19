@@ -22,5 +22,24 @@
       <br> <br>
       I've always imagined my life to be a movie and so, I decided to make an exhibit of a portfolio. I hope you enjoy.
     </p>
+    <!-- <button class="bg-white/50 hover:bg-white transition-all w-1 h-1 md:w-1.5 md:h-1.5 rounded-full block ml-auto mr-[15%] mt-[8%] glow" /> -->
+    <!-- <p class="text-white">Here's a picture I took of my university in my final days as an undergraduate as some form of totem to remind me where I'm coming from and how far I've come.</p> -->
   </div>
 </template>
+
+<!-- <style scoped>
+@keyframes glow {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(160%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+.glow {
+  animation: glow 4800ms linear infinite;
+}
+</style> -->
