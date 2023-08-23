@@ -67,18 +67,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="loading-screen h-screen w-full relative">
-    <div class="fixed top-0 left-0 w-full h-full -z-10">
-      <img
-        class="w-full h-full object-cover"
-        src="~/assets/images/landscape-background.png"
-        alt="landscape background"
-      />
-    </div>
-    <div class="relative w-full h-14 md:h-20 xl:h-24 2xl:h-32 bg-white/30">
+  <div class="loading-screen before:fixed before:inset-0 before:-z-10 before:bg-[url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background.png)] before:bg-no-repeat before:bg-cover">
+    <div class="relative w-full h-14 md:h-20 lg:h-24 bg-white/30">
       <div class="absolute top-0 left-0 h-full bg-adura-purple transition-all ease-linear duration-200" :style="{width: `${counter}%`}" />
     </div>
-    <div class="relative font-bold text-white mt-9 ml-[8.3vw] text-8xl md:text-9xl h-24 md:h-32">
+    <div class="relative font-normal font-monument-extended text-white mt-9 ml-[8.3vw] xl:ml-[120px] text-6xl md:text-7xl lg:text-8xl leading-[50px] md:leading-[61px] lg:leading-[81px] h-[50px] md:h-[60px] lg:h-[71px]">
       <Transition :css="false" @enter="onTextEnter" @leave="onTextLeave">
         <p v-if="counter <= 10" class="counter-text absolute">0</p>
         <p v-else-if="counter > 10 && counter <= 20" class="counter-text absolute">10</p>
@@ -93,12 +86,15 @@ onMounted(() => {
         <p v-else-if="counter === 100" class="counter-text absolute">100</p>
       </Transition>
     </div>
-    <p class="hang-tight font-extralight text-white/50 mt-3 md:mt-5 ml-[calc(8.3vw+12px)] text-4xl md:text-5xl">Do hang tight...</p>
+    <p class="hang-tight font-normal text-white/50 mx-[8.3vw] xl:mx-[120px] mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl">Quirky text goes hard.</p>
   </div>
 </template>
 
 <style scoped>
-.counter-text, .hang-tight {
+.counter-text {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 90%);
+}
+.hang-tight {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 </style>
