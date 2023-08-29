@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <h1 class="md:mr-[5vw] xl:mr-[12vw] font-bold text-adura-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
+  <h1 class="font-monument-extended font-extrabold text-adura-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
     {{ props.text }}
   </h1>
 </template>
