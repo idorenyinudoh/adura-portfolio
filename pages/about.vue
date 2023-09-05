@@ -115,6 +115,29 @@ const awardsTable = {
     }
   ]
 }
+const testimonials = [
+  {
+    name: 'Oladipupo Durojaiye',
+    headshot: '/testimonials/dipo.png',
+    position: 'Lead Backend Engineer',
+    company: 'ErrandPay',
+    testimonial: 'Adura\'s work constantly reflects his person. A thoughtful, brilliant mind who goes the extra mile in re-creating the intentions buried in the client\'s mind. One who often completes the requirements with great attention to details, many times before the client enunciates all they want, working together with him on a couple of projects was nought but enjoyable and hyper productive for me. I would 100% recommend him anytime.'
+  },
+  {
+    name: 'Victor Daudu',
+    headshot: '/testimonials/victor-daudu.png',
+    position: 'Flutter Mobile Developer',
+    company: 'ErrandPay',
+    testimonial: 'Working with Adura was and is a worthy ride. Adura has an eye for the tiniest detail, great combination and blends of colors, creative mind and above all, the right man for your UI/UX Job. Adura possesses a rare skill and passion to always design products from the end users\' point of views which is excellent for the scaling of the products. Adura is the man for the job!'
+  },
+  {
+    name: 'Idorenyin Udoh',
+    headshot: '/testimonials/idorenyin-udoh.jpeg',
+    position: 'Frontend Engineer',
+    company: 'Acumen Digital',
+    testimonial: 'Adura is a real nifty product designer. Watching him work on Figma should be among those “if it wasn\'t recorded, you wouldn\'t believe it” videos on YouTube. He sincerely cares about his products\' intended users and works his way from there — catering for them to reach their goals in the most efficient ways possible while taking accessibility into consideration. He\'s fun to work with as well. 100% would recommend.'
+  },
+]
 </script>
 
 <template>
@@ -162,6 +185,45 @@ const awardsTable = {
   </TextBaseP>
   <TextBaseH2 text="AWARDS AND PUBLICATIONS" />
   <BaseTable :table-data="awardsTable" />
+  <TextBaseH2 text="WORD ON THE STREET" />
+  <div class="-mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
+    <div class="grid grid-cols-[repeat(4,1fr)] gap-x-7 lg:gap-x-10 overflow-x-scroll">
+      <div v-for="(testimonial, index) in testimonials" :key="index" class="px-6 md:px-10 lg:px-12 xl:px-14 pt-5 md:pt-9 lg:pt-11 xl:pt-12 py-8 md:py-11 lg:py-14 xl:py-16 border border-solid border-[rgba(26,26,26,0.50)] rounded-[32px] w-[360px] sm:w-[480px] md:w-[720px] lg:w-[800px] xl:w-[960px]">
+        <div class="flex items-center gap-x-3 lg:gap-x-4">
+          <img :src="testimonial.headshot" width="72" alt="" class="w-12 md:w-14 lg:w-20 rounded-full border border-solid border-[#D3D0D0]">
+          <div>
+            <p class="text-adura-black text-sm md:text-base lg:text-xl font-bold">{{ testimonial.name }}</p>
+            <div class="md:mt-0.5 flex gap-x-1.5 md:gap-x-2 items-center">
+              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.position }}</p>
+              <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="2.21875" cy="2.39453" r="2" fill="#BBBBBB"/>
+              </svg>
+              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.company }}</p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-5 lg:mt-7 xl:mt-8 text-adura-black text-sm md:text-base lg:text-xl font-normal">{{ testimonial.testimonial }}</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-[repeat(4,1fr)] gap-x-10 overflow-x-scroll">
+      <div v-for="(testimonial, index) in testimonials.reverse()" :key="index" class="px-6 md:px-10 lg:px-12 xl:px-14 pt-5 md:pt-9 lg:pt-11 xl:pt-12 py-8 md:py-11 lg:py-14 xl:py-16 border border-solid border-[rgba(26,26,26,0.50)] rounded-[32px] w-[360px] sm:w-[480px] md:w-[720px] lg:w-[800px] xl:w-[960px]">
+        <div class="flex items-center gap-x-3 lg:gap-x-4">
+          <img :src="testimonial.headshot" width="72" alt="" class="w-12 md:w-14 lg:w-20 rounded-full border border-solid border-[#D3D0D0]">
+          <div>
+            <p class="text-adura-black text-sm md:text-base lg:text-xl font-bold">{{ testimonial.name }}</p>
+            <div class="md:mt-0.5 flex gap-x-1.5 md:gap-x-2 items-center">
+              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.position }}</p>
+              <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="2.21875" cy="2.39453" r="2" fill="#BBBBBB"/>
+              </svg>
+              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.company }}</p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-5 lg:mt-7 xl:mt-8 text-adura-black text-sm md:text-base lg:text-xl font-normal">{{ testimonial.testimonial }}</p>
+      </div>
+    </div>
+  </div>
   <TextBaseH2 text="REACH OUT" />
   <div class="mb-32 grid grid-cols-1 grid-rows-[max-content_1fr] md:grid-cols-[1fr_1.5fr] xl:grid-cols-2 gap-y-10 gap-x-8 xl:gap-x-16 justify-between">
     <p>
