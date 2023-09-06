@@ -116,9 +116,16 @@ const awardsTable = {
   ]
 }
 const testimonials = [
+{
+    name: 'Timilehin Oladunni',
+    headshot: '/testimonials/timilehin-oladunni.jpeg',
+    position: 'Software Engineer',
+    company: 'Periculum',
+    testimonial: 'Aduragbemi Abiola is a talented individual with a keen eye for detail and a strong work ethic. They are able to take complex design challenges and translate them into clear and effective solutions. In addition, Aduragbemi Abiola is a great communicator and is always willing to collaborate and take feedback in order to deliver the best possible results. Overall, I have no doubt that Aduragbemi Abiola would be a valuable asset to any design team and I wholeheartedly recommend them for any UI/UX design needs.'
+  },
   {
     name: 'Oladipupo Durojaiye',
-    headshot: '/testimonials/dipo.png',
+    headshot: '/testimonials/oladipupo-durojaiye.png',
     position: 'Lead Backend Engineer',
     company: 'ErrandPay',
     testimonial: 'Adura\'s work constantly reflects his person. A thoughtful, brilliant mind who goes the extra mile in re-creating the intentions buried in the client\'s mind. One who often completes the requirements with great attention to details, many times before the client enunciates all they want, working together with him on a couple of projects was nought but enjoyable and hyper productive for me. I would 100% recommend him anytime.'
@@ -136,6 +143,26 @@ const testimonials = [
     position: 'Frontend Engineer',
     company: 'Acumen Digital',
     testimonial: 'Adura is a real nifty product designer. Watching him work on Figma should be among those “if it wasn\'t recorded, you wouldn\'t believe it” videos on YouTube. He sincerely cares about his products\' intended users and works his way from there — catering for them to reach their goals in the most efficient ways possible while taking accessibility into consideration. He\'s fun to work with as well. 100% would recommend.'
+  },
+  {
+    name: 'Edward Eniang',
+    headshot: '/testimonials/edward-eniang.jpeg',
+    position: 'Director of Operations',
+    company: 'ErrandMedia',
+    testimonial: 'Adura is an excellent communicator, always willing to collaborate with other team members and take feedback constructively. He has a strong work ethic and consistently met deadlines, even under pressure. His ability to balance technical and creative requirements makes him an asset to any team. Overall, I highly recommend Adura for any UI/UX design role. He would be a valuable addition to any team and I\'m confident that he would make significant contributions to your organization.'
+  },
+  {
+    name: 'David Yaya',
+    headshot: '/testimonials/david-yaya.png',
+    position: 'Designer, Devops Engineer',
+    testimonial: 'Adura and I have joined hands on several projects. He worked as a UI/UX Designer and also as a UX Researcher. He is a highly skilled designer who\'s very devoted to learning and is also a great team player. Adura is impact-oriented and ensures that every project he works on is spectacular and astounding. I recommend him without any reservation.'
+  },
+  {
+    name: 'Samuel Babatunde',
+    headshot: '/testimonials/samuel-babatunde.png',
+    position: 'Fullstack Developer',
+    company: 'BorderPal',
+    testimonial: 'I have met a number of diligent people in my life, Adura tops them all. His zeal and dedication to see whatever he\'s doing through is second to none. He is the guy you want to work with. Always open to learning endlessly. He motivates me. And of course, he is an exceptionally skilled designer!'
   },
 ]
 </script>
@@ -186,41 +213,15 @@ const testimonials = [
   <TextBaseH2 text="AWARDS AND PUBLICATIONS" />
   <BaseTable :table-data="awardsTable" />
   <TextBaseH2 text="WORD ON THE STREET" />
-  <div class="-mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
-    <div class="grid grid-cols-[repeat(4,1fr)] gap-x-7 lg:gap-x-10 overflow-x-scroll">
-      <div v-for="(testimonial, index) in testimonials" :key="index" class="px-6 md:px-10 lg:px-12 xl:px-14 pt-5 md:pt-9 lg:pt-11 xl:pt-12 py-8 md:py-11 lg:py-14 xl:py-16 border border-solid border-[rgba(26,26,26,0.50)] rounded-[32px] w-[360px] sm:w-[480px] md:w-[720px] lg:w-[800px] xl:w-[960px]">
-        <div class="flex items-center gap-x-3 lg:gap-x-4">
-          <img :src="testimonial.headshot" width="72" alt="" class="w-12 md:w-14 lg:w-20 rounded-full border border-solid border-[#D3D0D0]">
-          <div>
-            <p class="text-adura-black text-sm md:text-base lg:text-xl font-bold">{{ testimonial.name }}</p>
-            <div class="md:mt-0.5 flex gap-x-1.5 md:gap-x-2 items-center">
-              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.position }}</p>
-              <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="2.21875" cy="2.39453" r="2" fill="#BBBBBB"/>
-              </svg>
-              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.company }}</p>
-            </div>
-          </div>
-        </div>
-        <p class="mt-5 lg:mt-7 xl:mt-8 text-adura-black text-sm md:text-base lg:text-xl font-normal">{{ testimonial.testimonial }}</p>
+  <div class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
+    <div class="overflow-x-hidden flex items-center">
+      <div v-for="(, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
+        <BaseTestimonial v-for="(testimonial, index) in testimonials" :key="index" :="testimonial" />
       </div>
     </div>
-    <div class="grid grid-cols-[repeat(4,1fr)] gap-x-10 overflow-x-scroll">
-      <div v-for="(testimonial, index) in testimonials.reverse()" :key="index" class="px-6 md:px-10 lg:px-12 xl:px-14 pt-5 md:pt-9 lg:pt-11 xl:pt-12 py-8 md:py-11 lg:py-14 xl:py-16 border border-solid border-[rgba(26,26,26,0.50)] rounded-[32px] w-[360px] sm:w-[480px] md:w-[720px] lg:w-[800px] xl:w-[960px]">
-        <div class="flex items-center gap-x-3 lg:gap-x-4">
-          <img :src="testimonial.headshot" width="72" alt="" class="w-12 md:w-14 lg:w-20 rounded-full border border-solid border-[#D3D0D0]">
-          <div>
-            <p class="text-adura-black text-sm md:text-base lg:text-xl font-bold">{{ testimonial.name }}</p>
-            <div class="md:mt-0.5 flex gap-x-1.5 md:gap-x-2 items-center">
-              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.position }}</p>
-              <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="2.21875" cy="2.39453" r="2" fill="#BBBBBB"/>
-              </svg>
-              <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ testimonial.company }}</p>
-            </div>
-          </div>
-        </div>
-        <p class="mt-5 lg:mt-7 xl:mt-8 text-adura-black text-sm md:text-base lg:text-xl font-normal">{{ testimonial.testimonial }}</p>
+    <div class="overflow-x-hidden flex items-center">
+      <div v-for="(, index) in 2" :key="index" class="scroll-reverse w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
+        <BaseTestimonial v-for="(testimonial, index) in [...testimonials].reverse()" :key="index" :="testimonial" />
       </div>
     </div>
   </div>
@@ -239,3 +240,23 @@ const testimonials = [
     </div>
   </div>
 </template>
+
+<style scoped>
+.scroll-group:hover .scroll, .scroll-group:hover .scroll-reverse {
+  animation-play-state: paused;
+}
+.scroll {
+  animation: scroll 85s linear infinite forwards;
+}
+.scroll-reverse {
+  animation: scroll 85s linear infinite reverse;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0)
+  }
+  to {
+    transform: translateX(-100%)
+  }
+}
+</style>
