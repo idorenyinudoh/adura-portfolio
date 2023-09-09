@@ -142,7 +142,9 @@ const testimonials = [
     headshot: 'idorenyin-udoh',
     position: 'Frontend Engineer',
     company: 'Acumen Digital',
-    testimonial: 'Adura is a real nifty product designer. Watching him work on Figma should be among those “if it wasn\'t recorded, you wouldn\'t believe it” videos on YouTube. He sincerely cares about his products\' intended users and works his way from there — catering for them to reach their goals in the most efficient ways possible while taking accessibility into consideration. He\'s fun to work with as well. 100% would recommend.'
+    testimonial: 'Adura is a real nifty product designer. Watching him work on Figma should be among those “if it wasn\'t recorded, you wouldn\'t believe it” videos on YouTube. He sincerely cares about his products\' intended users and works his way from there — catering for them to reach their goals in the most efficient ways possible while taking accessibility into consideration. He\'s fun to work with as well. 100% would recommend.',
+    devPitch: 'Okay okay, we\'ve admitted that Adura is good at design in general. Now I don\'t think you\'d want to hire him and share the designs with your users. That\'ll be tragic, right? Exactly. You\'d need someone to build your product\'s frontend and that\'s where I come in. Now I\'d love to take advantage of your time and preach on why I\'m a great fit for the job but we\'ve spent so much time here that Adura might nab us and if you haven\'t noticed, we\'re kind of running out of space. Hence, I\'ll just place a link to my LinkedIn somewhere around so this convo can be less one-sided, you know?',
+    devImage: '/extra-image.JPG'
   },
   {
     name: 'Edward Eniang',
@@ -205,10 +207,10 @@ const testimonials = [
     This is because I absolutely enjoy listening to music and across MULTIPLE genres. From Afrobeats (Burna Boy, Wizkid, Adekunle Gold, etc) to Highlife (Cavemen) and Live praise concerts (Bidemi Olaoba, Femi Praise, Mega 99) to Old School Apala (Haruna Ishola and the likes) to Heartbreak songs (Passenger, Jon Bellion, Lewis Capaldi, etc) to UK Rap (Stormzy, Dave) to “New Cats” HipHop (Fireboy, Rema, Bnxn, Ladipoe, etc) to Nigerian Rap Artistes (MI, Vector).
     <br>
     <br>
-    I also enjoy long form audio content like audiobooks (Jordan Person, Simon Sinek, Mark Manson are my OGs), YouTube interviews and podcasts (spoiler I have a podcast with about 30k listens so far). Comedy standups are also a personal favorite (Dave Chapelle, Trevor Noah, Kevin Hart, Matt Rife).
+    I also enjoy long form audio content like audiobooks (Jordan Peterson, Simon Sinek, Mark Manson are my OGs), YouTube interviews and podcasts (spoiler I have a podcast with about 30k listens so far). Comedy standups are also a personal favorite (Dave Chapelle, Trevor Noah, Kevin Hart, Matt Rife).
     <br>
     <br>
-    I do enjoy seeing movies and I especially love movies of the investigative type, Sherlock and the likes. I also take random courses of YouTube sometimes not even design related.
+    I do enjoy seeing movies and I especially love movies of the investigative type, Sherlock and the likes. I also take random courses on YouTube — sometimes not even design related.
   </TextBaseP>
   <TextBaseH2 text="AWARDS AND PUBLICATIONS" />
   <BaseTable :table-data="awardsTable" />
