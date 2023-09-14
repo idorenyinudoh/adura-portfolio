@@ -153,7 +153,7 @@ const projects: Project[] = [
 
 <style scoped>
 .hero {
-  background: linear-gradient(rgb(26 26 26 / 87%) 0%, rgb(26 26 26 / 87%) 100%), url(@/assets/images/projects/betasms.png);
+  background: linear-gradient(rgb(26 26 26 / 87%) 0%, rgb(26 26 26 / 87%) 100%), url(@/assets/images/projects/hero-background.png);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
