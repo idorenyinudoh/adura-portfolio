@@ -195,7 +195,7 @@ const testimonials = [
   <BaseTable :table-data="certificationsTable" />
   <TextBaseH2 text="SKILLS" />
   <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
-    <p v-for="(skill, index) in skills" :key="index" class="px-6 py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-base md:text-lg lg:text-2xl font-normal">
+    <p v-for="(skill, index) in skills" :key="index" class="px-6 py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-sm md:text-base lg:text-xl font-normal">
       {{ skill }}
     </p>
   </div>

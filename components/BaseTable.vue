@@ -15,7 +15,7 @@ const props = defineProps({
     </thead>
     <tbody>
       <tr v-for="(row, index) in props.tableData?.rows" :key="index" class="border-b border-solid border-adura-black">
-        <td v-for="header in props.tableData?.headers" :class="['py-4', 'md:py-6', 'lg:py-10', 'pr-4', 'md:pr-14', 'text-adura-black', 'text-base', 'md:text-lg', 'lg:text-2xl', 'font-normal', {'pl-2': header === props?.tableData?.headers[0]}]">
+        <td v-for="header in props.tableData?.headers" :class="['py-4', 'md:py-6', 'lg:py-10', 'pr-4', 'md:pr-14', 'text-adura-black', 'text-sm', 'md:text-base', 'lg:text-xl', 'font-normal', {'pl-2': header === props?.tableData?.headers[0]}]">
           {{ row[header] }}
         </td>
       </tr>
