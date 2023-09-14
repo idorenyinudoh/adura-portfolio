@@ -170,13 +170,13 @@ const testimonials = [
 </script>
 
 <template>
-  <TextBaseH1 text="MEET ADURA" />
-  <TextBaseP>
+  <BaseH1 text="MEET ADURA" />
+  <BaseP>
     Hi, I am Adura, a user experience designer. I have an experience in mobile app and web design, wire-framing and mockup design, user research, interactive prototyping illustration amongst others.
     <br>
     <br>
     Identifying and understanding the human needs is crucial for creating useful and usable products. I relish the moments when my skill and knowledge empowers people, thereby making life easier.
-  </TextBaseP>
+  </BaseP>
   <div class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-4 lg:gap-6 xl:gap-10">
     <div class="col-start-1 col-end-3 lg:col-end-2 lg:row-start-1 lg:row-end-3">
       <img class="w-full h-full object-cover rounded-[32px] lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="~/assets/images/about/adura-working.png" alt="adura working">
@@ -191,16 +191,16 @@ const testimonials = [
       <img class="w-full h-full object-cover rounded-[32px] lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="~/assets/images/about/adura-talking.png" alt="adura communicating with teammate">
     </div>
   </div>
-  <TextBaseH2 text="CERTIFICATIONS" />
+  <BaseH2 text="CERTIFICATIONS" />
   <BaseTable :table-data="certificationsTable" />
-  <TextBaseH2 text="SKILLS" />
+  <BaseH2 text="SKILLS" />
   <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
     <p v-for="(skill, index) in skills" :key="index" class="px-6 py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-sm md:text-base lg:text-xl font-normal">
       {{ skill }}
     </p>
   </div>
-  <TextBaseH2 text="INTERESTS" />
-  <TextBaseP>
+  <BaseH2 text="INTERESTS" />
+  <BaseP>
     One thing you know about me is that I always have some form of headphones on my person.
     <br>
     <br>
@@ -211,10 +211,10 @@ const testimonials = [
     <br>
     <br>
     I do enjoy seeing movies and I especially love movies of the investigative type, Sherlock and the likes. I also take random courses on YouTube — sometimes not even design related.
-  </TextBaseP>
-  <TextBaseH2 text="AWARDS AND PUBLICATIONS" />
+  </BaseP>
+  <BaseH2 text="AWARDS AND PUBLICATIONS" />
   <BaseTable :table-data="awardsTable" />
-  <TextBaseH2 text="WORD ON THE STREET" />
+  <BaseH2 text="WORD ON THE STREET" />
   <div class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
     <div class="overflow-x-hidden flex items-center">
       <div v-for="(, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
