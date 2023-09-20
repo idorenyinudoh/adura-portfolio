@@ -17,9 +17,9 @@
       <li>Carry out usability testing from time to time to make sure that the design is adequately optimised for the problem the team is poised to solve.</li>
       <li>Track and monitor usage of the software while creating a better user experience from a data driven standpoint.</li>
     </BaseUl>
-    <div class="flex flex-col md:flex-row items-center gap-y-8 md:gap-x-8 md:gap-y-0">
-      <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[60%] md:pt-[43.5%] w-full"></div>
-      <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[60%] md:pt-[43.5%] w-full"></div>
+    <div class="flex flex-col md:flex-row items-center gap-y-4 md:gap-x-8 md:gap-y-0">
+      <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[60%] md:pt-[43.5%] xl:pt-[33%] w-full"></div>
+      <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[60%] md:pt-[43.5%] xl:pt-[33%] w-full"></div>
     </div>
     <BaseH2 text="DESIGN PROCESS" class="!mb-6 md:!mb-8 lg:!mb-10" />
     <BaseUl>
@@ -35,6 +35,18 @@
       <li>Due to the fact that where was an existing iteration of the product, I had to go back and forth to make sure this new iteration solves the issues the existing one had.</li>
       <li>Working within such short timeframe was highly challenging and I was able to push myself to meet the deadline though we had a few close calls.</li>
     </BaseUl>
+    <div class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex items-center overflow-x-hidden">
+      <div class="scroll px-1 md:px-2 lg:px-3 xl:px-4 grid items-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-8 grid-cols-[repeat(3,310px)] sm:grid-cols-[repeat(3,500px)] md:grid-cols-[repeat(3,640px)] lg:grid-cols-[repeat(3,768px)] xl:grid-cols-[repeat(3,830px)]">
+        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
+        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
+        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
+      </div>
+      <div class="scroll px-1 md:px-2 lg:px-3 xl:px-4 grid items-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-8 grid-cols-[repeat(3,310px)] sm:grid-cols-[repeat(3,500px)] md:grid-cols-[repeat(3,640px)] lg:grid-cols-[repeat(3,768px)] xl:grid-cols-[repeat(3,830px)]">
+        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
+        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
+        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
+      </div>
+    </div>
     <BaseH2 text="LESSONS LEARNED" class="!mb-6 md:!mb-8 lg:!mb-10" />
     <BaseUl>
       <li>I actively sought and incorporated feedback from a diverse set of stakeholders, including users, developers, and product managers, to refine my designs.</li>
@@ -44,3 +56,7 @@
     <TheContact />
   </div>
 </template>
+
+<style scoped>
+@import url(~/assets/style/infinite-scroll.css);
+</style>

@@ -231,21 +231,5 @@ const testimonials = [
 </template>
 
 <style scoped>
-.scroll-group:hover .scroll, .scroll-group:hover .scroll-reverse {
-  animation-play-state: paused;
-}
-.scroll {
-  animation: scroll 85s linear infinite forwards;
-}
-.scroll-reverse {
-  animation: scroll 85s linear infinite reverse;
-}
-@keyframes scroll {
-  from {
-    transform: translateX(0)
-  }
-  to {
-    transform: translateX(-100%)
-  }
-}
+@import url(~/assets/style/infinite-scroll.css);
 </style>
