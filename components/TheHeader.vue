@@ -1,13 +1,25 @@
 <script setup lang="ts">
-const currentHour = ref(new Date().getHours())
+const formatHour = (hour: number) => {
+  if (hour > 12) {
+    return hour - 12
+  } else if (hour === 0) {
+    return 12
+  }
+  return hour
+}
+
+const currentHour = ref(formatHour(new Date().getHours()))
 const currentMinutes = ref(new Date().getMinutes())
 const timeOfDay = ref('AM')
 
+
 watchEffect(() => {
   setInterval(() => {
-    currentHour.value = new Date().getHours()
+    const actualCurrentHour = new Date().getHours()
+    currentHour.value = formatHour(actualCurrentHour)
     currentMinutes.value = new Date().getMinutes()
-    if (currentHour.value >= 0 && currentHour.value < 12) {
+    
+    if (actualCurrentHour < 12) {
       timeOfDay.value = 'AM'
     } else {
       timeOfDay.value = 'PM'
@@ -26,6 +38,7 @@ watchEffect(() => {
       </p>
       <span>|</span>
       <p>
+        <span v-if="currentHour < 10">0</span>
         <span>{{ currentHour }}</span>
         <span class="blink">:</span>
         <span v-if="currentMinutes < 10">0</span>
