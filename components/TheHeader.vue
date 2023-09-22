@@ -12,9 +12,9 @@ const currentHour = ref(formatHour(new Date().getHours()))
 const currentMinutes = ref(new Date().getMinutes())
 const timeOfDay = ref('AM')
 
-
-watchEffect(() => {
-  setInterval(() => {
+let intervalId = 0
+onMounted(() => {
+  intervalId = setInterval(() => {
     const actualCurrentHour = new Date().getHours()
     currentHour.value = formatHour(actualCurrentHour)
     currentMinutes.value = new Date().getMinutes()
@@ -25,6 +25,10 @@ watchEffect(() => {
       timeOfDay.value = 'PM'
     }
   }, 1000)
+})
+
+onUnmounted(() => {
+  clearInterval(intervalId)
 })
 </script>
 
