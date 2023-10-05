@@ -13,6 +13,7 @@
     "nuxt": "^3.4.3"
   },
   "dependencies": {
+    "airtable": "^0.12.2",
     "gsap": "^3.11.3",
     "split-type": "^0.3.3"
   }
