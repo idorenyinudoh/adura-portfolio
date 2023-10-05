@@ -1,57 +1,104 @@
+<script setup lang="ts">
+interface Step {
+  title?: string
+  description: string
+}
+
+defineProps({
+  projectName: {
+    type: String,
+    required: true
+  },
+  projectDescription: {
+    type: String,
+    required: true
+  },
+  deployLink: {
+    type: String,
+    required: false
+  },
+  heroImage: {
+    type: String,
+    required: true
+  },
+  projectObjectives: {
+    type: Array as PropType<Step[]>,
+    required: true
+  },
+  projectScreenshots: {
+    type: Array as PropType<string[]>,
+    required: true
+  },
+  designProcess: {
+    type: Array as PropType<Step[]>,
+    required: true
+  },
+  challenges: {
+    type: Array as PropType<Step[]>,
+    required: true
+  },
+  scrollImages: {
+    type: Array as PropType<string[]>,
+    required: true
+  },
+  lessons: {
+    type: Array as PropType<string[]>,
+    required: true
+  }
+})
+</script>
+
 <template>
   <div>
-    <BaseH1 text="kólé" />
+    <BaseH1 :text="projectName" />
     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-x-[10.1%]">
       <BaseP>
-        Kólé is dedicated to revolutionising construction planning and management in Africa. Empowering aspiring home owners and construction professionals alike with cutting-edge digital solutions that simplify and optimise every aspect of the construction journey.
+        {{ projectDescription }}
       </BaseP>
-      <a class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 hover:bg-adura-black/70 whitespace-nowrap text-adura-black hover:text-white font-normal text-sm md:text-base lg:text-xl transition-all duration-200 ease-linear" href="">View Live Site</a>
+      <a v-if="deployLink" class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 hover:bg-adura-black/70 whitespace-nowrap text-adura-black hover:text-white font-normal text-sm md:text-base lg:text-xl transition-all duration-200 ease-linear" :href="deployLink" target="_blank">View Live Site</a>
+      <p v-else class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 whitespace-nowrap text-adura-black font-normal text-sm md:text-base lg:text-xl">In Development</p>
     </div>
-    <div class="pt-[75%] sm:pt-[60%] lg:pt-[40.5%] -mx-[8.3vw] lg:mx-0 bg-[#D9D9D9] mt-16 lg:mt-4 rounded-none lg:rounded-2xl" />
+    <div class="relative pt-[75%] sm:pt-[60%] lg:pt-[40.5%] -mx-[8.3vw] lg:mx-0 mt-16 lg:mt-4">
+      <NuxtImg provider="cloudinary" class="absolute top-0 left-0 w-full h-full object-cover rounded-none lg:rounded-2xl" :src="`/projects/${heroImage}`" :alt="`image of user on ${projectName}'s platform`" />
+    </div>
     <BaseH2 text="PROJECT OBJECTIVES" class="!mb-6 md:!mb-8 lg:!mb-10" />
     <BaseUl>
-      <li>Create a design system for the company.</li>
-      <li>Create a highly responsive web app that is compatible for multiple devices.</li>
-      <li>Create a mobile app solution.</li>
-      <li>Creating two landing pages, one to accumulate emails to build the waitlist and the other to launch the software.</li>
-      <li>Carry out usability testing from time to time to make sure that the design is adequately optimised for the problem the team is poised to solve.</li>
-      <li>Track and monitor usage of the software while creating a better user experience from a data driven standpoint.</li>
+      <li v-for="(objective, index) in projectObjectives" :key="index">
+        <span v-if="objective.title" class="font-medium">{{ objective.title }}: </span>
+        <span>{{ objective.description }}</span>
+      </li>
     </BaseUl>
-    <div class="flex flex-col md:flex-row items-center gap-y-4 md:gap-x-8 md:gap-y-0">
-      <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[60%] md:pt-[43.5%] xl:pt-[33%] w-full"></div>
-      <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[60%] md:pt-[43.5%] xl:pt-[33%] w-full"></div>
+    <div class="flex flex-col md:flex-row items-center gap-y-10 md:gap-x-8 md:gap-y-0">
+      <div v-for="(screenshot, index) in projectScreenshots" :key="index" class="relative pt-[75%] sm:pt-[60%] md:pt-[43.5%] xl:pt-[33%] w-full">
+        <NuxtImg provider="cloudinary" class="absolute top-0 left-0 w-full h-full object-cover rounded-lg md:rounded-2xl border-2 border-solid border-adura-black" :src="`/projects/${screenshot}`" :alt="`screenshot of ${projectName}`" />
+      </div>
     </div>
     <BaseH2 text="DESIGN PROCESS" class="!mb-6 md:!mb-8 lg:!mb-10" />
     <BaseUl>
-      <li><span class="font-medium">Problem statement, understanding and research:</span> This was the very first step in my design process as I had to carefully explore the existing user interface, the current website to understand their services and ask questions within the team to make sure the design solves real world problems.</li>
-      <li><span class="font-medium">Design system:</span> Create a global design system that caters to both the mobile application and back-office and customise it to fit SCIART's brand identity.</li>
-      <li><span class="font-medium">Wireframing and prototyping:</span> Creating the design system, I then proceeded to creating sketches of how the new feature(s) will look before finally moving on to design software. PS: I especially enjoy this process using pen and paper.</li>
-      <li><span class="font-medium">High fidelity design iterations:</span> This process involves ideating the low fidelity designs (wireframes) into useful and usable interface.</li>
-      <li><span class="font-medium">Review and further iterations:</span> The design is then reviewed by the CEO and when green-lit, pushed for development.</li>
+      <li v-for="(step, index) in designProcess" :key="index">
+        <span v-if="step.title" class="font-medium">{{ step.title }}: </span>
+        <span>{{ step.description }}</span>
+      </li>
     </BaseUl>
     <BaseH2 text="CHALLENGES" class="!mb-6 md:!mb-8 lg:!mb-10" />
     <BaseUl>
-      <li>Designing effective ways to visualise financial data and analytics within the admin back-office can be complex.</li>
-      <li>Due to the fact that where was an existing iteration of the product, I had to go back and forth to make sure this new iteration solves the issues the existing one had.</li>
-      <li>Working within such short timeframe was highly challenging and I was able to push myself to meet the deadline though we had a few close calls.</li>
+      <li v-for="(challenge, index) in challenges" :key="index">
+        <span v-if="challenge.title" class="font-medium">{{ challenge.title }}: </span>
+        <span>{{ challenge.description }}</span>
+      </li>
     </BaseUl>
     <div class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex items-center overflow-x-hidden">
-      <div class="scroll px-1 md:px-2 lg:px-3 xl:px-4 grid items-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-8 grid-cols-[repeat(3,310px)] sm:grid-cols-[repeat(3,500px)] md:grid-cols-[repeat(3,640px)] lg:grid-cols-[repeat(3,768px)] xl:grid-cols-[repeat(3,830px)]">
-        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
-        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
-        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
-      </div>
-      <div class="scroll px-1 md:px-2 lg:px-3 xl:px-4 grid items-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-8 grid-cols-[repeat(3,310px)] sm:grid-cols-[repeat(3,500px)] md:grid-cols-[repeat(3,640px)] lg:grid-cols-[repeat(3,768px)] xl:grid-cols-[repeat(3,830px)]">
-        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
-        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
-        <div class="bg-[#D9D9D9] rounded-lg md:rounded-2xl pt-[75%] sm:pt-[62.9%]"></div>
+      <div v-for="i in 2" :key="i" class="scroll px-1 md:px-2 lg:px-3 xl:px-4 grid items-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-8 grid-cols-[repeat(3,310px)] sm:grid-cols-[repeat(3,500px)] md:grid-cols-[repeat(3,640px)] lg:grid-cols-[repeat(3,768px)] xl:grid-cols-[repeat(3,830px)]">
+        <div v-for="(image, index) in scrollImages" :key="index" class="relative pt-[75%] sm:pt-[62.9%]">
+          <NuxtImg provider="cloudinary" class="absolute top-0 left-0 w-full h-full object-cover rounded-lg md:rounded-2xl border-2 border-solid border-adura-black" :src="`/projects/${image}`" :alt="`screenshot of ${projectName}`" />
+        </div>
       </div>
     </div>
     <BaseH2 text="LESSONS LEARNED" class="!mb-6 md:!mb-8 lg:!mb-10" />
     <BaseUl>
-      <li>I actively sought and incorporated feedback from a diverse set of stakeholders, including users, developers, and product managers, to refine my designs.</li>
-      <li>I learned to maintain well-organised design documentation, style guides, and UI component libraries to streamline collaboration and future updates.</li>
-      <li>I especially learned what it meant to work with friends and reminded me the true power of collaborations.</li>
+      <li v-for="(lesson, index) in lessons" :key="index">
+        {{ lesson }}
+      </li>
     </BaseUl>
     <TheContact />
   </div>
