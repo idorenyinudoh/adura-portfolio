@@ -31,7 +31,7 @@ const props = {
   designProcess: [
     {
       title: 'Problem discovery',
-      description: 'This process often involves user feedback, stakeholder ideation for a business direction, or just an issue pointed out by the product manager, teammate(s) or myself.'
+      description: 'This process often involved user feedback, stakeholder ideation for a business direction, or just an issue pointed out by the product manager, teammate(s) or myself.'
     },
     {
       title: 'Research and problem understanding',
@@ -43,11 +43,11 @@ const props = {
     },
     {
       title: 'High fidelity design iterations',
-      description: 'This process involves ideating the low fidelity designs (wireframes) into useful and usable interface.'
+      description: 'This process involved ideating the low fidelity designs (wireframes) into useful and usable interface.'
     },
     {
       title: 'Review and further iterations',
-      description: 'The design was then reviewed by the product manger, frontend engineer, and sometimes the backend engineer if it involves matching the design to an existing endpoint.'
+      description: 'The design was then reviewed by the product manager, frontend engineer, and sometimes the backend engineer if it involves matching the design to an existing endpoint.'
     },
     {
       title: 'Push for development',
@@ -55,7 +55,7 @@ const props = {
     },
     {
       title: 'Testing and QA',
-      description: 'This involveed me interfacing with the product managers and beta testers to make sure the feature solved the problem it set out to solve within the test environment.'
+      description: 'This involved me interfacing with the product managers and beta testers to make sure the feature solved the problem it set out to solve within the test environment.'
     }
   ],
   challenges: [
@@ -72,7 +72,7 @@ const props = {
     'kole-scroll-image-3'
   ],
   lessons: [
-    'I was able to observe and learn how users think through multiple user testing processes.',
+    'I was able to observe and learn how users think through multiple user-testing processes.',
     'A/B testing was equally employed for certain design features and we were able to make data-driven decisions for certain features.',
     'I\'m still learning, lol.'
   ]
