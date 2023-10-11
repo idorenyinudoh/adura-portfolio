@@ -56,10 +56,10 @@ defineProps({
         {{ projectDescription }}
       </BaseP>
       <a v-if="deployLink" class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 hover:bg-adura-black/70 whitespace-nowrap text-adura-black hover:text-white font-normal text-sm md:text-base lg:text-xl transition-all duration-200 ease-linear" :href="deployLink" target="_blank">View Live Site</a>
-      <p v-else class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 whitespace-nowrap text-adura-black font-normal text-sm md:text-base lg:text-xl">In Development</p>
+      <p v-else-if="projectName.toLowerCase() !== 'hydrogen'" class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 whitespace-nowrap text-adura-black font-normal text-sm md:text-base lg:text-xl">In Development</p>
     </div>
     <div class="relative pt-[75%] sm:pt-[60%] lg:pt-[40.5%] -mx-[8.3vw] lg:mx-0 mt-16 lg:mt-4">
-      <NuxtImg provider="cloudinary" class="absolute top-0 left-0 w-full h-full object-cover rounded-none lg:rounded-2xl" :src="`/projects/${heroImage}`" :alt="`image of user on ${projectName}'s platform`" />
+      <NuxtImg provider="cloudinary" class="absolute top-0 left-0 w-full h-full object-cover rounded-none lg:rounded-2xl lg:border-2 lg:border-solid lg:border-adura-black" :src="`/projects/${heroImage}`" :alt="`image of user on ${projectName}'s platform`" />
     </div>
     <BaseH2 text="PROJECT OBJECTIVES" class="!mb-6 md:!mb-8 lg:!mb-10" />
     <BaseUl>
