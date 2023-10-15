@@ -304,7 +304,7 @@ onUnmounted(() => {
     </div>
     <BaseP class="md:hidden">Here's a catalogue of some my all time favorites. Audiobooks, ebooks, or paperbacks in that order is my preferred form of reading and frankly, I mostly enjoy mind-benders (philosophy, psychology), self-help books as well as design books and occasionally fiction.</BaseP>
     <div class="grid grid-rows-[max-content,max-content] md:grid-cols-[1fr,1fr] lg:grid-cols-[1.2fr,1fr] xl:grid-cols-[1.3fr,1fr] 2xl:grid-cols-[560px,1fr] gap-x-8 lg:gap-x-14 xl:gap-x-20 2xl:gap-x-28 items-center">
-      <div class="relative z-0 p-[10%] lg:p-[11.5%] xl:p-[12%] rounded-2xl grid grid-cols-3 xl:grid-cols-[repeat(3,123.22px)] grid-rows-3 xl:grid-rows-[repeat(3,129.89px)] gap-4 lg:gap-6 xl:gap-7 max-md:max-w-md max-md:mx-auto" :style="{ backgroundColor: interests[visibleInterestIndex].color }">
+      <div class="relative z-0 p-[10%] lg:p-[11.5%] xl:p-[12%] rounded-2xl grid grid-cols-3 2xl:grid-cols-[repeat(3,123.22px)] grid-rows-3 2xl:grid-rows-[repeat(3,129.89px)] gap-4 lg:gap-6 xl:gap-7 max-md:max-w-md max-md:mx-auto" :style="{ backgroundColor: interests[visibleInterestIndex].color }">
         <div v-for="(image, index) in interests[visibleInterestIndex].data" :key="index" class="relative cursor-pointer hover:after:opacity-100 after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear after:absolute after:w-full after:h-full after:inset-0 after:p-[10%] after:bg-black/70 after:rounded-lg after:content-[attr(data-content)] after:flex after:items-center after:justify-center after:text-center after:text-white after:text-sm xl:after:text-base after:leading-4 xl:after:leading-5" :data-content="image.caption">
           <NuxtImg class="rounded-lg cursor-pointer" :src="`/interests/${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')}/${image.url}`" :alt="`cover of ${image.title}`" />
         </div>
@@ -317,7 +317,7 @@ onUnmounted(() => {
           </div>
           <div :class="['text-adura-black grid grid-rows-[max-content,0fr] justify-items-start transition-[grid-template-rows] duration-300 ease-linear', { 'grid-rows-[max-content,1fr] gap-y-2 lg:gap-y-4 xl:gap-y-6': index === visibleInterestIndex }]">
             <button @click="handleVisibleInterestChange(index)">
-              <p class="text-lg lg:text-2xl xl:text-3xl font-bold">{{ interest.title }}</p>
+              <p :class="[ index === visibleInterestIndex ? 'text-lg lg:text-2xl xl:text-3xl font-medium' : 'text-base lg:text-xl xl:text-2xl font-normal' ]">{{ interest.title }}</p>
             </button>
             <p class="overflow-hidden text-base lg:text-xl xl:text-2xl font-normal">{{ interest.description }}</p>
           </div>
