@@ -108,19 +108,157 @@ const interests = [
     title: 'Podcasts and Standups',
     description: 'I also enjoy listening to long-form audio content while I work. Podcasts, Standup specials and YouTube interviews. I also have a podcast with over thirty thousand global listens which airs bi-weekly across podcast streaming platforms and occasionally YouTube.',
     color: '#C0E3A4',
-    data: []
+    data: [
+      {
+        title: 'The Diary of a CEO',
+        url: 'diary-of-a-ceo',
+        caption: 'Diary of a CEO'
+      },
+      {
+        title: 'Vent Per Week',
+        url: 'vent-per-week',
+        caption: 'Vent Per Week'
+      },
+      {
+        title: 'On Purpose',
+        url: 'on-purpose',
+        caption: 'On Purpose'
+      },
+      {
+        title: 'The Closer',
+        url: 'the-closer',
+        caption: 'The Closer'
+      },
+      {
+        title: 'Irresponsible',
+        url: 'irresponsible',
+        caption: 'Irresponsible'
+      },
+      {
+        title: 'I Wish You Would',
+        url: 'i-wish-you-would',
+        caption: 'I Wish You Would'
+      },
+      {
+        title: 'The King\'s Jester',
+        url: 'the-kings-jester',
+        caption: 'The King\'s Jester'
+      },
+      {
+        title: 'Shxts N Gigs',
+        url: 'shxts-n-gigs',
+        caption: 'Shxts N Gigs'
+      },
+      {
+        title: 'Shaking Tables',
+        url: 'shaking-tables',
+        caption: 'Subscribe'
+      }
+    ]
   },
   {
     title: 'More Designs',
     description: 'On days when I\'m not designing user interfaces or mapping out user experience, I often dabble poster and flyer design exploration as well as illustrations for fun.',
     color: '#BFD7EA',
-    data: []
+    data: [
+      {
+        title: 'Flyer Exploration',
+        url: 'flyer-exploration',
+        caption: 'Flyer Exploration'
+      },
+      {
+        title: 'Podcast Flyer',
+        url: 'podcast-flyer',
+        caption: 'Podcast Flyer'
+      },
+      {
+        title: 'Calendar Illustration',
+        url: 'calendar-illustration',
+        caption: 'Calendar Illustration'
+      },
+      {
+        title: 'Podcast Flyer',
+        url: 'podcast-flyer2',
+        caption: 'Podcast Flyer'
+      },
+      {
+        title: 'Notes Illustration',
+        url: 'notes-illustration',
+        caption: 'Notes Illustration'
+      },
+      {
+        title: 'Podcast Flyer',
+        url: 'podcast-flyer3',
+        caption: 'Podcast Flyer'
+      },
+      {
+        title: 'POS Illustration',
+        url: 'pos-illustration',
+        caption: 'POS Illustration'
+      },
+      {
+        title: 'Flyer Exploration',
+        url: 'flyer-exploration2',
+        caption: 'Flyer Exploration'
+      },
+      {
+        title: 'Ikoyi Bridge Illustration',
+        url: 'ikoyi-bridge-illustration',
+        caption: 'Ikoyi Bridge Illustration'
+      },
+    ]
   },
   {
     title: 'Movies and Series',
     description: 'A few genres I genuinely enjoy are sci-fi, action comedy, comedy, sitcoms, coming of age and my personal favorite, crime (something with a big reveal). I occasionally binge old animations cos I\'m not quite sure what they make these days.',
     color: '#FFE193',
-    data: []
+    data: [
+      {
+        title: 'Lie to Me',
+        url: 'lie-to-me',
+        caption: 'Lie to Me'
+      },
+      {
+        title: 'Forever',
+        url: 'forever',
+        caption: 'Forever'
+      },
+      {
+        title: 'Smallville',
+        url: 'smallville',
+        caption: 'Smallville'
+      },
+      {
+        title: 'Brooklyn Nine-Nine',
+        url: 'brooklyn-nine-nine',
+        caption: 'Brooklyn Nine-Nine'
+      },
+      {
+        title: 'Sherlock Holmes',
+        url: 'sherlock-holmes',
+        caption: 'Sherlock Holmes'
+      },
+      {
+        title: 'Bob Hearts Abishola',
+        url: 'bob-hearts-abishola',
+        caption: 'Bob Hearts Abishola'
+      },
+      {
+        title: 'Dark Knight Rises',
+        url: 'dark-knight-rises',
+        caption: 'Dark Knight Rises'
+      },
+      {
+        title: 'The Boys',
+        url: 'the-boys',
+        caption: 'The Boys'
+      },
+      {
+        title: 'Suits',
+        url: 'suits',
+        caption: 'Suits'
+      },
+    ]
   }
 ]
 
@@ -149,6 +287,9 @@ const handleVisibleInterestChange = (index: number) => {
 onMounted(() => {
   updateVisibleInterests()
 })
+onUnmounted(() => {
+  clearInterval(intervalId)
+})
 </script>
 
 <template>
@@ -174,7 +315,7 @@ onMounted(() => {
           <div class="relative w-1.5 xl:w-2 h-full rounded-3xl bg-[#D9D9D966]" :class="{ 'h-[calc(100%+8px)] -mt-1 lg:h-[calc(100%+16px)] lg:-mt-2 xl:h-[calc(100%+32px)] xl:-mt-4': index === visibleInterestIndex }">
             <div v-if="index === visibleInterestIndex" class="grow absolute w-full h-0 rounded-3xl" :style="{ backgroundColor: interest.color }"></div>
           </div>
-          <div :class="['text-adura-black grid grid-rows-[max-content,0fr] justify-items-start transition-[grid-template-rows] duration-700 ease-linear', { 'grid-rows-[max-content,1fr] gap-y-2 lg:gap-y-4 xl:gap-y-6': index === visibleInterestIndex }]">
+          <div :class="['text-adura-black grid grid-rows-[max-content,0fr] justify-items-start transition-[grid-template-rows] duration-300 ease-linear', { 'grid-rows-[max-content,1fr] gap-y-2 lg:gap-y-4 xl:gap-y-6': index === visibleInterestIndex }]">
             <button @click="handleVisibleInterestChange(index)">
               <p class="text-lg lg:text-2xl xl:text-3xl font-bold">{{ interest.title }}</p>
             </button>
@@ -183,6 +324,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <BaseP>PS: I'm open to nerding out on any of these topics, you can shoot me an email or a twitter DM.</BaseP>
   </div>
 </template>
 
