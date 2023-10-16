@@ -73,6 +73,7 @@ const certificationsTable = {
     }
   ]
 }
+
 const skills = [
   'No Code Development',
   'Critical Thinking',
@@ -91,6 +92,7 @@ const skills = [
   'Accessibility',
   'A/B Testing'
 ]
+
 const awardsTable = {
   headers: [
     'platform',
@@ -115,6 +117,7 @@ const awardsTable = {
     }
   ]
 }
+
 const testimonials = [
 {
     name: 'Timilehin Oladunni',
@@ -179,16 +182,16 @@ const testimonials = [
   </BaseP>
   <div class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-4 lg:gap-6 xl:gap-10">
     <div class="col-start-1 col-end-3 lg:col-end-2 lg:row-start-1 lg:row-end-3">
-      <img class="w-full h-full object-cover rounded-[32px] lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="~/assets/images/about/adura-working.png" alt="adura working">
+      <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-working" alt="adura working" />
     </div>
     <div>
-      <img class="w-full h-full object-cover rounded-[32px] lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="~/assets/images/about/adura-headshot.png" alt="adura's headshot">
+      <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-headshot" alt="adura's headshot" />
     </div>
     <div>
-      <img class="w-full h-full object-cover rounded-[32px] lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="~/assets/images/about/adura-collaborating.png" alt="adura collaborating with teammate">
+      <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-collaborating" alt="adura collaborating with teammate" />
     </div>
     <div class="col-start-1 col-end-3 lg:col-start-2 lg:col-end-4">
-      <img class="w-full h-full object-cover rounded-[32px] lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="~/assets/images/about/adura-talking.png" alt="adura communicating with teammate">
+      <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-talking" alt="adura communicating with teammate" />
     </div>
   </div>
   <BaseH2 text="CERTIFICATIONS" />
@@ -199,19 +202,7 @@ const testimonials = [
       {{ skill }}
     </p>
   </div>
-  <BaseH2 text="INTERESTS" />
-  <BaseP>
-    One thing you know about me is that I always have some form of headphones on my person.
-    <br>
-    <br>
-    This is because I absolutely enjoy listening to music and across MULTIPLE genres. From Afrobeats (Burna Boy, Wizkid, Adekunle Gold, etc) to Highlife (Cavemen) and Live praise concerts (Bidemi Olaoba, Femi Praise, Mega 99) to Old School Apala (Haruna Ishola and the likes) to Heartbreak songs (Passenger, Jon Bellion, Lewis Capaldi, etc) to UK Rap (Stormzy, Dave) to “New Cats” HipHop (Fireboy, Rema, Bnxn, Ladipoe, etc) to Nigerian Rap Artistes (MI, Vector).
-    <br>
-    <br>
-    I also enjoy long form audio content like audiobooks (Jordan Peterson, Simon Sinek, Mark Manson are my OGs), YouTube interviews and podcasts (spoiler I have a podcast with about 30k listens so far). Comedy standups are also a personal favorite (Dave Chapelle, Trevor Noah, Kevin Hart, Matt Rife).
-    <br>
-    <br>
-    I do enjoy seeing movies and I especially love movies of the investigative type, Sherlock and the likes. I also take random courses on YouTube — sometimes not even design related.
-  </BaseP>
+  <AboutInterests />
   <BaseH2 text="AWARDS AND PUBLICATIONS" />
   <BaseTable :table-data="awardsTable" />
   <BaseH2 text="WORD ON THE STREET" />
