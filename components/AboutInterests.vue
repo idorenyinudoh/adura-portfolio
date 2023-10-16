@@ -280,37 +280,73 @@ const updateVisibleInterests = () => {
 
 const handleVisibleInterestChange = (index: number) => {
   visibleInterestIndex.value = index
-  clearInterval(intervalId)
-  intervalId = setInterval(intervalFunction, 10000)
+  if (window.innerWidth >= 768) {
+    clearInterval(intervalId)
+    intervalId = setInterval(intervalFunction, 10000)
+  }
+}
+
+const initialWindowWidth = ref(0)
+
+const onWindowResize = () => {
+  if (window.innerWidth >= 768 && initialWindowWidth.value < 768) {
+    updateVisibleInterests()
+  } else if (window.innerWidth < 768 && initialWindowWidth.value >= 768) {
+    clearInterval(intervalId)
+  }
+  initialWindowWidth.value = window.innerWidth
 }
 
 onMounted(() => {
-  updateVisibleInterests()
+  initialWindowWidth.value = window.innerWidth
+  if (window.innerWidth >= 768) {
+    updateVisibleInterests()
+  }
+  window.addEventListener('resize', onWindowResize)
 })
 onUnmounted(() => {
   clearInterval(intervalId)
+  window.removeEventListener('resize', onWindowResize)
 })
 </script>
 
 <template>
-  <div class="max-sm:relative">
+  <div>
     <BaseH2 text="INTERESTS" />
-    <div class="max-sm:sticky max-sm:top-0 z-[51] bg-adura-black flex md:hidden flex-wrap items-center justify-center gap-3 -mx-[8.3vw] mb-10 px-1 py-6 text-white/90 text-sm">
-      <button class="px-4 py-2 border-2 border-white/90 rounded-[72px]">Books</button>
-      <button class="px-4 py-2 border-2 border-white/90 rounded-[72px]">Music</button>
-      <button class="px-4 py-2 border-2 border-white/90 rounded-[72px]">Podcasts and Standups</button>
-      <button class="px-4 py-2 border-2 border-white/90 rounded-[72px]">More Designs</button>
-      <button class="px-4 py-2 border-2 border-white/90 rounded-[72px]">Movies and Series</button>
-    </div>
-    <BaseP class="md:hidden">Here's a catalogue of some my all time favorites. Audiobooks, ebooks, or paperbacks in that order is my preferred form of reading and frankly, I mostly enjoy mind-benders (philosophy, psychology), self-help books as well as design books and occasionally fiction.</BaseP>
-    <div class="grid grid-rows-[max-content,max-content] md:grid-cols-[1fr,1fr] lg:grid-cols-[1.2fr,1fr] xl:grid-cols-[1.3fr,1fr] 2xl:grid-cols-[560px,1fr] gap-x-8 lg:gap-x-14 xl:gap-x-20 2xl:gap-x-28 items-center">
-      <div class="relative z-0 p-[10%] lg:p-[11.5%] xl:p-[12%] rounded-2xl grid grid-cols-3 2xl:grid-cols-[repeat(3,123.22px)] grid-rows-3 2xl:grid-rows-[repeat(3,129.89px)] gap-4 lg:gap-6 xl:gap-7 max-md:max-w-md max-md:mx-auto" :style="{ backgroundColor: interests[visibleInterestIndex].color }">
+    <dl class="md:hidden">
+      <template v-for="(interest, index) in interests" :key="index">
+        <dt class="border-b border-solid border-adura-black/30">
+          <button class="w-full py-2 flex justify-between" @click="handleVisibleInterestChange(index)">
+            <p class="text-base font-medium">{{ interest.title }}</p>
+            <svg v-if="index !== visibleInterestIndex" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 12.9961H13V17.9961C13 18.2613 12.8946 18.5157 12.7071 18.7032C12.5196 18.8907 12.2652 18.9961 12 18.9961C11.7348 18.9961 11.4804 18.8907 11.2929 18.7032C11.1054 18.5157 11 18.2613 11 17.9961V12.9961H6C5.73478 12.9961 5.48043 12.8907 5.29289 12.7032C5.10536 12.5157 5 12.2613 5 11.9961C5 11.7309 5.10536 11.4765 5.29289 11.289C5.48043 11.1015 5.73478 10.9961 6 10.9961H11V5.99609C11 5.73088 11.1054 5.47652 11.2929 5.28899C11.4804 5.10145 11.7348 4.99609 12 4.99609C12.2652 4.99609 12.5196 5.10145 12.7071 5.28899C12.8946 5.47652 13 5.73088 13 5.99609V10.9961H18C18.2652 10.9961 18.5196 11.1015 18.7071 11.289C18.8946 11.4765 19 11.7309 19 11.9961C19 12.2613 18.8946 12.5157 18.7071 12.7032C18.5196 12.8907 18.2652 12.9961 18 12.9961Z" fill="black"/>
+            </svg>
+            <svg v-else xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+              <path d="M17.8125 10.9844C17.8125 11.233 17.7137 11.4715 17.5379 11.6473C17.3621 11.8231 17.1236 11.9219 16.875 11.9219H3.125C2.87636 11.9219 2.6379 11.8231 2.46209 11.6473C2.28627 11.4715 2.1875 11.233 2.1875 10.9844C2.1875 10.7357 2.28627 10.4973 2.46209 10.3215C2.6379 10.1456 2.87636 10.0469 3.125 10.0469H16.875C17.1236 10.0469 17.3621 10.1456 17.5379 10.3215C17.7137 10.4973 17.8125 10.7357 17.8125 10.9844Z" fill="black"/>
+            </svg>
+          </button>
+        </dt>
+        <dd :class="['grid transition-[grid-template-rows] duration-500 ease-linear', index === visibleInterestIndex ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]']">
+          <div :class="[{'mb-2': index !== interests.length - 1 }, 'overflow-hidden']">
+            <p class="my-8 text-sm">{{ interest.description }}</p>
+            <div class="relative z-0 p-[10%] rounded-2xl grid grid-cols-3 grid-rows-3 gap-4 max-md:max-w-md max-md:mx-auto" :style="{ backgroundColor: interest.color }">
+              <div v-for="(image, subIndex) in interest.data" :key="subIndex">
+                <NuxtImg class="rounded-lg cursor-pointer" :src="`/interests/${interest.title.toLowerCase().split(' ').join('-')}/${image.url}`" :alt="`cover of ${image.title}`" />
+              </div>
+              <img class="absolute -z-[1] bottom-0 right-0" :src="`/icons/${interest.title.toLowerCase().split(' ').join('-')}.svg`" :alt="`${interest.title.toLowerCase().split(' ').join('-')} icon`">
+            </div>
+          </div>
+        </dd>
+      </template>
+    </dl>
+    <div class="hidden md:grid grid-cols-[1fr,1fr] lg:grid-cols-[1.2fr,1fr] xl:grid-cols-[1.3fr,1fr] 2xl:grid-cols-[560px,1fr] gap-x-8 lg:gap-x-14 xl:gap-x-20 2xl:gap-x-28 items-center">
+      <div class="relative z-0 p-[10%] lg:p-[11.5%] xl:p-[12%] rounded-2xl grid grid-cols-3 2xl:grid-cols-[repeat(3,123.22px)] grid-rows-3 2xl:grid-rows-[repeat(3,129.89px)] gap-4 lg:gap-6 xl:gap-7" :style="{ backgroundColor: interests[visibleInterestIndex].color }">
         <div v-for="(image, index) in interests[visibleInterestIndex].data" :key="index" class="relative cursor-pointer hover:after:opacity-100 after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear after:absolute after:w-full after:h-full after:inset-0 after:p-[10%] after:bg-black/70 after:rounded-lg after:content-[attr(data-content)] after:flex after:items-center after:justify-center after:text-center after:text-white after:text-sm xl:after:text-base after:leading-4 xl:after:leading-5" :data-content="image.caption">
           <NuxtImg class="rounded-lg cursor-pointer" :src="`/interests/${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')}/${image.url}`" :alt="`cover of ${image.title}`" />
         </div>
         <img class="absolute -z-[1] bottom-0 right-0" :src="`/icons/${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')}.svg`" :alt="`${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')} icon`">
       </div>
-      <div class="hidden md:flex flex-col gap-y-1.5 lg:gap-y-3 xl:gap-y-6">
+      <div class="flex flex-col gap-y-1.5 lg:gap-y-3 xl:gap-y-6">
         <div v-for="(interest, index) in interests" :key="index" class="grid grid-cols-[8px,1fr] gap-x-3 lg:gap-x-7 xl:gap-x-10">
           <div class="relative w-1.5 xl:w-2 h-full rounded-3xl bg-[#D9D9D966]" :class="{ 'h-[calc(100%+8px)] -mt-1 lg:h-[calc(100%+16px)] lg:-mt-2 xl:h-[calc(100%+32px)] xl:-mt-4': index === visibleInterestIndex }">
             <div v-if="index === visibleInterestIndex" class="grow absolute w-full h-0 rounded-3xl" :style="{ backgroundColor: interest.color }"></div>
