@@ -272,17 +272,13 @@ const intervalFunction = () => {
   }
 }
 
-let intervalId: any = null
-
-const updateVisibleInterests = () => {
-  intervalId = setInterval(intervalFunction, 10000)
-}
+const innerCustomInterval = new customInterval(intervalFunction, 10000)
 
 const handleVisibleInterestChange = (index: number) => {
   visibleInterestIndex.value = index
   if (window.innerWidth >= 768) {
-    clearInterval(intervalId)
-    intervalId = setInterval(intervalFunction, 10000)
+    innerCustomInterval.stop()
+    innerCustomInterval.play()
   }
 }
 
@@ -290,9 +286,9 @@ const initialWindowWidth = ref(0)
 
 const onWindowResize = () => {
   if (window.innerWidth >= 768 && initialWindowWidth.value < 768) {
-    updateVisibleInterests()
+    innerCustomInterval.play()
   } else if (window.innerWidth < 768 && initialWindowWidth.value >= 768) {
-    clearInterval(intervalId)
+    innerCustomInterval.stop()
   }
   initialWindowWidth.value = window.innerWidth
 }
@@ -300,12 +296,12 @@ const onWindowResize = () => {
 onMounted(() => {
   initialWindowWidth.value = window.innerWidth
   if (window.innerWidth >= 768) {
-    updateVisibleInterests()
+    innerCustomInterval.play()
   }
   window.addEventListener('resize', onWindowResize)
 })
 onUnmounted(() => {
-  clearInterval(intervalId)
+  innerCustomInterval.stop()
   window.removeEventListener('resize', onWindowResize)
 })
 </script>
@@ -339,8 +335,8 @@ onUnmounted(() => {
         </dd>
       </template>
     </dl>
-    <div class="hidden md:grid grid-cols-[1fr,1fr] lg:grid-cols-[1.2fr,1fr] xl:grid-cols-[1.3fr,1fr] 2xl:grid-cols-[560px,1fr] gap-x-8 lg:gap-x-14 xl:gap-x-20 2xl:gap-x-28 items-center">
-      <div class="relative z-0 p-[10%] lg:p-[11.5%] xl:p-[12%] rounded-2xl grid grid-cols-3 2xl:grid-cols-[repeat(3,123.22px)] grid-rows-3 2xl:grid-rows-[repeat(3,129.89px)] gap-4 lg:gap-6 xl:gap-7" :style="{ backgroundColor: interests[visibleInterestIndex].color }">
+    <div class="grow-parent hidden md:grid grid-cols-[1fr,1fr] lg:grid-cols-[1.2fr,1fr] xl:grid-cols-[1.3fr,1fr] 2xl:grid-cols-[560px,1fr] gap-x-8 lg:gap-x-14 xl:gap-x-20 2xl:gap-x-28 items-center">
+      <div class="relative z-0 p-[10%] lg:p-[11.5%] xl:p-[12%] rounded-2xl grid grid-cols-3 2xl:grid-cols-[repeat(3,123.22px)] grid-rows-3 2xl:grid-rows-[repeat(3,129.89px)] gap-4 lg:gap-6 xl:gap-7" :style="{ backgroundColor: interests[visibleInterestIndex].color }" @mouseenter="innerCustomInterval.pause" @mouseleave="innerCustomInterval.play">
         <div v-for="(image, index) in interests[visibleInterestIndex].data" :key="index" class="relative cursor-pointer hover:after:opacity-100 after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear after:absolute after:w-full after:h-full after:inset-0 after:p-[10%] after:bg-black/70 after:rounded-lg after:content-[attr(data-content)] after:flex after:items-center after:justify-center after:text-center after:text-white after:text-sm xl:after:text-base after:leading-4 xl:after:leading-5" :data-content="image.caption">
           <NuxtImg class="rounded-lg cursor-pointer" :src="`/interests/${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')}/${image.url}`" :alt="`cover of ${image.title}`" />
         </div>
@@ -365,6 +361,9 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+.grow-parent > div:first-of-type:hover + div .grow {
+  animation-play-state: paused;
+}
 .grow {
   animation: grow 10s linear forwards;
 }
