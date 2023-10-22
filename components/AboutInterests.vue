@@ -262,6 +262,15 @@ const interests = [
   }
 ]
 
+const redirectToPodcast = async (title: string) => {
+  if (title !== 'Shaking Tables') return 
+  await navigateTo('https://open.spotify.com/show/0CWTfoNZn8IsNECNoQXMG0?si=a939d696b57d43c4', {
+    open: {
+      target: '_blank'
+    }
+  })
+}
+
 const visibleInterestIndex = ref(0)
 
 const intervalFunction = () => {
@@ -326,7 +335,7 @@ onUnmounted(() => {
           <div :class="[{'mb-2': index !== interests.length - 1 }, 'overflow-hidden']">
             <p class="my-8 text-sm">{{ interest.description }}</p>
             <div class="relative z-0 p-[10%] rounded-2xl grid grid-cols-3 grid-rows-3 gap-4 max-md:max-w-md max-md:mx-auto" :style="{ backgroundColor: interest.color }">
-              <div v-for="(image, subIndex) in interest.data" :key="subIndex">
+              <div v-for="(image, subIndex) in interest.data" :key="subIndex" @click="redirectToPodcast(image.title)">
                 <NuxtImg class="rounded-lg cursor-pointer" :src="`/interests/${interest.title.toLowerCase().split(' ').join('-')}/${image.url}`" :alt="`cover of ${image.title}`" />
               </div>
               <img class="absolute -z-[1] bottom-0 right-0" :src="`/icons/${interest.title.toLowerCase().split(' ').join('-')}.svg`" :alt="`${interest.title.toLowerCase().split(' ').join('-')} icon`">
@@ -337,7 +346,7 @@ onUnmounted(() => {
     </dl>
     <div class="grow-parent hidden md:grid grid-cols-[1fr,1fr] lg:grid-cols-[1.2fr,1fr] xl:grid-cols-[1.3fr,1fr] 2xl:grid-cols-[560px,1fr] gap-x-8 lg:gap-x-14 xl:gap-x-20 2xl:gap-x-28 items-center">
       <div class="relative z-0 p-[10%] lg:p-[11.5%] xl:p-[12%] rounded-2xl grid grid-cols-3 2xl:grid-cols-[repeat(3,123.22px)] grid-rows-3 2xl:grid-rows-[repeat(3,129.89px)] gap-4 lg:gap-6 xl:gap-7" :style="{ backgroundColor: interests[visibleInterestIndex].color }" @mouseenter="innerCustomInterval.pause" @mouseleave="innerCustomInterval.play">
-        <div v-for="(image, index) in interests[visibleInterestIndex].data" :key="index" class="relative cursor-pointer hover:after:opacity-100 after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear after:absolute after:w-full after:h-full after:inset-0 after:p-[10%] after:bg-black/70 after:rounded-lg after:content-[attr(data-content)] after:flex after:items-center after:justify-center after:text-center after:text-white after:text-sm xl:after:text-base after:leading-4 xl:after:leading-5" :data-content="image.caption">
+        <div v-for="(image, index) in interests[visibleInterestIndex].data" :key="index" class="relative cursor-pointer hover:after:opacity-100 after:opacity-0 after:transition-opacity after:duration-200 after:ease-linear after:absolute after:w-full after:h-full after:inset-0 after:p-[10%] after:bg-black/70 after:rounded-lg after:content-[attr(data-content)] after:flex after:items-center after:justify-center after:text-center after:text-white after:text-xs lg:after:text-sm xl:after:text-base after:leading-4 xl:after:leading-5" :class="{'hover:before:opacity-100 before:opacity-0 before:transition-opacity before:duration-200 before:ease-linear before:absolute before:w-[80%] before:h-[30%] before:inset-0 before:z-[1] before:m-auto before:bg-white before:content-[attr(data-content)] before:flex before:items-center before:justify-center before:text-center before:rounded-3xl before:text-xs lg:before:text-sm xl:before:text-base before:leading-4 xl:before:leading-5' : image.title === 'Shaking Tables'}" :data-content="image.caption" @click="redirectToPodcast(image.title)">
           <NuxtImg class="rounded-lg cursor-pointer" :src="`/interests/${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')}/${image.url}`" :alt="`cover of ${image.title}`" />
         </div>
         <img class="absolute -z-[1] bottom-0 right-0" :src="`/icons/${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')}.svg`" :alt="`${interests[visibleInterestIndex].title.toLowerCase().split(' ').join('-')} icon`">
