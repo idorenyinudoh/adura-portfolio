@@ -335,10 +335,11 @@ onUnmounted(() => {
           <div :class="[{'mb-2': index !== interests.length - 1 }, 'overflow-hidden']">
             <p class="my-8 text-sm">{{ interest.description }}</p>
             <div class="relative z-0 p-[10%] rounded-2xl grid grid-cols-3 grid-rows-3 gap-4 max-md:max-w-md max-md:mx-auto" :style="{ backgroundColor: interest.color }">
+              <img class="absolute -z-[1] top-0 left-0" :src="`/icons/${interest.title.toLowerCase().split(' ').join('-')}-1.svg`" :alt="`${interest.title.toLowerCase().split(' ').join('-')} icon`">
               <div v-for="(image, subIndex) in interest.data" :key="subIndex" @click="redirectToPodcast(image.title)">
                 <NuxtImg class="rounded-lg cursor-pointer" :src="`/interests/${interest.title.toLowerCase().split(' ').join('-')}/${image.url}`" :alt="`cover of ${image.title}`" />
               </div>
-              <img class="absolute -z-[1] bottom-0 right-0" :src="`/icons/${interest.title.toLowerCase().split(' ').join('-')}.svg`" :alt="`${interest.title.toLowerCase().split(' ').join('-')} icon`">
+              <img class="absolute -z-[1] bottom-0 right-0" :src="`/icons/${interest.title.toLowerCase().split(' ').join('-')}-2.svg`" :alt="`${interest.title.toLowerCase().split(' ').join('-')} icon`">
             </div>
           </div>
         </dd>
