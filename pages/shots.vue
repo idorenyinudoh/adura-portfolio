@@ -144,6 +144,30 @@ const images = [
     url: 'fashion-landing-page',
     alt: 'Fashion landing page'
   },
+  {
+    url: 'window-illustration',
+    alt: 'Window view illustration'
+  },
+  {
+    url: 'fraud-detection-dashboard',
+    alt: 'Fraud detection dashboard'
+  },
+  {
+    url: 'pos-terminal-illustration',
+    alt: 'POS terminal illustration'
+  },
+  {
+    url: 'ikoyi-bridge-illustration',
+    alt: 'Ikoyi bridge illustration'
+  },
+  {
+    url: 'calendar-icon-illustration',
+    alt: 'Calendar icon illustration'
+  },
+  {
+    url: 'building-illustration',
+    alt: 'Building view illustration'
+  },
 ]
 
 onMounted(() => {
@@ -165,7 +189,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="fixed inset-0 w-full h-full overflow-auto grid grid-cols-[repeat(6,_250px)] grid-rows-[repeat(6,_187.5px)] md:grid-cols-[repeat(6,_350px)] md:grid-rows-[repeat(6,_262.5px)] xl:grid-cols-[repeat(6,_400px)] xl:grid-rows-[repeat(6,_300px)] p-4 xl:p-6 gap-4 xl:gap-6">
+  <main class="fixed inset-0 w-full h-full overflow-auto grid grid-cols-[repeat(6,_250px)] grid-rows-[repeat(6,_187.5px)] md:grid-cols-[repeat(6,_350px)] md:grid-rows-[repeat(6,_262.5px)] xl:grid-cols-[repeat(6,_400px)] xl:grid-rows-[repeat(6,_300px)] p-4 pt-[77px] md:pt-[89px] lg:pt-[109px] xl:p-6 xl:pt-[109px] gap-4 xl:gap-6">
     <BaseShot v-for="(image, index) in images" :key="index" :="image" />
   </main>
 </template>
