@@ -1,5 +1,5 @@
 <template>
-  <div class="before:fixed before:inset-0 before:-z-10 before:bg-[url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background.png)] before:bg-no-repeat before:bg-cover">
+  <div class="before:fixed before:inset-0 before:-z-10 before:bg-[url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background)] before:bg-no-repeat before:bg-cover">
     <div class="font-extrabold font-monument-extended text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
       <h1>ADURAGBEMI</h1>
       <div class="flex">
