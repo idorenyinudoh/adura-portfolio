@@ -1,11 +1,20 @@
 <script setup lang="ts">
 const route = useRoute()
+const store = usePreloadImagesStore()
+const { imagesHaveLoaded } = storeToRefs(store)
 const isIndex = computed(() => route.path === '/')
+
+onMounted(() => {
+  if (!imagesHaveLoaded.value) {
+    loadAssets()
+  }
+})
 </script>
 
 <template>
-  <!-- <Preloader /> -->
+  <Preloader v-if="!imagesHaveLoaded" />
   <div
+    v-else
     :class="[
       'px-[8.3vw]',
       'xl:px-[120px]',
