@@ -25,7 +25,7 @@ onMounted(() => {
       'lg:pb-32'
     ]">
     <TheHeader v-if="!isIndex" />
-    <slot />
+    <NuxtPage />
     <TheMenu />
   </div>
 </template>
