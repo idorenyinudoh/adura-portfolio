@@ -67,7 +67,7 @@ watch(counter, () => {
         opacity: 0,
         stagger: 0.05,
         duration: 1.5,
-        delay: 2,
+        delay: 3,
         ease: 'power4.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
@@ -77,7 +77,7 @@ watch(counter, () => {
       gsap.to('.loading-screen', {
         duration: 1.5,
         opacity: 0,
-        delay: 2,
+        delay: 3,
         ease: 'power3.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
