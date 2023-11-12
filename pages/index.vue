@@ -1,5 +1,5 @@
 <template>
-  <div class="before:fixed before:inset-0 before:-z-10 before:bg-[url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background)] before:bg-no-repeat before:bg-cover">
+  <div class="main before:fixed before:inset-0 before:-z-10">
     <div class="font-extrabold font-monument-extended text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
       <h1>ADURAGBEMI</h1>
       <div class="flex">
@@ -27,8 +27,16 @@
   </div>
 </template>
 
-<!-- <style scoped>
-@keyframes glow {
+<style scoped>
+.main::before {
+  background: linear-gradient(rgb(0 0 0 / 85%), rgb(0 0 0 / 85%)), url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* @keyframes glow {
   0% {
     transform: scale(100%);
   }
@@ -41,5 +49,5 @@
 }
 .glow {
   animation: glow 4800ms linear infinite;
-}
-</style> -->
+} */
+</style>
