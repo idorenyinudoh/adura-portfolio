@@ -331,7 +331,7 @@ onUnmounted(() => {
             </svg>
           </button>
         </dt>
-        <dd :class="['grid transition-[grid-template-rows] duration-500 ease-linear', index === visibleInterestIndex ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]']">
+        <dd :class="['grid transition-[grid-template-rows] duration-[400ms] ease-in-out', index === visibleInterestIndex ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]']">
           <div :class="[{'mb-2': index !== interests.length - 1 }, 'overflow-hidden']">
             <p class="my-8 text-sm">{{ interest.description }}</p>
             <div class="relative z-0 p-[10%] rounded-2xl grid grid-cols-3 grid-rows-3 gap-4 max-md:max-w-md max-md:mx-auto" :style="{ backgroundColor: interest.color }">
