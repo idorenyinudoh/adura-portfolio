@@ -208,12 +208,12 @@ const testimonials = [
   <BaseH2 text="WORD ON THE STREET" />
   <div class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
     <div class="overflow-x-hidden flex items-center">
-      <div v-for="(, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
+      <div v-for="(_, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
         <BaseTestimonial v-for="(testimonial, index) in testimonials" :key="index" :="testimonial" />
       </div>
     </div>
     <div class="overflow-x-hidden flex items-center">
-      <div v-for="(, index) in 2" :key="index" class="scroll-reverse w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
+      <div v-for="(_, index) in 2" :key="index" class="scroll-reverse w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
         <BaseTestimonial v-for="(testimonial, index) in [...testimonials].reverse()" :key="index" :="testimonial" />
       </div>
     </div>
