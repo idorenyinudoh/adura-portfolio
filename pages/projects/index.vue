@@ -148,7 +148,7 @@ const projects: Project[] = [
       </div>
     </div>
   </div>
-  <TheContact />
+  <TheFooter />
 </template>
 
 <style scoped>

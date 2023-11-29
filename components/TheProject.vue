@@ -100,7 +100,7 @@ defineProps({
         {{ lesson }}
       </li>
     </BaseUl>
-    <TheContact />
+    <TheFooter />
   </div>
 </template>
 

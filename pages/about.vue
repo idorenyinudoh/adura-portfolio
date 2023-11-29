@@ -218,7 +218,7 @@ const testimonials = [
       </div>
     </div>
   </div>
-  <TheContact />
+  <TheFooter />
 </template>
 
 <style scoped>
