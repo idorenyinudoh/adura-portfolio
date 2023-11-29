@@ -107,47 +107,50 @@ const projects: Project[] = [
       'In the 2021 Fintech Times report, with respect to fintech, Nigeria\'s fintech landscape consisted of 210 to 250 fintech companies, key stakeholders (banks, telecom companies and the government), enablers and funding partners (i.e universities and research institutions, investors, incubators, technology and consumers).',
       'Thus, birthing the problem of these institutions (traditional banks, MFBs, mobile banks) wrestling for users, and while this might be a good business or profit-making strategy, it has an adverse effect on users creating problems like confusion on the path of users (as proven in Hick\'s Law) and occasional cognitive overload, to mention a few.'
     ],
-    link: ''
+    link: '/'
   }
 ]
 </script>
 
 <template>
-  <div class="hero -mx-[8.3vw] xl:-mx-[120px] -mt-16 md:-mt-24 h-[80vh] md:h-[calc(100vh-173px)] xl:h-[calc(100vh-225px)] flex justify-center items-center">
-    <BaseH1 text="RECENT WORKS OF ART" class="text-white text-center mx-[15%]" />
-  </div>
-  <div class="pt-20 md:pt-28 lg:pt-36 pb-9 md:pb-14 lg:pb-8">
-    <div v-for="(project, index) in projects" :key="index" class="py-10 md:py-14 lg:py-20 grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-12 lg:gap-x-20 items-center">
-      <div class="hidden md:flex rounded-2xl bg-[#C0DCB6] p-4 w-[195px] lg:w-[247px] flex-col gap-y-4">
-        <div class="relative rounded-lg bg-white w-full pt-[80%]">
-          <NuxtImg provider="cloudinary" class="bounce absolute bottom-[calc(22%+2px)] left-0 right-0 mx-auto w-2/5" :src="`/project-logos/${project.image}`" :alt="`${project.title} logo`" />
-          <div class="shrink absolute bottom-[22%] left-0 right-0 mx-auto bg-[#D9D9D9]/30 w-1/2 h-[5px] rounded-[80%]" />
-        </div>
-        <div class="flex justify-between items-center px-3 lg:px-4 py-1.5 lg:py-2 bg-white rounded-2xl lg:rounded-[32px]">
-          <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ project.tags.join(', ') }}</p>
-          <a :href="project.company" target="_blank">
-            <svg class="w-3 h-3 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667" stroke="#1A1A1A" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="text-sm md:text-base lg:text-xl text-adura-black font-normal">
-        <p class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 lg:mb-6">{{ project.title }}</p>
-        <p class="mb-1 lg:mb-2">{{ project.tasks.join(', ')}}</p>
-        <p class="mb-4">{{ project.duration }}</p>
-        <p class="py-4 border-t border-solid border-adura-black/20">
-          <span v-for="(desc, index) in project.description" :key="index">
-            <br v-if="index !== 0" />
-            <br v-if="index !== 0" />
-            {{ desc }}
-          </span>
-        </p>
-        <a v-if="project.isCaseStudy" class="text-[#C7BEBE] border-b border-solid border-[#C7BEBE]" :href="project.link">See case study presentation</a>
-        <NuxtLink v-else class="text-[#C7BEBE] border-b border-solid border-[#C7BEBE]" :to="`/projects/${project.link}`">See design process</NuxtLink>
-      </div>
+  <article>
+    <div class="hero -mx-[8.3vw] xl:-mx-[120px] -mt-16 md:-mt-24 h-[80vh] md:h-[calc(100vh-173px)] xl:h-[calc(100vh-225px)] flex justify-center items-center">
+      <BaseH1 text="RECENT WORKS OF ART" class="text-white text-center mx-[15%]" />
     </div>
-  </div>
+    <main class="pt-20 md:pt-28 lg:pt-36 pb-9 md:pb-14 lg:pb-8">
+      <article v-for="(project, index) in projects" :key="index" class="py-10 md:py-14 lg:py-20 grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-12 lg:gap-x-20 items-center">
+        <aside class="hidden md:flex rounded-2xl bg-[#C0DCB6] p-4 w-[195px] lg:w-[247px] flex-col gap-y-4">
+          <div class="relative rounded-lg bg-white w-full pt-[80%]">
+            <NuxtImg provider="cloudinary" class="bounce absolute bottom-[calc(22%+2px)] left-0 right-0 mx-auto w-2/5" :src="`/project-logos/${project.image}`" :alt="`${project.title} logo`" />
+            <div class="shrink absolute bottom-[22%] left-0 right-0 mx-auto bg-[#D9D9D9]/30 w-1/2 h-[5px] rounded-[80%]" />
+          </div>
+          <div class="flex justify-between items-center px-3 lg:px-4 py-1.5 lg:py-2 bg-white rounded-2xl lg:rounded-[32px]">
+            <p class="text-adura-black text-xs md:text-sm lg:text-base font-normal">{{ project.tags.join(', ') }}</p>
+            <NuxtLink :to="project.company" target="_blank">
+              <svg class="w-3 h-3 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667" stroke="#1A1A1A" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </NuxtLink>
+          </div>
+        </aside>
+        <div class="text-sm md:text-base lg:text-xl text-adura-black font-normal">
+          <h2 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 lg:mb-6">{{ project.title }}</h2>
+          <p class="mb-1 lg:mb-2">{{ project.tasks.join(', ')}}</p>
+          <p class="mb-4">{{ project.duration }}</p>
+          <p class="py-4 border-t border-solid border-adura-black/20">
+            <template v-for="(desc, index) in project.description" :key="index">
+              <br v-if="index !== 0" />
+              <br v-if="index !== 0" />
+              <span>{{ desc }}</span>
+            </template>
+          </p>
+          <NuxtLink class="text-[#C7BEBE] border-b border-solid border-[#C7BEBE]" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`">
+            {{ project.isCaseStudy ? 'See case study presentation' : 'See design process' }}
+          </NuxtLink>
+        </div>
+      </article>
+    </main>
+  </article>
   <TheFooter />
 </template>
 
