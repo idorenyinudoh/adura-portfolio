@@ -316,7 +316,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <article>
     <BaseH2 text="INTERESTS" />
     <dl class="md:hidden">
       <template v-for="(interest, index) in interests" :key="index">
@@ -358,17 +358,19 @@ onUnmounted(() => {
           <div class="relative w-1.5 xl:w-2 h-full rounded-3xl bg-[#D9D9D966]" :class="{ 'h-[calc(100%+8px)] -mt-1 lg:h-[calc(100%+16px)] lg:-mt-2 xl:h-[calc(100%+32px)] xl:-mt-4': index === visibleInterestIndex }">
             <div v-if="index === visibleInterestIndex" class="grow absolute w-full h-0 rounded-3xl" :style="{ backgroundColor: interest.color }"></div>
           </div>
-          <div :class="['text-adura-black grid grid-rows-[max-content,0fr] justify-items-start transition-[grid-template-rows] duration-300 ease-linear', { 'grid-rows-[max-content,1fr] gap-y-2 lg:gap-y-4 xl:gap-y-6': index === visibleInterestIndex }]">
+          <article :class="['text-adura-black grid grid-rows-[max-content,0fr] justify-items-start transition-[grid-template-rows] duration-300 ease-linear', { 'grid-rows-[max-content,1fr] gap-y-2 lg:gap-y-4 xl:gap-y-6': index === visibleInterestIndex }]">
             <button @click="handleVisibleInterestChange(index)">
-              <p :class="[ index === visibleInterestIndex ? 'text-lg lg:text-2xl xl:text-3xl font-medium' : 'text-base lg:text-xl xl:text-2xl font-normal' ]">{{ interest.title }}</p>
+              <h3 :class="[ index === visibleInterestIndex ? 'text-lg lg:text-2xl xl:text-3xl font-medium' : 'text-base lg:text-xl xl:text-2xl font-normal' ]">{{ interest.title }}</h3>
             </button>
             <p class="overflow-hidden text-base lg:text-xl xl:text-2xl font-normal">{{ interest.description }}</p>
-          </div>
+          </article>
         </div>
       </div>
     </div>
-    <BaseP>PS: I'm open to nerding out on any of these topics, you can shoot me an email or a twitter DM.</BaseP>
-  </div>
+    <footer>
+      <BaseP>PS: I'm open to nerding out on any of these topics, you can shoot me an email or a twitter DM.</BaseP>
+    </footer>
+  </article>
 </template>
 
 <style scoped>

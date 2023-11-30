@@ -67,9 +67,3 @@
     @apply font-satoshi;
   }
 }
-
-.router-link-active {
-  font-weight: 500;
-  color: theme('colors.adura-black');
-  background-color: #E6E6E6;
-}

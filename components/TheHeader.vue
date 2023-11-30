@@ -227,7 +227,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 w-full z-50 bg-adura-black text-sm md:text-base lg:text-xl font-normal text-white px-[8.3vw] xl:px-[120px] py-5 md:py-6 lg:py-8 flex flex-row justify-between items-center">
+  <header class="fixed top-0 left-0 w-full z-50 bg-adura-black text-sm md:text-base lg:text-xl font-normal text-white px-[8.3vw] xl:px-[120px] py-5 md:py-6 lg:py-8 flex flex-row justify-between items-center">
     <div class="flex flex-row items-center gap-x-1">
       <p>
         <span>Lagos, </span>
@@ -246,7 +246,7 @@ onUnmounted(() => {
     </div>
     <!-- <p class="hidden md:block">Listening to: Human by Jon Bellion</p> -->
     <a href="" class="border-b border-solid border-white w-max">Resumé</a>
-  </div>
+  </header>
 </template>
 
 <style scoped>
