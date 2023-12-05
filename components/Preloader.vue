@@ -4,7 +4,7 @@ import SplitType from 'split-type'
 
 const route = useRoute()
 const store = usePreloadImagesStore()
-const counter = computed(() => parseInt(store.percentageOfLoadedImages))
+const counter = ref()
 
 const onCounterEnter = (el: Element, done: () => void) => {
   const split = new SplitType(el as HTMLElement, {
@@ -67,7 +67,7 @@ watch(counter, () => {
         opacity: 0,
         stagger: 0.05,
         duration: 1.5,
-        delay: 3,
+        delay: 2,
         ease: 'power4.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
@@ -77,7 +77,7 @@ watch(counter, () => {
       gsap.to('.loading-screen', {
         duration: 1.5,
         opacity: 0,
-        delay: 3,
+        delay: 2,
         ease: 'power3.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
@@ -85,6 +85,10 @@ watch(counter, () => {
       })
     }
   }
+})
+
+onMounted(() => {
+  gsap.fromTo(counter, { value: 0 }, { value: 100, duration: 10, ease: 'power1.inOut' })
 })
 </script>
 
