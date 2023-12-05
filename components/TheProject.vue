@@ -109,7 +109,6 @@ defineProps({
       </BaseUl>
     </article>
   </article>
-  <TheFooter />
 </template>
 
 <style scoped>

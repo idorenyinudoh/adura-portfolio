@@ -151,7 +151,6 @@ const projects: Project[] = [
       </article>
     </main>
   </article>
-  <TheFooter />
 </template>
 
 <style scoped>

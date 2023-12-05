@@ -2,7 +2,8 @@
 const route = useRoute()
 const store = usePreloadImagesStore()
 const { imagesHaveLoaded } = storeToRefs(store)
-const isIndex = computed(() => route.path === '/')
+const isIndexPage = computed(() => route.path === '/')
+const isShotsPage = computed(() => route.path === '/shots')
 
 onMounted(() => {
   if (!imagesHaveLoaded.value) {
@@ -18,14 +19,15 @@ onMounted(() => {
     :class="[
       'px-[8.3vw]',
       'xl:px-[120px]',
-      isIndex ? 'pt-16' : 'pt-[calc(64px+2.5rem)]',
-      isIndex ? 'md:pt-24' : 'md:pt-[calc(73px+4rem)]',
-      isIndex ? 'lg:pt-32' : 'lg:pt-[calc(93px+5rem)]',
+      isIndexPage ? 'pt-16' : 'pt-[calc(64px+2.5rem)]',
+      isIndexPage ? 'md:pt-24' : 'md:pt-[calc(73px+4rem)]',
+      isIndexPage ? 'lg:pt-32' : 'lg:pt-[calc(93px+5rem)]',
       'pb-14',
       'lg:pb-32'
     ]">
-    <TheHeader v-if="!isIndex" />
+    <TheHeader v-if="!isIndexPage" />
     <NuxtPage />
     <TheMenu />
+    <TheFooter v-if="!isIndexPage && !isShotsPage" />
   </div>
 </template>

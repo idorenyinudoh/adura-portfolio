@@ -228,7 +228,6 @@ const testimonials = [
       </section>
     </article>
   </article>
-  <TheFooter />
 </template>
 
 <style scoped>
