@@ -189,9 +189,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="fixed inset-0 w-full h-full overflow-auto grid grid-cols-[repeat(6,_250px)] grid-rows-[repeat(6,_187.5px)] md:grid-cols-[repeat(6,_350px)] md:grid-rows-[repeat(6,_262.5px)] xl:grid-cols-[repeat(6,_400px)] xl:grid-rows-[repeat(6,_300px)] p-4 pt-[77px] md:pt-[89px] lg:pt-[109px] xl:p-6 xl:pt-[109px] gap-4 xl:gap-6">
-    <BaseShot v-for="(image, index) in images" :key="index" :="image" />
-  </main>
+  <div>
+    <TheHeader />
+    <main class="fixed inset-0 w-full h-full overflow-auto grid grid-cols-[repeat(6,_250px)] grid-rows-[repeat(6,_187.5px)] md:grid-cols-[repeat(6,_350px)] md:grid-rows-[repeat(6,_262.5px)] xl:grid-cols-[repeat(6,_400px)] xl:grid-rows-[repeat(6,_300px)] p-4 pt-[77px] md:pt-[89px] lg:pt-[109px] xl:p-6 xl:pt-[109px] gap-4 xl:gap-6">
+      <BaseShot v-for="(image, index) in images" :key="index" :="image" />
+    </main>
+  </div>
 </template>
 
 <style scoped>

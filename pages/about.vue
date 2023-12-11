@@ -173,61 +173,65 @@ const testimonials = [
 </script>
 
 <template>
-  <article>
-    <BaseH1 text="MEET ADURA" />
-    <BaseP>
-      <span>Hi, I am Adura, a user experience designer. I have an experience in mobile app and web design, wire-framing and mockup design, user research, interactive prototyping illustration amongst others.</span>
-      <br>
-      <br>
-      <span>Identifying and understanding the human needs is crucial for creating useful and usable products. I relish the moments when my skill and knowledge empowers people, thereby making life easier.</span>
-    </BaseP>
-    <section class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-4 lg:gap-6 xl:gap-10">
-      <div class="col-start-1 col-end-3 lg:col-end-2 lg:row-start-1 lg:row-end-3">
-        <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-working" alt="adura working" />
-      </div>
-      <div>
-        <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-headshot" alt="adura's headshot" />
-      </div>
-      <div>
-        <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-collaborating" alt="adura collaborating with teammate" />
-      </div>
-      <div class="col-start-1 col-end-3 lg:col-start-2 lg:col-end-4">
-        <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-talking" alt="adura communicating with teammate" />
-      </div>
-    </section>
+  <div>
+    <TheHeader />
     <article>
-      <BaseH2 text="CERTIFICATIONS" />
-      <BaseTable :table-data="certificationsTable" />
-    </article>
-    <article>
-      <BaseH2 text="SKILLS" />
-      <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
-        <p v-for="(skill, index) in skills" :key="index" class="px-6 py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-sm md:text-base lg:text-xl font-normal">
-          {{ skill }}
-        </p>
-      </div>
-    </article>
-    <AboutInterests />
-    <article>
-      <BaseH2 text="AWARDS AND PUBLICATIONS" />
-      <BaseTable :table-data="awardsTable" />
-    </article>
-    <article>
-      <BaseH2 text="WORD ON THE STREET" />
-      <section class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
-        <div class="overflow-x-hidden flex items-center">
-          <div v-for="(_, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
-            <BaseTestimonial v-for="(testimonial, index) in testimonials" :key="index" :="testimonial" />
-          </div>
+      <BaseH1 text="MEET ADURA" />
+      <BaseP>
+        <span>Hi, I am Adura, a user experience designer. I have an experience in mobile app and web design, wire-framing and mockup design, user research, interactive prototyping illustration amongst others.</span>
+        <br>
+        <br>
+        <span>Identifying and understanding the human needs is crucial for creating useful and usable products. I relish the moments when my skill and knowledge empowers people, thereby making life easier.</span>
+      </BaseP>
+      <section class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-4 lg:gap-6 xl:gap-10">
+        <div class="col-start-1 col-end-3 lg:col-end-2 lg:row-start-1 lg:row-end-3">
+          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-working" alt="adura working" />
         </div>
-        <div class="overflow-x-hidden flex items-center">
-          <div v-for="(_, index) in 2" :key="index" class="scroll-reverse w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
-            <BaseTestimonial v-for="(testimonial, index) in [...testimonials].reverse()" :key="index" :="testimonial" />
-          </div>
+        <div>
+          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-headshot" alt="adura's headshot" />
+        </div>
+        <div>
+          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-collaborating" alt="adura collaborating with teammate" />
+        </div>
+        <div class="col-start-1 col-end-3 lg:col-start-2 lg:col-end-4">
+          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-talking" alt="adura communicating with teammate" />
         </div>
       </section>
+      <article>
+        <BaseH2 text="CERTIFICATIONS" />
+        <BaseTable :table-data="certificationsTable" />
+      </article>
+      <article>
+        <BaseH2 text="SKILLS" />
+        <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
+          <p v-for="(skill, index) in skills" :key="index" class="px-6 py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-sm md:text-base lg:text-xl font-normal">
+            {{ skill }}
+          </p>
+        </div>
+      </article>
+      <AboutInterests />
+      <article>
+        <BaseH2 text="AWARDS AND PUBLICATIONS" />
+        <BaseTable :table-data="awardsTable" />
+      </article>
+      <article>
+        <BaseH2 text="WORD ON THE STREET" />
+        <section class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
+          <div class="overflow-x-hidden flex items-center">
+            <div v-for="(_, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
+              <BaseTestimonial v-for="(testimonial, index) in testimonials" :key="index" :="testimonial" />
+            </div>
+          </div>
+          <div class="overflow-x-hidden flex items-center">
+            <div v-for="(_, index) in 2" :key="index" class="scroll-reverse w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
+              <BaseTestimonial v-for="(testimonial, index) in [...testimonials].reverse()" :key="index" :="testimonial" />
+            </div>
+          </div>
+        </section>
+      </article>
     </article>
-  </article>
+    <TheFooter />
+  </div>
 </template>
 
 <style scoped>
