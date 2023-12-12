@@ -4,11 +4,11 @@ import SplitType from 'split-type'
 
 const route = useRoute()
 const store = usePreloadImagesStore()
-const counter = computed(() => parseInt(store.percentageOfLoadedImages))
+const counter = ref()
 
 const onCounterEnter = (el: Element, done: () => void) => {
   const split = new SplitType(el as HTMLElement, {
-    types: 'words, chars'
+    types: 'words,chars'
   })
   const chars = split.chars
   gsap.set(el, { autoAlpha: 1 })
@@ -34,15 +34,20 @@ const onCounterLeave = (el: Element, done: () => void) => {
 }
 
 const onQuirkyTextEnter = (el: Element, done: () => void) => {
+  const isMobile = window.innerWidth < 500
+
   const split = new SplitType(el as HTMLElement, {
-    types: 'words, chars'
+    types: isMobile ? 'lines,words' : 'words,chars'
   })
+
   const chars = split.chars
-  gsap.fromTo(chars, { opacity: 0, y: 100 }, {
+  const lines = split.lines
+
+  gsap.fromTo( isMobile ? lines : chars , { opacity: 0, y: 100 }, {
     y: 0,
     opacity: 1,
     stagger: 0.05,
-    duration: 1,
+    duration: isMobile ? 4 : 1,
     delay: 0.5,
     ease: 'power4.out',
     onComplete: done
@@ -50,11 +55,12 @@ const onQuirkyTextEnter = (el: Element, done: () => void) => {
 }
 
 const onQuirkyTextLeave = (el: Element, done: () => void) => {
+  const isMobile = window.innerWidth < 500
+
   gsap.fromTo(el, { y: 0 }, {
-    y: -100,
+    y: -25,
     opacity: 0,
-    stagger: 0.05,
-    duration: 1,
+    duration: isMobile ? 2 : 1,
     ease: 'power4.out',
     onComplete: done
   })
@@ -67,7 +73,7 @@ watch(counter, () => {
         opacity: 0,
         stagger: 0.05,
         duration: 1.5,
-        delay: 3,
+        delay: 2,
         ease: 'power4.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
@@ -77,7 +83,7 @@ watch(counter, () => {
       gsap.to('.loading-screen', {
         duration: 1.5,
         opacity: 0,
-        delay: 3,
+        delay: 2,
         ease: 'power3.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
@@ -85,6 +91,10 @@ watch(counter, () => {
       })
     }
   }
+})
+
+onMounted(() => {
+  gsap.fromTo(counter, { value: 0 }, { value: 100, duration: 10, ease: 'power1.inOut' })
 })
 </script>
 

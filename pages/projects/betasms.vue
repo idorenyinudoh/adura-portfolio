@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 const props = {
   projectName: 'Betasms',
   projectDescription: 'BetaSMS is a communication platform as a service (CPAAS) that enables businesses and individuals send bulk SMS messages to all network providers in Nigeria and international networks worldwide. BetaSMS delivers messages to all active numbers, including DND numbers with real-time delivery reports.',

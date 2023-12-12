@@ -1,5 +1,11 @@
+<script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+</script>
+
 <template>
-  <div class="main before:fixed before:inset-0 before:-z-10">
+  <div class="main -mt-10 before:fixed before:inset-0 before:-z-10">
     <header>
       <h1 class="font-extrabold font-monument-extended text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
         <span>ADURAGBEMI</span>
