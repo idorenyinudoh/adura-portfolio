@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 const props = {
   projectName: 'Hydrogen',
   projectDescription: 'HydrogenPay aims at simplifying payments for African businesses and business owners. Business owners are able to collect payments, monitor transactions, confirm payments instantly, and grow their businesses with seamless payment solutions.',

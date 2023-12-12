@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+</script>
+
 <template>
   <div class="main -mt-10 before:fixed before:inset-0 before:-z-10">
     <header>

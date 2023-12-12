@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 const props = {
   projectName: 'Kólé',
   projectDescription: 'Kólé is dedicated to revolutionising construction planning and management in Africa. Empowering aspiring home owners and construction professionals alike with cutting-edge digital solutions that simplify and optimise every aspect of the construction journey.',

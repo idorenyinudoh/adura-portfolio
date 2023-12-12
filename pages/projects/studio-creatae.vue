@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 const props = {
   projectName: 'Studio Creatae',
   projectDescription: 'Studio Creatae is growing brands with value based experiences - using branding and marketing communications. They focus on crafting timeless experiences that define brands while shaping brand perceptions through thoughtfully-curated experiential interactions.',

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 const certificationsTable = {
   headers: [
     'course',

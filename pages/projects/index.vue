@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 interface Project {
   isCaseStudy: boolean
   image: string

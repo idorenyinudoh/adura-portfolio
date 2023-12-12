@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 const props = {
   projectName: 'Errandpay',
   projectDescription: 'ErrandPay offers financial services to individuals and business owners to start their payment collection company in days, processing tens of millions of Naira daily with thousands of current users. They also white-label payment solutions where users can start processing payments for traders and agents, providing autonomy and customisation of services.',

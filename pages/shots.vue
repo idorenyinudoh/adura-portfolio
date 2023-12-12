@@ -1,4 +1,8 @@
 <script setup>
+definePageMeta({
+  scrollToTop: false
+})
+
 const images = [
   {
     url: 'sign-up-page',

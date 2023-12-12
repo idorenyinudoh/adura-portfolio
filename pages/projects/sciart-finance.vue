@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  scrollToTop: false
+})
+
 const props = {
   projectName: 'Sciart Finance',
   projectDescription: 'Sciart Finance Company Limited offers comprehensive financial and investment services as well as savings and bill payment services. They also provide context-relevant advisory services to businesses and individuals. They are a CBN-licensed finance company built for small and medium-sized businesses who are currently underserved by the traditional finance sector.',
