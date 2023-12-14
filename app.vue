@@ -91,13 +91,7 @@ onMounted(() => {
       <TheMenu />
     </div>
     <div class="page-transition fixed z-[60] top-full left-0 w-full h-full px-[5%] bg-adura-black hidden items-center justify-center">
-      <BaseP ref="madText" class="text-white text-center" />
+      <BaseP ref="madText" class="clip-path text-white text-center" />
     </div>
   </div>
 </template>
-
-<style scoped>
-.page-transition p {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-</style>
