@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-gtag'
   ],
   image: {
     provider: 'cloudinary',
