@@ -69,7 +69,7 @@ const onQuirkyTextLeave = (el: Element, done: () => void) => {
 watch(counter, () => {
   if (counter.value === 100) {
     if (route.name === 'index') {
-      gsap.to(gsap.utils.toArray(['.loader', '.counter-container', '.hang-tight']), {
+      gsap.to(gsap.utils.toArray(['.loader', '.counter-container', '.clip-path']), {
         opacity: 0,
         stagger: 0.05,
         duration: 1.5,
@@ -120,8 +120,8 @@ onMounted(() => {
     </div>
     <div class="relative">
       <Transition :css="false" @enter="onQuirkyTextEnter" @leave="onQuirkyTextLeave">
-        <p v-if="counter > 0 && counter <= 60" class="absolute hang-tight font-normal text-white/50 mx-[8.3vw] xl:mx-[120px] mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl">Beauty, they say, is in the eye of the beholder.</p>
-        <p v-else-if="counter >= 60" class="absolute hang-tight font-normal text-white/50 mx-[8.3vw] xl:mx-[120px] mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl">With all due respect, please behold.</p>
+        <p v-if="counter > 0 && counter <= 60" class="absolute clip-path font-normal text-white/50 mx-[8.3vw] xl:mx-[120px] mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl">Beauty, they say, is in the eye of the beholder.</p>
+        <p v-else-if="counter >= 60" class="absolute clip-path font-normal text-white/50 mx-[8.3vw] xl:mx-[120px] mt-2 lg:mt-5 text-xl md:text-2xl lg:text-3xl">With all due respect, please behold.</p>
       </Transition>
     </div>
   </div>
@@ -137,8 +137,5 @@ onMounted(() => {
 }
 .counter-text {
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 90%);
-}
-.hang-tight {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 </style>
