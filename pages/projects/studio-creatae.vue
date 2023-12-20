@@ -1,4 +1,40 @@
 <script setup lang="ts">
+useHead({
+  title: 'Studio Creatae',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Studio Creatae | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Studio Creatae | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Studio Creatae.'
+    },
+    {
+      property: 'og:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Studio Creatae.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Studio Creatae.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/projects/studio-creatae'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/projects/studio-creatae'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })

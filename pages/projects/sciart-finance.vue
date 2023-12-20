@@ -1,4 +1,40 @@
 <script setup lang="ts">
+useHead({
+  title: 'Sciart Finance',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Sciart Finance | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Sciart Finance | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Sciart Finance.'
+    },
+    {
+      property: 'og:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Sciart Finance.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Sciart Finance.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/projects/sciart-finance'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/projects/sciart-finance'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })

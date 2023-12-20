@@ -1,4 +1,40 @@
 <script setup lang="ts">
+useHead({
+  title: 'Kólé',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Kólé | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Kólé | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Kólé.'
+    },
+    {
+      property: 'og:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Kólé.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Kólé.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/projects/kole'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/projects/kole'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })

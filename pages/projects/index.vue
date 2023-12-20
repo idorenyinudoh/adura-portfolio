@@ -1,4 +1,40 @@
 <script setup lang="ts">
+useHead({
+  title: 'Projects',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Projects | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Projects | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Projects worked on by Aduragbemi Abiola, a product designer with over two years of experience creating user-centric digital experiences via design.'
+    },
+    {
+      property: 'og:description',
+      content: 'Projects worked on by Aduragbemi Abiola, a product designer with over two years of experience creating user-centric digital experiences via design.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Projects worked on by Aduragbemi Abiola, a product designer with over two years of experience creating user-centric digital experiences via design.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/projects'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/projects'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })
