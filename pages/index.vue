@@ -2,6 +2,41 @@
 import { gsap } from 'gsap';
 import SplitType from 'split-type'
 
+useHead({
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Aduragbemi Abiola is a product designer with over two years of experience creating user-centric digital experiences and driving business success via design.'
+    },
+    {
+      property: 'og:description',
+      content: 'Aduragbemi Abiola is a product designer with over two years of experience creating user-centric digital experiences and driving business success via design.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Aduragbemi Abiola is a product designer with over two years of experience creating user-centric digital experiences and driving business success via design.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false,
   pageTransition: {
