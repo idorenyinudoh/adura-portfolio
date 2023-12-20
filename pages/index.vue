@@ -74,8 +74,8 @@ definePageMeta({
         <span>I've always imagined my life to be a movie and so, I decided to make an exhibit of a portfolio. I hope you enjoy.</span>
       </p>
     </main>
-    <button class="w-2 h-2 bg-white/50 hover:bg-white transition-all rounded-full block ml-auto mr-[15%] mt-[8%] animate-pulse" />
-    <p class="hidden text-white">Here's a picture I took of my university in my final days as an undergraduate as some form of totem to remind me where I'm coming from and how far I've come.</p>
+    <!-- <button class="w-2 h-2 bg-white/50 hover:bg-white transition-all rounded-full block ml-auto mr-[15%] mt-[8%] animate-pulse" />
+    <p class="text-white">Here's a picture I took of my university in my final days as an undergraduate as some form of totem to remind me where I'm coming from and how far I've come.</p> -->
   </div>
 </template>
 
