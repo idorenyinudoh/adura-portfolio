@@ -6,60 +6,71 @@
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-Light.otf') format('opentype');
   font-weight: 300;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-LightItalic.otf') format('opentype');
   font-weight: 300;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-Regular.otf') format('opentype');
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Monument Extended';
   src: url('~/assets/fonts/monument-extended/MonumentExtended-Regular.otf') format('opentype');
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-Medium.otf') format('opentype');
   font-weight: 500;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-MediumItalic.otf') format('opentype');
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-Bold.otf') format('opentype');
   font-weight: 700;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-BoldItalic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Monument Extended';
   src: url('~/assets/fonts/monument-extended/MonumentExtended-Ultrabold.otf') format('opentype');
   font-weight: 800;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-Black.otf') format('opentype');
   font-weight: 900;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('~/assets/fonts/satoshi/Satoshi-Black.otf') format('opentype');
   font-weight: 900;
   font-style: italic;
+  font-display: swap;
 }
 
 @layer base {
