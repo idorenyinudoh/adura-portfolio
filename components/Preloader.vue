@@ -69,7 +69,7 @@ const onQuirkyTextLeave = (el: Element, done: () => void) => {
 watch(counter, () => {
   if (counter.value === 100) {
     if (route.name === 'index') {
-      gsap.to(gsap.utils.toArray(['.loader', '.counter-container', '.clip-path']), {
+      gsap.to(gsap.utils.toArray(['.loader', '.counter-container', '.loading-screen .clip-path']), {
         opacity: 0,
         stagger: 0.05,
         duration: 1.5,
