@@ -42,6 +42,18 @@ useHead({
       type: 'image/png',
       sizes: '16x16',
       href: '/favicon-16x16.png'
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://res.cloudinary.com'
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://google-analytics.com'
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://googletagmanager.com'
     }
   ],
   htmlAttrs: {
