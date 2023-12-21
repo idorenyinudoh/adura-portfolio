@@ -116,7 +116,7 @@ definePageMeta({
 
 <style scoped>
 .main::before {
-  background: linear-gradient(rgb(0 0 0 / 85%), rgb(0 0 0 / 85%)), url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background);
+  background: linear-gradient(rgb(0 0 0 / 85%), rgb(0 0 0 / 85%)), url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background.webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

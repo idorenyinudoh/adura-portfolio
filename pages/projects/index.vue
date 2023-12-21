@@ -54,7 +54,7 @@ interface Project {
 const projects: Project[] = [
   {
     isCaseStudy: false,
-    image: 'kole',
+    image: 'kole.webp',
     tags: ['Construction', 'AI'],
     company: 'https://getkole.co/',
     title: 'Kólé',
@@ -68,7 +68,7 @@ const projects: Project[] = [
   },
   {
     isCaseStudy: false,
-    image: 'sciart-finance',
+    image: 'sciart-finance.webp',
     tags: ['Fintech', 'Investment'],
     company: 'https://sciartfinance.com/',
     title: 'Sciart Finance',
@@ -82,7 +82,7 @@ const projects: Project[] = [
   },
   {
     isCaseStudy: false,
-    image: 'studio-creatae',
+    image: 'studio-creatae.webp',
     tags: ['Design Agency'],
     company: 'https://www.linkedin.com/company/studio-creatae/',
     title: 'Studio Creatae',
@@ -96,7 +96,7 @@ const projects: Project[] = [
   },
   {
     isCaseStudy: false,
-    image: 'errandpay',
+    image: 'errandpay.webp',
     tags: ['Fintech'],
     company: 'https://errandpay.com/',
     title: 'ErrandPay',
@@ -110,7 +110,7 @@ const projects: Project[] = [
   },
   {
     isCaseStudy: false,
-    image: 'betasms',
+    image: 'betasms.webp',
     tags: ['Telecomms'],
     company: 'https://betasms.com/',
     title: 'BetaSMS',
@@ -124,7 +124,7 @@ const projects: Project[] = [
   },
   {
     isCaseStudy: false,
-    image: 'hydrogen',
+    image: 'hydrogen.webp',
     tags: ['Fintech'],
     company: 'https://hydrogenpay.com/',
     title: 'Hydrogen',
@@ -137,7 +137,7 @@ const projects: Project[] = [
   },
   {
     isCaseStudy: true,
-    image: 'bridgefinance',
+    image: 'bridgefinance.webp',
     tags: ['Fintech'],
     company: '',
     title: 'BridgeFinance',
@@ -163,7 +163,7 @@ const projects: Project[] = [
         <article v-for="(project, index) in projects" :key="index" class="py-10 md:py-14 lg:py-20 grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-12 lg:gap-x-20 items-center">
           <aside class="hidden md:flex rounded-2xl bg-[#C0DCB6] p-4 w-[195px] lg:w-[247px] flex-col gap-y-4">
             <div class="relative rounded-lg bg-white w-full pt-[80%]">
-              <NuxtImg provider="cloudinary" class="bounce absolute bottom-[calc(22%+2px)] left-0 right-0 mx-auto w-2/5" :src="`/project-logos/${project.image}`" :alt="`${project.title} logo`" />
+              <NuxtImg class="bounce absolute bottom-[calc(22%+2px)] left-0 right-0 mx-auto w-2/5" :src="`/project-logos/${project.image}`" :alt="`${project.title} logo`" />
               <div class="shrink absolute bottom-[22%] left-0 right-0 mx-auto bg-[#D9D9D9]/30 w-1/2 h-[5px] rounded-[80%]" />
             </div>
             <div class="flex justify-between items-center px-3 lg:px-4 py-1.5 lg:py-2 bg-white rounded-2xl lg:rounded-[32px]">

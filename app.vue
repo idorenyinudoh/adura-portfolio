@@ -6,33 +6,6 @@ import SplitType from 'split-type'
 useHead({
   titleTemplate: (title) => {
     return title ? `${title} | Aduragbemi Abiola` : 'Aduragbemi Abiola'
-  },
-  meta: [
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    {
-      property: 'og:site:name',
-      content: 'Aduragbemi Abiola'
-    },
-    {
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    },
-    {
-      name:'twitter:creator',
-      content: '@aduragbemi_aa'
-    },
-  ],
-  link: [
-    {
-      rel: 'icon',
-      href: '/favicon.ico'
-    },
-  ],
-  htmlAttrs: {
-    lang: 'en'
   }
 })
 
@@ -87,7 +60,7 @@ const transitionObject: TransitionProps = {
   onBeforeLeave() {
     gsap.set('.page-transition', { display: 'flex' })
     madText.value.$el.innerHTML = lines[activeMadTextIndex.value]
-    SplitType.create('.page-transition p', { types: 'lines,words' })
+    SplitType.create('.page-transition p', { types: 'lines,words', tagName: 'span' })
     gsap.set('.page-transition p .line', { opacity: 0 })
   },
   onLeave(el, done) {

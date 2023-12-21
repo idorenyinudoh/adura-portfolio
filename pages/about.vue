@@ -161,28 +161,28 @@ const awardsTable = {
 const testimonials = [
 {
     name: 'Timilehin Oladunni',
-    headshot: 'timilehin-oladunni',
+    headshot: 'timilehin-oladunni.webp',
     position: 'Software Engineer',
     company: 'Periculum',
     testimonial: 'Aduragbemi Abiola is a talented individual with a keen eye for detail and a strong work ethic. They are able to take complex design challenges and translate them into clear and effective solutions. In addition, Aduragbemi Abiola is a great communicator and is always willing to collaborate and take feedback in order to deliver the best possible results. Overall, I have no doubt that Aduragbemi Abiola would be a valuable asset to any design team and I wholeheartedly recommend them for any UI/UX design needs.'
   },
   {
     name: 'Oladipupo Durojaiye',
-    headshot: 'oladipupo-durojaiye',
+    headshot: 'oladipupo-durojaiye.webp',
     position: 'Lead Backend Engineer',
     company: 'ErrandPay',
     testimonial: 'Adura\'s work constantly reflects his person. A thoughtful, brilliant mind who goes the extra mile in re-creating the intentions buried in the client\'s mind. One who often completes the requirements with great attention to details, many times before the client enunciates all they want, working together with him on a couple of projects was nought but enjoyable and hyper productive for me. I would 100% recommend him anytime.'
   },
   {
     name: 'Victor Daudu',
-    headshot: 'victor-daudu',
+    headshot: 'victor-daudu.webp',
     position: 'Flutter Mobile Developer',
     company: 'ErrandPay',
     testimonial: 'Working with Adura was and is a worthy ride. Adura has an eye for the tiniest detail, great combination and blends of colors, creative mind and above all, the right man for your UI/UX Job. Adura possesses a rare skill and passion to always design products from the end users\' point of views which is excellent for the scaling of the products. Adura is the man for the job!'
   },
   {
     name: 'Idorenyin Udoh',
-    headshot: 'idorenyin-udoh',
+    headshot: 'idorenyin-udoh.webp',
     position: 'Frontend Engineer',
     company: 'Acumen Digital',
     testimonial: 'Adura is a real nifty product designer. Watching him work on Figma should be among those “if it wasn\'t recorded, you wouldn\'t believe it” videos on YouTube. He sincerely cares about his products\' intended users and works his way from there — catering for them to reach their goals in the most efficient ways possible while taking accessibility into consideration. He\'s fun to work with as well. 100% would recommend.',
@@ -191,20 +191,20 @@ const testimonials = [
   },
   {
     name: 'Edward Eniang',
-    headshot: 'edward-eniang',
+    headshot: 'edward-eniang.webp',
     position: 'Director of Operations',
     company: 'ErrandMedia',
     testimonial: 'Adura is an excellent communicator, always willing to collaborate with other team members and take feedback constructively. He has a strong work ethic and consistently met deadlines, even under pressure. His ability to balance technical and creative requirements makes him an asset to any team. Overall, I highly recommend Adura for any UI/UX design role. He would be a valuable addition to any team and I\'m confident that he would make significant contributions to your organization.'
   },
   {
     name: 'David Yaya',
-    headshot: 'david-yaya',
+    headshot: 'david-yaya.webp',
     position: 'Designer, Devops Engineer',
     testimonial: 'Adura and I have joined hands on several projects. He worked as a UI/UX Designer and also as a UX Researcher. He is a highly skilled designer who\'s very devoted to learning and is also a great team player. Adura is impact-oriented and ensures that every project he works on is spectacular and astounding. I recommend him without any reservation.'
   },
   {
     name: 'Samuel Babatunde',
-    headshot: 'samuel-babatunde',
+    headshot: 'samuel-babatunde.webp',
     position: 'Fullstack Developer',
     company: 'BorderPal',
     testimonial: 'I have met a number of diligent people in my life, Adura tops them all. His zeal and dedication to see whatever he\'s doing through is second to none. He is the guy you want to work with. Always open to learning endlessly. He motivates me. And of course, he is an exceptionally skilled designer!'
@@ -225,16 +225,16 @@ const testimonials = [
       </BaseP>
       <section class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-4 lg:gap-6 xl:gap-10">
         <div class="col-start-1 col-end-3 lg:col-end-2 lg:row-start-1 lg:row-end-3">
-          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-working" alt="adura working" />
+          <NuxtImg class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-working.webp" alt="adura working" />
         </div>
         <div>
-          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-headshot" alt="adura's headshot" />
+          <NuxtImg class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-headshot.webp" alt="adura's headshot" />
         </div>
         <div>
-          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-collaborating" alt="adura collaborating with teammate" />
+          <NuxtImg class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-collaborating.webp" alt="adura collaborating with teammate" />
         </div>
         <div class="col-start-1 col-end-3 lg:col-start-2 lg:col-end-4">
-          <NuxtImg provider="cloudinary" class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-talking" alt="adura communicating with teammate" />
+          <NuxtImg class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-talking.webp" alt="adura communicating with teammate" />
         </div>
       </section>
       <article>

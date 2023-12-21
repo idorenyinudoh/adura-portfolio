@@ -7,47 +7,47 @@ const interests = [
     data: [
       {
         title: 'The Non-Designer\'s Design Book',
-        url: 'non-designers-design-book',
+        url: 'non-designers-design-book.webp',
         caption: 'My very first design book. Great read!'
       },
       {
         title: 'Don\'t Make Me Think',
-        url: 'dont-make-me-think',
+        url: 'dont-make-me-think.webp',
         caption: 'Brilliant guide for usability'
       },
       {
         title: 'Hooked',
-        url: 'hooked',
+        url: 'hooked.webp',
         caption: 'Think Atomic Habits but for products building'
       },
       {
         title: 'The Subtle Art of Not Giving a Fuck',
-        url: 'the-subtle-art-of-not-giving-a-fuck',
+        url: 'the-subtle-art-of-not-giving-a-fuck.webp',
         caption: 'An All Time Favorite'
       },
       {
         title: '12 Rules for Life',
-        url: '12-rules-for-life',
+        url: '12-rules-for-life.webp',
         caption: 'Life changing read, trust me!'
       },
       {
         title: 'Beyond Order',
-        url: 'beyond-order',
+        url: 'beyond-order.webp',
         caption: 'You know there\'s gotta be a sequel'
       },
       {
         title: 'The Power of Positive Thinking',
-        url: 'the-power-of-positive-thinking',
+        url: 'the-power-of-positive-thinking.webp',
         caption: 'Deeply insightful read'
       },
       {
         title: 'Steal Like an Artist',
-        url: 'steal-like-an-artist',
+        url: 'steal-like-an-artist.webp',
         caption: 'Love LOVE his use of drawings and huge fonts'
       },
       {
         title: 'START WITH WHY',
-        url: 'start-with-why',
+        url: 'start-with-why.webp',
         caption: 'It\'s so good, I\'ll definitely have another read'
       }
     ]
@@ -59,47 +59,47 @@ const interests = [
     data: [
       {
         title: 'Burna Boy',
-        url: 'burna-boy',
+        url: 'burna-boy.webp',
         caption: '"Odogwu no be nickname"'
       },
       {
         title: 'Passenger',
-        url: 'passenger',
+        url: 'passenger.webp',
         caption: 'You should give his project All The Little Lights a listen.'
       },
       {
         title: 'The Cavemen',
-        url: 'the-cavemen',
+        url: 'the-cavemen.webp',
         caption: 'The Cavemen'
       },
       {
         title: 'King Sunny Ade',
-        url: 'king-sunny-ade',
+        url: 'king-sunny-ade.webp',
         caption: 'King Sunny Ade'
       },
       {
         title: 'Baba Ara',
-        url: 'baba-ara',
+        url: 'baba-ara.webp',
         caption: 'My mum is literally singing his songs as I work on this this right now.'
       },
       {
         title: 'NF',
-        url: 'nf',
+        url: 'nf.webp',
         caption: 'NF\'s storytelling and use of orchestra is too peak!'
       },
       {
         title: 'Santan Dave',
-        url: 'santan-dave',
+        url: 'santan-dave.webp',
         caption: 'Santan Dave. First time I saw the name, my brain saw satan. Lol.'
       },
       {
         title: 'Jon Bellion',
-        url: 'jon-bellion',
+        url: 'jon-bellion.webp',
         caption: 'Jon Bellion\'s acoustic rendition of Human is just so heavenly!'
       },
       {
         title: 'Adele',
-        url: 'adele',
+        url: 'adele.webp',
         caption: 'I mean, it\'s Adele'
       }
     ]
@@ -111,47 +111,47 @@ const interests = [
     data: [
       {
         title: 'The Diary of a CEO',
-        url: 'diary-of-a-ceo',
+        url: 'diary-of-a-ceo.webp',
         caption: 'Diary of a CEO'
       },
       {
         title: 'Vent Per Week',
-        url: 'vent-per-week',
+        url: 'vent-per-week.webp',
         caption: 'Vent Per Week'
       },
       {
         title: 'On Purpose',
-        url: 'on-purpose',
+        url: 'on-purpose.webp',
         caption: 'On Purpose'
       },
       {
         title: 'The Closer',
-        url: 'the-closer',
+        url: 'the-closer.webp',
         caption: 'The Closer'
       },
       {
         title: 'Irresponsible',
-        url: 'irresponsible',
+        url: 'irresponsible.webp',
         caption: 'Irresponsible'
       },
       {
         title: 'I Wish You Would',
-        url: 'i-wish-you-would',
+        url: 'i-wish-you-would.webp',
         caption: 'I Wish You Would'
       },
       {
         title: 'The King\'s Jester',
-        url: 'the-kings-jester',
+        url: 'the-kings-jester.webp',
         caption: 'The King\'s Jester'
       },
       {
         title: 'Shxts N Gigs',
-        url: 'shxts-n-gigs',
+        url: 'shxts-n-gigs.webp',
         caption: 'Shxts N Gigs'
       },
       {
         title: 'Shaking Tables',
-        url: 'shaking-tables',
+        url: 'shaking-tables.webp',
         caption: 'Subscribe'
       }
     ]
@@ -163,47 +163,47 @@ const interests = [
     data: [
       {
         title: 'Flyer Exploration',
-        url: 'flyer-exploration',
+        url: 'flyer-exploration.webp',
         caption: 'Flyer Exploration'
       },
       {
         title: 'Podcast Flyer',
-        url: 'podcast-flyer',
+        url: 'podcast-flyer.webp',
         caption: 'Podcast Flyer'
       },
       {
         title: 'Calendar Illustration',
-        url: 'calendar-illustration',
+        url: 'calendar-illustration.webp',
         caption: 'Calendar Illustration'
       },
       {
         title: 'Podcast Flyer',
-        url: 'podcast-flyer2',
+        url: 'podcast-flyer2.webp',
         caption: 'Podcast Flyer'
       },
       {
         title: 'Notes Illustration',
-        url: 'notes-illustration',
+        url: 'notes-illustration.webp',
         caption: 'Notes Illustration'
       },
       {
         title: 'Podcast Flyer',
-        url: 'podcast-flyer3',
+        url: 'podcast-flyer3.webp',
         caption: 'Podcast Flyer'
       },
       {
         title: 'POS Illustration',
-        url: 'pos-illustration',
+        url: 'pos-illustration.webp',
         caption: 'POS Illustration'
       },
       {
         title: 'Flyer Exploration',
-        url: 'flyer-exploration2',
+        url: 'flyer-exploration2.webp',
         caption: 'Flyer Exploration'
       },
       {
         title: 'Ikoyi Bridge Illustration',
-        url: 'ikoyi-bridge-illustration',
+        url: 'ikoyi-bridge-illustration.webp',
         caption: 'Ikoyi Bridge Illustration'
       },
     ]
@@ -215,47 +215,47 @@ const interests = [
     data: [
       {
         title: 'Lie to Me',
-        url: 'lie-to-me',
+        url: 'lie-to-me.webp',
         caption: 'Lie to Me'
       },
       {
         title: 'Forever',
-        url: 'forever',
+        url: 'forever.webp',
         caption: 'Forever'
       },
       {
         title: 'Smallville',
-        url: 'smallville',
+        url: 'smallville.webp',
         caption: 'Smallville'
       },
       {
         title: 'Brooklyn Nine-Nine',
-        url: 'brooklyn-nine-nine',
+        url: 'brooklyn-nine-nine.webp',
         caption: 'Brooklyn Nine-Nine'
       },
       {
         title: 'Sherlock Holmes',
-        url: 'sherlock-holmes',
+        url: 'sherlock-holmes.webp',
         caption: 'Sherlock Holmes'
       },
       {
         title: 'Bob Hearts Abishola',
-        url: 'bob-hearts-abishola',
+        url: 'bob-hearts-abishola.webp',
         caption: 'Bob Hearts Abishola'
       },
       {
         title: 'Dark Knight Rises',
-        url: 'dark-knight-rises',
+        url: 'dark-knight-rises.webp',
         caption: 'Dark Knight Rises'
       },
       {
         title: 'The Boys',
-        url: 'the-boys',
+        url: 'the-boys.webp',
         caption: 'The Boys'
       },
       {
         title: 'Suits',
-        url: 'suits',
+        url: 'suits.webp',
         caption: 'Suits'
       },
     ]

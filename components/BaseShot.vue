@@ -21,7 +21,7 @@ const toggleFigureIsHoveredOn = () => {
 
 <template>
   <figure class="relative lg:cursor-pointer" @pointerenter="toggleFigureIsHoveredOn" @pointerleave="toggleFigureIsHoveredOn">
-    <NuxtImg provider="cloudinary" :src="`/shots/${props.url}`" :alt="props.alt?.toLowerCase()" class="rounded-lg w-full h-full object-cover transition-all duration-200 ease-linear lg:hover:brightness-75" />
+    <NuxtImg :src="`/shots/${props.url}`" :alt="props.alt?.toLowerCase()" class="rounded-lg w-full h-full object-cover transition-all duration-200 ease-linear lg:hover:brightness-75" />
     <Transition name="caption">
       <figcaption v-if="figureIsHoveredOn && innerWidth >= 1024" class="absolute left-6 bottom-2 z-10 text-white font-normal leading-7">
         {{ props.alt }}

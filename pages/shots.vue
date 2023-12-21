@@ -41,171 +41,171 @@ definePageMeta({
 
 const images = [
   {
-    url: 'sign-up-page',
+    url: 'sign-up-page.webp',
     alt: 'Sign up page design for web and mobile'
   },
   {
-    url: 'credit-card-checkout',
+    url: 'credit-card-checkout.webp',
     alt: 'Credit card checkout'
   },
   {
-    url: 'settings-screen',
+    url: 'settings-screen.webp',
     alt: 'Settings screen for web'
   },
   {
-    url: 'profile-menu',
+    url: 'profile-menu.webp',
     alt: 'Profile menu for mobile'
   },
   {
-    url: 'loan-calculator',
+    url: 'loan-calculator.webp',
     alt: 'Loan calculator for mobile'
   },
   {
-    url: 'edutech-landing-page',
+    url: 'edutech-landing-page.webp',
     alt: 'Edutech landing page'
   },
   {
-    url: 'superhero-messaging-platform',
+    url: 'superhero-messaging-platform.webp',
     alt: 'Superhero messaging platform'
   },
   {
-    url: 'ecommerce-mobile-app',
+    url: 'ecommerce-mobile-app.webp',
     alt: 'Ecommerce mobile app'
   },
   {
-    url: 'smartwatch-productivity-app',
+    url: 'smartwatch-productivity-app.webp',
     alt: 'Productivity app for smartwatch'
   },
   {
-    url: 'modals-for-web',
+    url: 'modals-for-web.webp',
     alt: 'Modals for web'
   },
   {
-    url: 'spiderman-themed-toggle',
+    url: 'spiderman-themed-toggle.webp',
     alt: 'Spiderman-themed on/off toggle'
   },
   {
-    url: 'share-modal',
+    url: 'share-modal.webp',
     alt: 'Share modal for web podcasting platform'
   },
   {
-    url: 'online-learning-app',
+    url: 'online-learning-app.webp',
     alt: 'Online learning mobile app'
   },
   {
-    url: 'interactive-music-player',
+    url: 'interactive-music-player.webp',
     alt: 'Interactive music player for mobile'
   },
   {
-    url: 'podcasts-streaming-platform',
+    url: 'podcasts-streaming-platform.webp',
     alt: 'Streaming platform for podcasts'
   },
   {
-    url: 'online-messaging-platform',
+    url: 'online-messaging-platform.webp',
     alt: 'Online messaging platform'
   },
   {
-    url: 'airpods-tracker',
+    url: 'airpods-tracker.webp',
     alt: 'AirPods tracker'
   },
   {
-    url: 'real-estate-landing-page',
+    url: 'real-estate-landing-page.webp',
     alt: 'Real estate landing page'
   },
   {
-    url: 'agricultural-produce-onboarding',
+    url: 'agricultural-produce-onboarding.webp',
     alt: 'Agricultural produce app onboarding'
   },
   {
-    url: 'fintech-mobile-app',
+    url: 'fintech-mobile-app.webp',
     alt: 'Fintech mobile app'
   },
   {
-    url: 'healthcare-landing-page',
+    url: 'healthcare-landing-page.webp',
     alt: 'Healthcare landing page'
   },
   {
-    url: 'dashboard-for-healthcare',
+    url: 'dashboard-for-healthcare.webp',
     alt: 'Dashboard for healthcare'
   },
   {
-    url: 'crypto-trading-app',
+    url: 'crypto-trading-app.webp',
     alt: 'Crypto-trading mobile app'
   },
   {
-    url: 'food-ordering-app',
+    url: 'food-ordering-app.webp',
     alt: 'Food-ordering mobile app'
   },
   {
-    url: 'party-searching-app',
+    url: 'party-searching-app.webp',
     alt: 'Party-searching mobile app'
   },
   {
-    url: 'travel-app',
+    url: 'travel-app.webp',
     alt: 'Travel mobile app for Lagosians'
   },
   {
-    url: 'minimalistic-hero-page',
+    url: 'minimalistic-hero-page.webp',
     alt: 'Minimalistic hero page'
   },
   {
-    url: 'skincare-ecommerce-app',
+    url: 'skincare-ecommerce-app.webp',
     alt: 'Skincare e-commerce mobile app'
   },
   {
-    url: 'login-screen',
+    url: 'login-screen.webp',
     alt: 'Login screen for men\'s mental health platform'
   },
   {
-    url: 'podcast-listening-app',
+    url: 'podcast-listening-app.webp',
     alt: 'Podcast listening mobile app'
   },
   {
-    url: '404-error-page',
+    url: '404-error-page.webp',
     alt: '404 error page for web'
   },
   {
-    url: 'email-receipt',
+    url: 'email-receipt.webp',
     alt: 'Email receipt for shopping mart'
   },
   {
-    url: 'movie-streaming-dashboard',
+    url: 'movie-streaming-dashboard.webp',
     alt: 'Movie streaming dashboard'
   },
   {
-    url: 'flash-messages-and-toasts',
+    url: 'flash-messages-and-toasts.webp',
     alt: 'Flash messages and toasts for web'
   },
   {
-    url: 'analytics-dashboard',
+    url: 'analytics-dashboard.webp',
     alt: 'Analytics dashboard overview for web'
   },
   {
-    url: 'fashion-landing-page',
+    url: 'fashion-landing-page.webp',
     alt: 'Fashion landing page'
   },
   {
-    url: 'window-illustration',
+    url: 'window-illustration.webp',
     alt: 'Window view illustration'
   },
   {
-    url: 'fraud-detection-dashboard',
+    url: 'fraud-detection-dashboard.webp',
     alt: 'Fraud detection dashboard'
   },
   {
-    url: 'pos-terminal-illustration',
+    url: 'pos-terminal-illustration.webp',
     alt: 'POS terminal illustration'
   },
   {
-    url: 'ikoyi-bridge-illustration',
+    url: 'ikoyi-bridge-illustration.webp',
     alt: 'Ikoyi bridge illustration'
   },
   {
-    url: 'calendar-icon-illustration',
+    url: 'calendar-icon-illustration.webp',
     alt: 'Calendar icon illustration'
   },
   {
-    url: 'building-illustration',
+    url: 'building-illustration.webp',
     alt: 'Building view illustration'
   },
 ]

@@ -129,7 +129,7 @@ onMounted(() => {
 
 <style scoped>
 .loading-screen::before {
-  background: linear-gradient(rgb(0 0 0 / calc(100% - var(--percent)/6.67)), rgb(0 0 0 / calc(100% - var(--percent)/6.67))), url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background);
+  background: linear-gradient(rgb(0 0 0 / calc(100% - var(--percent)/6.67)), rgb(0 0 0 / calc(100% - var(--percent)/6.67))), url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background.webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
