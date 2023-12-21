@@ -125,7 +125,7 @@ const props = defineProps({
 <template>
   <article class="px-6 md:px-10 lg:px-12 xl:px-14 pt-5 md:pt-9 lg:pt-11 xl:pt-12 py-8 md:py-11 lg:py-14 xl:py-16 border border-solid border-[rgba(26,26,26,0.50)] rounded-[32px] w-[360px] sm:w-[480px] md:w-[720px] lg:w-[800px] xl:w-[960px]">
     <div class="flex items-center gap-x-3 lg:gap-x-4">
-      <NuxtImg provider="cloudinary" :src="`/headshots/${props.headshot}`" :alt="`${props.headshot.split('-').join(' ')}'s headshot'`" class="w-12 md:w-14 lg:w-20 rounded-full border border-solid border-[#D3D0D0]" />
+      <NuxtImg :src="`/headshots/${props.headshot}`" :alt="`${props.headshot.split('-').join(' ')}'s headshot'`" class="w-12 md:w-14 lg:w-20 rounded-full border border-solid border-[#D3D0D0]" />
       <div>
         <h3 class="text-adura-black text-sm md:text-base lg:text-xl font-bold">{{ props.name }}</h3>
         <div class="md:mt-0.5 flex gap-x-1.5 md:gap-x-2 items-center">
