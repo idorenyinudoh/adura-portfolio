@@ -87,7 +87,7 @@ const transitionObject: TransitionProps = {
   onBeforeLeave() {
     gsap.set('.page-transition', { display: 'flex' })
     madText.value.$el.innerHTML = lines[activeMadTextIndex.value]
-    SplitType.create('.page-transition p', { types: 'lines,words' })
+    SplitType.create('.page-transition p', { types: 'lines,words', tagName: 'span' })
     gsap.set('.page-transition p .line', { opacity: 0 })
   },
   onLeave(el, done) {
