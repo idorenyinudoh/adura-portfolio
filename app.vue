@@ -3,6 +3,39 @@ import { gsap } from 'gsap'
 import type { TransitionProps } from 'nuxt/dist/app/compat/capi';
 import SplitType from 'split-type'
 
+useHead({
+  titleTemplate: (title) => {
+    return title ? `${title} | Aduragbemi Abiola` : 'Aduragbemi Abiola'
+  },
+  meta: [
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    {
+      property: 'og:site:name',
+      content: 'Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      name:'twitter:creator',
+      content: '@aduragbemi_aa'
+    },
+  ],
+  link: [
+    {
+      rel: 'icon',
+      href: '/favicon.ico'
+    },
+  ],
+  htmlAttrs: {
+    lang: 'en'
+  }
+})
+
 const route = useRoute()
 const store = usePreloadImagesStore()
 const { imagesHaveLoaded } = storeToRefs(store)

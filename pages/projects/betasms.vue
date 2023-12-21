@@ -1,10 +1,46 @@
 <script setup lang="ts">
+useHead({
+  title: 'BetaSMS',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'BetaSMS | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'BetaSMS | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on BetaSMS.'
+    },
+    {
+      property: 'og:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on BetaSMS.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on BetaSMS.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/projects/betasms'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/projects/betasms'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })
 
 const props = {
-  projectName: 'Betasms',
+  projectName: 'BetaSMS',
   projectDescription: 'BetaSMS is a communication platform as a service (CPAAS) that enables businesses and individuals send bulk SMS messages to all network providers in Nigeria and international networks worldwide. BetaSMS delivers messages to all active numbers, including DND numbers with real-time delivery reports.',
   heroImage: 'betasms-hero',
   projectObjectives: [

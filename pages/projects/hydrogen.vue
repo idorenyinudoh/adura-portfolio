@@ -1,4 +1,40 @@
 <script setup lang="ts">
+useHead({
+  title: 'Hydrogen',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Hydrogen | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Hydrogen | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Hydrogen.'
+    },
+    {
+      property: 'og:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Hydrogen.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on Hydrogen.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/projects/hydrogen'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/projects/hydrogen'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })

@@ -1,4 +1,40 @@
 <script setup>
+useHead({
+  title: 'Shots',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Shots | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Shots | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Illustrations and UI designs created by Aduragbemi Abiola, a product designer with over two years of experience creating user-centric digital experiences.'
+    },
+    {
+      property: 'og:description',
+      content: 'Illustrations and UI designs created by Aduragbemi Abiola, a product designer with over two years of experience creating user-centric digital experiences.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Illustrations and UI designs created by Aduragbemi Abiola, a product designer with over two years of experience creating user-centric digital experiences.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/shots'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/shots'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })

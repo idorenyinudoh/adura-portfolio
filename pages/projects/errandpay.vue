@@ -1,10 +1,46 @@
 <script setup lang="ts">
+useHead({
+  title: 'ErrandPay',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'ErrandPay | Aduragbemi Abiola'
+    },
+    {
+      name: 'twitter:title',
+      content: 'ErrandPay | Aduragbemi Abiola'
+    },
+    {
+      name: 'description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on ErrandPay.'
+    },
+    {
+      property: 'og:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on ErrandPay.'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Design process, challenges faced, and lessons learned by product designer, Aduragbemi Abiola, while working on ErrandPay.'
+    },
+    {
+      property: 'og:url',
+      content: 'https://adura.design/projects/errandpay'
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://adura.design/projects/errandpay'
+    }
+  ]
+})
+
 definePageMeta({
   scrollToTop: false
 })
 
 const props = {
-  projectName: 'Errandpay',
+  projectName: 'ErrandPay',
   projectDescription: 'ErrandPay offers financial services to individuals and business owners to start their payment collection company in days, processing tens of millions of Naira daily with thousands of current users. They also white-label payment solutions where users can start processing payments for traders and agents, providing autonomy and customisation of services.',
   deployLink: 'https://errandpay.com',
   heroImage: 'errandpay-hero',
