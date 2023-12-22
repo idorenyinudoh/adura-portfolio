@@ -3,12 +3,6 @@ import { gsap } from 'gsap'
 import type { TransitionProps } from 'nuxt/dist/app/compat/capi';
 import SplitType from 'split-type'
 
-useHead({
-  titleTemplate: (title) => {
-    return title ? `${title} | Aduragbemi Abiola` : 'Aduragbemi Abiola'
-  }
-})
-
 const route = useRoute()
 const store = usePreloadImagesStore()
 const { imagesHaveLoaded } = storeToRefs(store)

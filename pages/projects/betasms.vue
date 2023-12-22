@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'BetaSMS',
+  title: 'BetaSMS | Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',

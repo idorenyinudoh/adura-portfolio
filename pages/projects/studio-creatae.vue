@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Studio Creatae',
+  title: 'Studio Creatae | Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Kólé',
+  title: 'Kólé | Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',

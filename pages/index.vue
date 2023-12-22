@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import SplitType from 'split-type'
 
 useHead({
+  title: 'Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',

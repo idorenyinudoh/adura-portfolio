@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Sciart Finance',
+  title: 'Sciart Finance | Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',
