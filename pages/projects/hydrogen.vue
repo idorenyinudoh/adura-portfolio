@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Hydrogen',
+  title: 'Hydrogen | Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',

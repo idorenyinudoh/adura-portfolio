@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: 'Shots',
+  title: 'Shots | Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',

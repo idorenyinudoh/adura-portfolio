@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'ErrandPay',
+  title: 'ErrandPay | Aduragbemi Abiola',
   meta: [
     {
       property: 'og:title',
