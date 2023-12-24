@@ -2,6 +2,9 @@
 import { gsap } from 'gsap';
 import SplitType from 'split-type'
 
+const store = usePreloadImagesStore()
+const { imagesHaveLoaded } = storeToRefs(store)
+
 useHead({
   title: 'Aduragbemi Abiola',
   meta: [
@@ -38,53 +41,64 @@ useHead({
   ]
 })
 
+const introAnimation = () => {
+  const splitFirstName = SplitType.create('.first-name',{
+    types: 'words,chars',
+    tagName: 'span'
+  })
+  const splitLastName = SplitType.create('.last-name',{
+    types: 'words,chars',
+    tagName: 'span'
+  })
+  const splitExplanation = SplitType.create('.explanation span',{
+    types: 'lines,words',
+    tagName: 'span'
+  })
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      splitFirstName.revert()
+      splitLastName.revert()
+      splitExplanation.revert()
+    }
+  })
+
+  tl.fromTo(splitFirstName.chars, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 2, ease: 'power4.out' })
+  .fromTo(splitLastName.chars, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 2, ease: 'power4.out' }, '-=2.2')
+  .fromTo('.last-name + svg', { y: -20, x: -20, rotate: -10 }, { y: 0, x: 0, rotate: 0, opacity: 1, duration: 1.5, ease: 'elastic.inOut' }, '-=1.5')
+  .fromTo('.last-name + svg + span', { scaleX: '140%', scaleY: '140%' }, { scaleX: '100%', scaleY: '100%', opacity: 1, duration: .5, ease: 'power4.in' }, '-=1.2')
+  .to('.location', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
+  .fromTo(splitExplanation.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+}
+
 definePageMeta({
   scrollToTop: false,
-  pageTransition: {
-    onBeforeEnter(el) {
-      const targets = gsap.utils.toArray([
-        el.querySelector('.last-name + svg'),
-        el.querySelector('.last-name + svg + span'),
-        el.querySelector('.location'),
-      ])
-      gsap.set(targets, { opacity: 0 })
-    },
-    onEnter(el, done) {
-      const splitFirstName = SplitType.create('.first-name',{
-        types: 'words,chars',
-        tagName: 'span'
-      })
-      const splitLastName = SplitType.create('.last-name',{
-        types: 'words,chars',
-        tagName: 'span'
-      })
-      const splitExplanation = SplitType.create('.explanation span',{
-        types: 'lines,words',
-        tagName: 'span'
-      })
+})
 
-      const tl = gsap.timeline({
-        onComplete: () => {
-          splitFirstName.revert()
-          splitLastName.revert()
-          splitExplanation.revert()
-          done()
-        }
-      })
+onMounted(() => {
+  const homeContainer = document.querySelector('.home-container')!
 
-      tl.fromTo(splitFirstName.chars, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 2, ease: 'power4.out' })
-      .fromTo(splitLastName.chars, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 2, ease: 'power4.out' }, '-=2.2')
-      .fromTo('.last-name + svg', { y: -20, x: -20, rotate: -10 }, { y: 0, x: 0, rotate: 0, opacity: 1, duration: 1.5, ease: 'elastic.inOut' }, '-=1.5')
-      .fromTo('.last-name + svg + span', { scaleX: '140%', scaleY: '140%' }, { scaleX: '100%', scaleY: '100%', opacity: 1, duration: .5, ease: 'power4.in' }, '-=1.2')
-      .to('.location', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
-      .fromTo(splitExplanation.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
-    }
+  const targets = gsap.utils.toArray([
+    homeContainer.querySelector('.last-name + svg'),
+    homeContainer.querySelector('.last-name + svg + span'),
+    homeContainer.querySelector('.location'),
+  ])
+  gsap.set(targets, { opacity: 0 })
+
+  if (imagesHaveLoaded.value) {
+    introAnimation()
+  } else {
+    watch(imagesHaveLoaded, (hasLoaded) => {
+      if (hasLoaded) {
+        introAnimation()  
+      }
+    })
   }
 })
 </script>
 
 <template>
-  <div class="main -mt-10 before:fixed before:inset-0 before:-z-10">
+  <div class="home-container main -mt-10 before:fixed before:inset-0 before:-z-10">
     <header>
       <h1 class="font-extrabold font-monument-extended text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
         <span class="first-name clip-path">ADURAGBEMI</span>
