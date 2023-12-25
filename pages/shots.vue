@@ -24,13 +24,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://adura.design/shots'
+      content: 'https://www.adura.design/shots'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://adura.design/shots'
+      href: 'https://www.adura.design/shots'
     }
   ]
 })

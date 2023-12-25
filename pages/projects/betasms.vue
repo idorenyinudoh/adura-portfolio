@@ -24,13 +24,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://adura.design/projects/betasms'
+      content: 'https://www.adura.design/projects/betasms'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://adura.design/projects/betasms'
+      href: 'https://www.adura.design/projects/betasms'
     }
   ]
 })
