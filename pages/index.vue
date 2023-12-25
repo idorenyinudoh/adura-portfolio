@@ -30,13 +30,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://adura.design'
+      content: 'https://www.adura.design'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://adura.design'
+      href: 'https://www.adura.design'
     }
   ]
 })
