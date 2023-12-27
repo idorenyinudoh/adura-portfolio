@@ -24,13 +24,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://www.adura.design/projects/errandpay'
+      content: 'https://adura.design/projects/errandpay'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://www.adura.design/projects/errandpay'
+      href: 'https://adura.design/projects/errandpay'
     }
   ]
 })

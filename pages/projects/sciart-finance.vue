@@ -24,13 +24,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://www.adura.design/projects/sciart-finance'
+      content: 'https://adura.design/projects/sciart-finance'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://www.adura.design/projects/sciart-finance'
+      href: 'https://adura.design/projects/sciart-finance'
     }
   ]
 })

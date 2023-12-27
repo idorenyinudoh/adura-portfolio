@@ -24,13 +24,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://www.adura.design/projects/studio-creatae'
+      content: 'https://adura.design/projects/studio-creatae'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://www.adura.design/projects/studio-creatae'
+      href: 'https://adura.design/projects/studio-creatae'
     }
   ]
 })
