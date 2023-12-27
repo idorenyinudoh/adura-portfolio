@@ -24,13 +24,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://www.adura.design/projects/kole'
+      content: 'https://adura.design/projects/kole'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://www.adura.design/projects/kole'
+      href: 'https://adura.design/projects/kole'
     }
   ]
 })

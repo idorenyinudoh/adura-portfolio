@@ -24,13 +24,13 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://www.adura.design/projects/hydrogen'
+      content: 'https://adura.design/projects/hydrogen'
     },
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://www.adura.design/projects/hydrogen'
+      href: 'https://adura.design/projects/hydrogen'
     }
   ]
 })
