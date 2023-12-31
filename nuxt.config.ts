@@ -125,7 +125,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'manifest',
-          href: 'manifest.json'
+          href: '/manifest.json'
         },
         {
           rel: 'preconnect',
