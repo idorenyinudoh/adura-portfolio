@@ -124,10 +124,6 @@ export default defineNuxtConfig({
           href: '/favicon-16x16.png'
         },
         {
-          rel: 'manifest',
-          href: 'manifest.json'
-        },
-        {
           rel: 'preconnect',
           href: 'https://res.cloudinary.com'
         },
