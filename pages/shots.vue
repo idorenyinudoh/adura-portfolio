@@ -1,4 +1,9 @@
 <script setup>
+import { gsap } from 'gsap'
+
+const store = usePreloadImagesStore()
+const { imagesHaveLoaded } = storeToRefs(store)
+
 useHead({
   title: 'Shots | Aduragbemi Abiola',
   meta: [
@@ -210,7 +215,7 @@ const images = [
   },
 ]
 
-onMounted(() => {
+const scrollToCenter = () => {
   const mainContainer = document.querySelector('main');
   const mainScrollWidth = mainContainer.scrollWidth;
   const mainScrollHeight = mainContainer.scrollHeight;
@@ -222,9 +227,30 @@ onMounted(() => {
 
   mainContainer.scrollTo({
     top: scrollTop,
-    left: scrollLeft,
-    behavior: 'smooth'
+    left: scrollLeft
   });
+}
+
+const introAnimation = () => {
+  const targets = gsap.utils.toArray('main > figure > img')
+
+  gsap.set(targets, { opacity: 0, width: '0%', height: '80%' })
+
+  gsap.fromTo(targets, { opacity: 0, width: '0%', height: '80%' }, { opacity: 1, width: '100%', height: '100%', ease: 'power2.out', duration: 1.5 })
+}
+
+onMounted(() => {
+  scrollToCenter()
+
+  if (imagesHaveLoaded.value) {
+    introAnimation()
+  } else {
+    watch(imagesHaveLoaded, (hasLoaded) => {
+      if (hasLoaded) {
+        introAnimation()  
+      }
+    })
+  }
 })
 </script>
 

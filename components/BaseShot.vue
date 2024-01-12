@@ -20,8 +20,8 @@ const toggleFigureIsHoveredOn = () => {
 </script>
 
 <template>
-  <figure class="relative lg:cursor-pointer" @pointerenter="toggleFigureIsHoveredOn" @pointerleave="toggleFigureIsHoveredOn">
-    <NuxtImg :src="`/shots/${props.url}`" :alt="props.alt?.toLowerCase()" class="rounded-lg w-full h-full object-cover transition-all duration-200 ease-linear lg:hover:brightness-75" />
+  <figure class="relative lg:cursor-pointer flex justify-center items-center" @pointerenter="toggleFigureIsHoveredOn" @pointerleave="toggleFigureIsHoveredOn">
+    <NuxtImg :src="`/shots/${props.url}`" :alt="props.alt?.toLowerCase()" class="rounded-lg w-full h-full inset-0 mx-auto object-cover transition-[filter] duration-200 ease-linear lg:hover:brightness-75" />
     <Transition name="caption">
       <figcaption v-if="figureIsHoveredOn && innerWidth >= 1024" class="absolute left-6 bottom-2 z-10 text-white font-normal leading-7">
         {{ props.alt }}
