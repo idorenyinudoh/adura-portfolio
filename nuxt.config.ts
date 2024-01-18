@@ -33,12 +33,20 @@ export default defineNuxtConfig({
           content: 'Aduragbemi Abiola'
         },
         {
+          property: 'og:image',
+          content: 'https://res.cloudinary.com/idorenyinudoh/image/upload/v1705588440/adura-portfolio/preview.jpg'
+        },
+        {
           name: 'twitter:card',
           content: 'summary_large_image'
         },
         {
           name:'twitter:creator',
           content: '@aduragbemi_aa'
+        },
+        {
+          name: 'twitter:image',
+          content: 'https://res.cloudinary.com/idorenyinudoh/image/upload/v1705588440/adura-portfolio/preview.jpg'
         },
         {
           name: 'msapplication-TileColor',
