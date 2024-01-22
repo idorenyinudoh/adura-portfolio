@@ -81,6 +81,14 @@
   p.base-text {
     @apply my-10 md:my-12 text-adura-black text-base md:text-lg lg:text-2xl font-normal;
   }
+
+  h1 {
+    @apply font-monument-extended font-extrabold text-adura-black uppercase text-4xl sm:text-5xl md:text-7xl lg:text-8xl;
+  }
+
+  h2 {
+    @apply mt-24 mb-12 md:mt-32 md:mb-16 lg:mt-40 lg:mb-20 font-monument-extended font-normal text-adura-black text-3xl sm:text-4xl md:text-6xl lg:text-7xl;
+  }
   
   .clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

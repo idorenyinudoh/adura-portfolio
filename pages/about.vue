@@ -216,7 +216,7 @@ const testimonials = [
   <div>
     <TheHeader />
     <article>
-      <BaseH1 text="MEET ADURA" />
+      <h1>MEET ADURA</h1>
       <p class="base-text">
         <span>Hi, I am Adura, a user experience designer. I have an experience in mobile app and web design, wire-framing and mockup design, user research, interactive prototyping illustration amongst others.</span>
         <br>
@@ -238,11 +238,11 @@ const testimonials = [
         </div>
       </section>
       <article>
-        <BaseH2 text="CERTIFICATIONS" />
+        <h2>CERTIFICATIONS</h2>
         <BaseTable :table-data="certificationsTable" />
       </article>
       <article>
-        <BaseH2 text="SKILLS" />
+        <h2>SKILLS</h2>
         <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
           <p v-for="(skill, index) in skills" :key="index" class="px-6 py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-sm md:text-base lg:text-xl font-normal">
             {{ skill }}
@@ -251,11 +251,11 @@ const testimonials = [
       </article>
       <AboutInterests />
       <article>
-        <BaseH2 text="AWARDS AND PUBLICATIONS" />
+        <h2>AWARDS AND PUBLICATIONS</h2>
         <BaseTable :table-data="awardsTable" />
       </article>
       <article>
-        <BaseH2 text="WORD ON THE STREET" />
+        <h2>WORD ON THE STREET</h2>
         <section class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
           <div class="overflow-x-hidden flex items-center">
             <div v-for="(_, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">

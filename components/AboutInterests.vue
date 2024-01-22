@@ -317,7 +317,7 @@ onUnmounted(() => {
 
 <template>
   <article>
-    <BaseH2 text="INTERESTS" />
+    <h2>INTERESTS</h2>
     <dl class="md:hidden">
       <template v-for="(interest, index) in interests" :key="index">
         <dt class="border-b border-solid border-adura-black/30">

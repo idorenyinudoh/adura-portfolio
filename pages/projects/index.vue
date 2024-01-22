@@ -157,7 +157,7 @@ const projects: Project[] = [
     <TheHeader />
     <article>
       <div class="hero -mx-[8.3vw] xl:-mx-[120px] -mt-16 md:-mt-24 h-[80vh] md:h-[calc(100vh-173px)] xl:h-[calc(100vh-225px)] flex justify-center items-center">
-        <BaseH1 text="RECENT WORKS OF ART" class="text-white text-center mx-[15%]" />
+        <h1 class="text-white text-center mx-[15%]">RECENT WORKS OF ART</h1>
       </div>
       <main class="pt-20 md:pt-28 lg:pt-36 pb-9 md:pb-14 lg:pb-8">
         <article v-for="(project, index) in projects" :key="index" class="py-10 md:py-14 lg:py-20 grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-12 lg:gap-x-20 items-center">
@@ -176,7 +176,7 @@ const projects: Project[] = [
             </div>
           </aside>
           <div class="text-sm md:text-base lg:text-xl text-adura-black font-normal">
-            <h2 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 lg:mb-6">{{ project.title }}</h2>
+            <h2 class="mt-0 mb-3 lg:mb-6 font-satoshi text-xl md:text-2xl lg:text-3xl font-bold">{{ project.title }}</h2>
             <p class="mb-1 lg:mb-2">{{ project.tasks.join(', ')}}</p>
             <p class="mb-4">{{ project.duration }}</p>
             <p class="py-4 border-t border-solid border-adura-black/20">
