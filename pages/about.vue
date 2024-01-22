@@ -216,13 +216,13 @@ const testimonials = [
   <div>
     <TheHeader />
     <article>
-      <BaseH1 text="MEET ADURA" />
-      <BaseP>
+      <h1>MEET ADURA</h1>
+      <p class="base-text">
         <span>Hi, I am Adura, a user experience designer. I have an experience in mobile app and web design, wire-framing and mockup design, user research, interactive prototyping illustration amongst others.</span>
         <br>
         <br>
         <span>Identifying and understanding the human needs is crucial for creating useful and usable products. I relish the moments when my skill and knowledge empowers people, thereby making life easier.</span>
-      </BaseP>
+      </p>
       <section class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-4 lg:gap-6 xl:gap-10">
         <div class="col-start-1 col-end-3 lg:col-end-2 lg:row-start-1 lg:row-end-3">
           <NuxtImg class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-working.webp" alt="adura working" />
@@ -238,11 +238,11 @@ const testimonials = [
         </div>
       </section>
       <article>
-        <BaseH2 text="CERTIFICATIONS" />
+        <h2>CERTIFICATIONS</h2>
         <BaseTable :table-data="certificationsTable" />
       </article>
       <article>
-        <BaseH2 text="SKILLS" />
+        <h2>SKILLS</h2>
         <div class="flex flex-wrap gap-2 md:gap-3 lg:gap-6">
           <p v-for="(skill, index) in skills" :key="index" class="px-6 py-3 lg:px-12 lg:py-6 border border-solid border-adura-black rounded-[48px] text-sm md:text-base lg:text-xl font-normal">
             {{ skill }}
@@ -251,20 +251,20 @@ const testimonials = [
       </article>
       <AboutInterests />
       <article>
-        <BaseH2 text="AWARDS AND PUBLICATIONS" />
+        <h2>AWARDS AND PUBLICATIONS</h2>
         <BaseTable :table-data="awardsTable" />
       </article>
       <article>
-        <BaseH2 text="WORD ON THE STREET" />
+        <h2>WORD ON THE STREET</h2>
         <section class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex flex-col gap-y-6 lg:gap-y-9">
           <div class="overflow-x-hidden flex items-center">
             <div v-for="(_, index) in 2" :key="index" class="scroll w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
-              <BaseTestimonial v-for="(testimonial, index) in testimonials" :key="index" :="testimonial" />
+              <AboutTestimonial v-for="(testimonial, index) in testimonials" :key="index" :="testimonial" />
             </div>
           </div>
           <div class="overflow-x-hidden flex items-center">
             <div v-for="(_, index) in 2" :key="index" class="scroll-reverse w-fit grid grid-cols-[repeat(7,max-content)] gap-x-7 lg:gap-x-10 px-3.5 lg:px-5">
-              <BaseTestimonial v-for="(testimonial, index) in [...testimonials].reverse()" :key="index" :="testimonial" />
+              <AboutTestimonial v-for="(testimonial, index) in [...testimonials].reverse()" :key="index" :="testimonial" />
             </div>
           </div>
         </section>
@@ -275,5 +275,5 @@ const testimonials = [
 </template>
 
 <style scoped>
-@import url(~/assets/style/infinite-scroll.css);
+@import url(~/assets/css/infinite-scroll.css);
 </style>

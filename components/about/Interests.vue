@@ -317,7 +317,7 @@ onUnmounted(() => {
 
 <template>
   <article>
-    <BaseH2 text="INTERESTS" />
+    <h2>INTERESTS</h2>
     <dl class="md:hidden">
       <template v-for="(interest, index) in interests" :key="index">
         <dt class="border-b border-solid border-adura-black/30">
@@ -368,7 +368,7 @@ onUnmounted(() => {
       </div>
     </div>
     <footer>
-      <BaseP>PS: I'm open to nerding out on any of these topics, you can shoot me an email or a twitter DM.</BaseP>
+      <p class="base-text">PS: I'm open to nerding out on any of these topics, you can shoot me an email or a twitter DM.</p>
     </footer>
   </article>
 </template>

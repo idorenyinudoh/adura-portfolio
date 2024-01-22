@@ -92,5 +92,5 @@ const props = {
 </script>
 
 <template>
-  <TheProject :="props" />
+  <ProjectPage :="props" />
 </template>
