@@ -51,7 +51,7 @@ const introAnimation = () => {
     tagName: 'span'
   })
   const splitExplanation = SplitType.create('.explanation span',{
-    types: 'lines,words',
+    types: 'lines',
     tagName: 'span'
   })
 
@@ -60,6 +60,7 @@ const introAnimation = () => {
       splitFirstName.revert()
       splitLastName.revert()
       splitExplanation.revert()
+      backgroundHasAnimated.value = false
     }
   })
 
@@ -69,6 +70,85 @@ const introAnimation = () => {
   .fromTo('.last-name + svg + span', { scaleX: '140%', scaleY: '140%' }, { scaleX: '100%', scaleY: '100%', opacity: 1, duration: .5, ease: 'power4.in' }, '-=1.2')
   .to('.location', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
   .fromTo(splitExplanation.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+  .to('.image-button', { display: 'block', duration: .5, ease: 'power4.in' }, '-=1')
+}
+
+const backgroundHasAnimated = ref(false)
+const backgroundGradientPercentage = ref(85)
+const background = computed(() => `linear-gradient(rgb(0 0 0 / ${backgroundGradientPercentage.value}%), rgb(0 0 0 / ${backgroundGradientPercentage.value}%)), url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background.webp)`)
+
+const animateBackground = () => {
+  gsap.set('.image-button', { display: 'none' })
+
+  const splitFirstName = SplitType.create('.first-name',{
+    types: 'words,chars',
+    tagName: 'span'
+  })
+  const splitLastName = SplitType.create('.last-name',{
+    types: 'words,chars',
+    tagName: 'span'
+  })
+  const splitExplanation = SplitType.create('.explanation span',{
+    types: 'lines',
+    tagName: 'span'
+  })
+  const splitImageDesc = SplitType.create('.image-desc',{
+    types: 'lines',
+    tagName: 'span'
+  })
+
+  gsap.set('.image-desc', { display: 'block', opacity: 0 })
+  gsap.set(splitImageDesc.lines, { opacity: 0 })
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      splitImageDesc.revert()
+      backgroundHasAnimated.value = true
+    }
+  })
+
+  tl.to(splitFirstName.chars, { y: 100, opacity: 0, stagger: 0.1, duration: 2, ease: 'power4.out' })
+  .to(splitLastName.chars, { y: 100, opacity: 0, stagger: 0.1, duration: 2, ease: 'power4.out' }, '<')
+  .to('.last-name + svg', { opacity: 0, duration: .5, ease: 'back.in' }, '-=3.2')
+  .to('.last-name + svg + span', { scaleX: '80%', scaleY: '80%', opacity: 0, duration: .5, ease: 'power4.in' }, '-=3.5')
+  .to('.location', { opacity: 0, duration: .5, ease: 'power4.in' }, '<')
+  .to(splitExplanation.lines, { y: 100, opacity: 0, stagger: 0.05, duration: 2, ease: 'power4.out' }, '-=2')
+  .to('nav', { opacity: .5, duration: 1, ease: 'power4.in' }, '-=1.5')
+  .to('.image-desc', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
+  .fromTo(splitImageDesc.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+  .to(backgroundGradientPercentage, { value: 0, duration: 3, ease: 'power4.in' }, '-=4')
+}
+
+const undoBackgroundAnimation = () => {
+  gsap.set('.image-button', { display: 'none' })
+
+  const splitImageDesc = SplitType.create('.image-desc',{
+    types: 'lines,words',
+    tagName: 'span'
+  })
+
+  const homeContainer = document.querySelector('.home-container')!
+
+  const targets = gsap.utils.toArray([
+    homeContainer.querySelector('.last-name + svg'),
+    homeContainer.querySelector('.last-name + svg + span'),
+    homeContainer.querySelector('.location'),
+  ])
+  gsap.set(targets, { opacity: 0 })
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      splitImageDesc.revert()
+      gsap.set('.image-desc', { display: 'none' })
+      introAnimation()
+    }
+  })
+
+  tl.fromTo(splitImageDesc.lines, { y: 0, opacity: 1 }, { y: 100, opacity: 0, stagger: 0.05, duration: 2, ease: 'power4.inOut' })
+  .to('.image-desc', { opacity: 0, duration: .5, ease: 'power4.out' }, '-=0.5')
+  .to('nav', { opacity: 1, duration: 1, ease: 'power4.in' }, '-=1.5')
+  .to(backgroundGradientPercentage, { value: 85, duration: 3, ease: 'power4.in' }, '-=4')
+
 }
 
 definePageMeta({
@@ -84,6 +164,7 @@ onMounted(() => {
     homeContainer.querySelector('.location'),
   ])
   gsap.set(targets, { opacity: 0 })
+  gsap.set('.image-button', { display: 'none' })
 
   if (imagesHaveLoaded.value) {
     introAnimation()
@@ -93,6 +174,12 @@ onMounted(() => {
         introAnimation()  
       }
     })
+  }
+})
+
+onBeforeUnmount(() => {
+  if (backgroundHasAnimated.value) {
+    undoBackgroundAnimation()
   }
 })
 </script>
@@ -124,14 +211,15 @@ onMounted(() => {
         <span>I've always imagined my life to be a movie and so, I decided to make an exhibit of a portfolio. I hope you enjoy.</span>
       </p>
     </main>
-    <!-- <button class="w-2 h-2 bg-white/50 hover:bg-white transition-all rounded-full block ml-auto mr-[15%] mt-[8%] animate-pulse" />
-    <p class="text-white">Here's a picture I took of my university in my final days as an undergraduate as some form of totem to remind me where I'm coming from and how far I've come.</p> -->
+    <button v-if="backgroundHasAnimated" class="image-button fixed right-[20%] top-[13%] md:top-[20%] lg:top-[25%] w-2 h-2 bg-adura-black/80 transition-all rounded-full block ml-auto mr-[15%] mt-[8%] animate-pulse" @click="undoBackgroundAnimation" />
+    <button v-else class="image-button fixed right-[20%] bottom-[13%] md:bottom-[20%] lg:bottom-[25%] w-2 h-2 bg-white/50 transition-all rounded-full block ml-auto mr-[15%] mt-[8%] animate-pulse" @click="animateBackground" />
+    <p class="image-desc clip-path hidden fixed left-0 right-0 bottom-24 md:bottom-40 xl:bottom-44 mx-auto px-5 py-2 text-center md:text-lg text-white before:absolute before:inset-0 before:w-full before:h-full before:bg-adura-black/50 before:-z-10">I took this picture in my final days as an undergraduate in the university as some form of totem to remind me where I'm coming from and how far I've come.</p>
   </div>
 </template>
 
 <style scoped>
 .main::before {
-  background: linear-gradient(rgb(0 0 0 / 85%), rgb(0 0 0 / 85%)), url(https://res.cloudinary.com/idorenyinudoh/image/upload/adura-portfolio/landscape-background.webp);
+  background: v-bind('background');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
