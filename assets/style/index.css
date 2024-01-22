@@ -77,9 +77,13 @@
   html {
     @apply font-satoshi;
   }
-}
 
-.clip-path {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  font-kerning: none;
+  p.base-text {
+    @apply my-10 md:my-12 text-adura-black text-base md:text-lg lg:text-2xl font-normal;
+  }
+  
+  .clip-path {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    font-kerning: none;
+  }
 }

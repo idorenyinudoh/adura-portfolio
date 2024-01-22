@@ -54,9 +54,7 @@ defineProps({
     <article>
       <BaseH1 :text="projectName" />
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-x-[10.1%]">
-        <BaseP>
-          {{ projectDescription }}
-        </BaseP>
+        <p class="base-text">{{ projectDescription }}</p>
         <NuxtLink v-if="deployLink" class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 hover:bg-adura-black/70 whitespace-nowrap text-adura-black hover:text-white font-normal text-sm md:text-base lg:text-xl transition-all duration-200 ease-linear" :href="deployLink" target="_blank">View Live Site</NuxtLink>
         <p v-else-if="projectName.toLowerCase() !== 'hydrogen'" class="w-max px-6 md:px-8 lg:px-10 py-2 md:py-2.5 lg:py-3 rounded-[56px] border border-solid border-adura-black bg-adura-black/10 whitespace-nowrap text-adura-black font-normal text-sm md:text-base lg:text-xl">In Development</p>
       </div>

@@ -217,12 +217,12 @@ const testimonials = [
     <TheHeader />
     <article>
       <BaseH1 text="MEET ADURA" />
-      <BaseP>
+      <p class="base-text">
         <span>Hi, I am Adura, a user experience designer. I have an experience in mobile app and web design, wire-framing and mockup design, user research, interactive prototyping illustration amongst others.</span>
         <br>
         <br>
         <span>Identifying and understanding the human needs is crucial for creating useful and usable products. I relish the moments when my skill and knowledge empowers people, thereby making life easier.</span>
-      </BaseP>
+      </p>
       <section class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-4 lg:gap-6 xl:gap-10">
         <div class="col-start-1 col-end-3 lg:col-end-2 lg:row-start-1 lg:row-end-3">
           <NuxtImg class="w-full h-full object-cover rounded-lg lg:grayscale lg:hover:grayscale-0 transition-all duration-[400ms] ease-linear" src="/adura-working.webp" alt="adura working" />

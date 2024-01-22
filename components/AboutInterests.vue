@@ -368,7 +368,7 @@ onUnmounted(() => {
       </div>
     </div>
     <footer>
-      <BaseP>PS: I'm open to nerding out on any of these topics, you can shoot me an email or a twitter DM.</BaseP>
+      <p class="base-text">PS: I'm open to nerding out on any of these topics, you can shoot me an email or a twitter DM.</p>
     </footer>
   </article>
 </template>
