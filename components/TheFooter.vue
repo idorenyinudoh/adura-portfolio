@@ -14,10 +14,10 @@
           <br>
           <span>really fun these days</span>
         </p>
-        <BaseOutboundLink title="TikTok" url="https://www.tiktok.com/@aduragbemi_aa" class="self-center" />
-        <BaseOutboundLink title="Instagram" url="https://www.instagram.com/adura.ux/" />
-        <BaseOutboundLink title="Twitter" url="https://twitter.com/aduragbemi_aa" />
-        <BaseOutboundLink title="Medium" url="https://medium.com/@abiolaaduragbemiaa" />
+        <TheFooterOutboundLink title="TikTok" url="https://www.tiktok.com/@aduragbemi_aa" class="self-center" />
+        <TheFooterOutboundLink title="Instagram" url="https://www.instagram.com/adura.ux/" />
+        <TheFooterOutboundLink title="Twitter" url="https://twitter.com/aduragbemi_aa" />
+        <TheFooterOutboundLink title="Medium" url="https://medium.com/@abiolaaduragbemiaa" />
       </div>
     </address>
   </footer>
