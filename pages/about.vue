@@ -275,5 +275,5 @@ const testimonials = [
 </template>
 
 <style scoped>
-@import url(~/assets/style/infinite-scroll.css);
+@import url(~/assets/css/infinite-scroll.css);
 </style>
