@@ -69,6 +69,7 @@ const introAnimation = () => {
   .fromTo('.last-name + svg', { y: -20, x: -20, rotate: -10 }, { y: 0, x: 0, rotate: 0, opacity: 1, duration: 1.5, ease: 'elastic.inOut' }, '-=1.5')
   .fromTo('.last-name + svg + span', { scaleX: '140%', scaleY: '140%' }, { scaleX: '100%', scaleY: '100%', opacity: 1, duration: .5, ease: 'power4.in' }, '-=1.2')
   .to('.location', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
+  .to('.explanation span', { opacity: 1, duration: .5, ease: 'power4.out' }, '<')
   .fromTo(splitExplanation.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
   .to('.image-button', { display: 'block', duration: .5, ease: 'power4.in' }, '-=1')
 }
@@ -102,8 +103,10 @@ const animateBackground = () => {
 
   const tl = gsap.timeline({
     onComplete: () => {
+      splitExplanation.revert()
       splitImageDesc.revert()
       backgroundHasAnimated.value = true
+      window.addEventListener('click', undoAnimationIfItHasPlayed, false)
     }
   })
 
@@ -113,6 +116,7 @@ const animateBackground = () => {
   .to('.last-name + svg + span', { scaleX: '80%', scaleY: '80%', opacity: 0, duration: .5, ease: 'power4.in' }, '-=3.5')
   .to('.location', { opacity: 0, duration: .5, ease: 'power4.in' }, '<')
   .to(splitExplanation.lines, { y: 100, opacity: 0, stagger: 0.05, duration: 2, ease: 'power4.out' }, '-=2')
+  .to('.explanation span', { opacity: 0, duration: .5, ease: 'power4.out' })
   .to('nav', { opacity: .5, duration: 1, ease: 'power4.in' }, '-=1.5')
   .to('.image-desc', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
   .fromTo(splitImageDesc.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
@@ -148,7 +152,13 @@ const undoBackgroundAnimation = () => {
   .to('.image-desc', { opacity: 0, duration: .5, ease: 'power4.out' }, '-=0.5')
   .to('nav', { opacity: 1, duration: 1, ease: 'power4.in' }, '-=1.5')
   .to(backgroundGradientPercentage, { value: 85, duration: 3, ease: 'power4.in' }, '-=4')
+}
 
+const undoAnimationIfItHasPlayed = () => {
+  window.removeEventListener('click', undoAnimationIfItHasPlayed, false)
+  if (backgroundHasAnimated.value) {
+    undoBackgroundAnimation()
+  }
 }
 
 definePageMeta({
@@ -178,9 +188,8 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  if (backgroundHasAnimated.value) {
-    undoBackgroundAnimation()
-  }
+  window.removeEventListener('click', undoAnimationIfItHasPlayed, false)
+  undoAnimationIfItHasPlayed()
 })
 </script>
 
@@ -213,7 +222,7 @@ onBeforeUnmount(() => {
     </main>
     <button v-if="backgroundHasAnimated" class="image-button fixed right-[20%] top-[13%] md:top-[20%] lg:top-[25%] w-2 h-2 bg-adura-black/80 transition-all rounded-full block ml-auto mr-[15%] mt-[8%] animate-pulse" @click="undoBackgroundAnimation" />
     <button v-else class="image-button fixed right-[20%] bottom-[13%] md:bottom-[20%] lg:bottom-[25%] w-2 h-2 bg-white/50 transition-all rounded-full block ml-auto mr-[15%] mt-[8%] animate-pulse" @click="animateBackground" />
-    <p class="image-desc clip-path hidden fixed left-0 right-0 bottom-24 md:bottom-40 xl:bottom-44 mx-auto px-5 py-2 text-center md:text-lg text-white before:absolute before:inset-0 before:w-full before:h-full before:bg-adura-black/50 before:-z-10">I took this picture in my final days as an undergraduate in the university as some form of totem to remind me where I'm coming from and how far I've come.</p>
+    <p class="image-desc clip-path hidden fixed left-0 right-0 bottom-24 md:bottom-40 xl:bottom-44 mx-auto px-5 py-2 text-center md:text-lg text-white before:absolute before:inset-0 before:w-full before:h-full before:bg-adura-black/70 before:-z-10">I took this picture in my final days as an undergraduate in the university as some form of totem to remind me where I'm coming from and how far I've come.</p>
   </div>
 </template>
 
