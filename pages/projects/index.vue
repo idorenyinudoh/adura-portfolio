@@ -223,7 +223,7 @@ onMounted(() => {
         <article v-for="(project, index) in projects" :key="index" class="py-10 md:py-14 lg:py-20 grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-12 lg:gap-x-20 items-center">
           <aside class="hidden md:flex rounded-2xl bg-[#C0DCB6] p-4 w-[195px] lg:w-[247px] flex-col gap-y-4">
             <div class="relative rounded-lg bg-white w-full pt-[80%]">
-              <NuxtImg class="bounce absolute bottom-[calc(22%+2px)] left-0 right-0 mx-auto w-2/5" :src="`/project-logos/${project.image}`" :alt="`${project.title} logo`" />
+              <NuxtImg class="bounce absolute bottom-[calc(22%+2px)] left-0 right-0 mx-auto w-2/5" :src="`/projects/logos/${project.image}`" :alt="`${project.title} logo`" />
               <div class="shrink absolute bottom-[22%] left-0 right-0 mx-auto bg-[#D9D9D9]/30 w-1/2 h-[5px] rounded-[80%]" />
             </div>
             <div class="flex justify-between items-center px-3 lg:px-4 py-1.5 lg:py-2 bg-white rounded-2xl lg:rounded-[32px]">
