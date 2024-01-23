@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import { gsap } from 'gsap'
+import SplitType from 'split-type'
+
+const store = usePreloadImagesStore()
+const { imagesHaveLoaded } = storeToRefs(store)
+
 useHead({
   title: 'Projects | Aduragbemi Abiola',
   meta: [
@@ -150,14 +156,68 @@ const projects: Project[] = [
     link: '/'
   }
 ]
+
+const introAnimation = () => {
+  gsap.set('.frames', { opacity: 0 })
+  gsap.set('.frames + div', { opacity: 0 })
+
+  const splitHeading = SplitType.create('.frames + div h1',{
+    types: 'lines',
+    tagName: 'span'
+  })
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      splitHeading.revert()
+    }
+  })
+
+  tl.to('.frames', { opacity: 1, duration: 1, ease: 'power4.out' })
+  .fromTo('.frames', { background: 'transparent' }, { background: 'rgb(26 26 26 / 0.8)', duration: 2, ease: 'power4.out' }, '<')
+  .fromTo('.frames > div:nth-of-type(odd)', { y: '0', opacity: 0 }, { y: '-7%', opacity: 1, duration: 2, ease: 'power4.out' }, '<')
+  .fromTo('.frames > div:nth-of-type(even)', { y: '-17%', opacity: 0 }, { y: '-10%', opacity: 1, duration: 2, ease: 'power4.out' }, '<')
+  .to('.frames + div', { opacity: 1, duration: 1, ease: 'power4.out' }, '-=2')
+  .fromTo(splitHeading.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+}
+
+onMounted(() => {
+  if (imagesHaveLoaded.value) {
+    introAnimation()
+  } else {
+    watch(imagesHaveLoaded, (hasLoaded) => {
+      if (hasLoaded) {
+        introAnimation()  
+      }
+    })
+  }
+})
 </script>
 
 <template>
   <div>
     <TheHeader />
     <article>
-      <div class="hero -mx-[8.3vw] xl:-mx-[120px] -mt-16 md:-mt-24 h-[80vh] md:h-[calc(100vh-173px)] xl:h-[calc(100vh-225px)] flex justify-center items-center">
-        <h1 class="text-white text-center mx-[15%]">RECENT WORKS OF ART</h1>
+      <div class="hero relative -mx-[8.3vw] xl:-mx-[120px] -mt-16 md:-mt-24 h-[80vh] md:h-[calc(100vh-173px)] xl:h-[calc(100vh-225px)] overflow-hidden">
+        <div class="frames absolute w-[calc(100%+25vh)] -left-[12.5vh] -z-10 inset-0 grid grid-cols-3 gap-x-5 md:gap-x-8 lg:gap-x-10 xl:gap-x-12 bg-adura-black/80">
+          <div class="flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
+            <NuxtImg src="/projects/frames/frame-1.png" alt="screenshot of kólé dashboard in a frame" />
+            <NuxtImg src="/projects/frames/frame-2.png" alt="screenshot of errandpay dashboard in a frame" />
+            <NuxtImg src="/projects/frames/frame-3.png" alt="screenshot of logoipsum dashboard in a frame" />
+          </div>
+          <div class="flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
+            <NuxtImg src="/projects/frames/frame-4.png" alt="screenshots from kólé dashboard in a frame" />
+            <NuxtImg src="/projects/frames/frame-5.png" alt="screenshots from betasms dashboard in a frame" />
+            <NuxtImg src="/projects/frames/frame-6.png" alt="screenshot of studio creatae's website footer in a frame" />
+          </div>
+          <div class="flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
+            <NuxtImg src="/projects/frames/frame-7.png" alt="screenshot of betasms dashboard in a frame" />
+            <NuxtImg src="/projects/frames/frame-8.png" alt="screenshot of studio creatae's website hero in a frame" />
+            <NuxtImg src="/projects/frames/frame-9.png" alt="screenshot of sciart finance's login page in a frame" />
+          </div>
+        </div>
+        <div class="w-full h-full flex justify-center items-center bg-adura-black/[.87]">
+          <h1 class="clip-path text-white text-center mx-[15%]">RECENT WORKS OF ART</h1>
+        </div>
       </div>
       <main class="pt-20 md:pt-28 lg:pt-36 pb-9 md:pb-14 lg:pb-8">
         <article v-for="(project, index) in projects" :key="index" class="py-10 md:py-14 lg:py-20 grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-12 lg:gap-x-20 items-center">
@@ -198,13 +258,6 @@ const projects: Project[] = [
 </template>
 
 <style scoped>
-.hero {
-  background: linear-gradient(rgb(26 26 26 / 87%) 0%, rgb(26 26 26 / 87%) 100%), url(@/assets/images/projects/hero-background.png);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .shrink {
   animation: shrink 3s ease-in-out forwards infinite;
 }

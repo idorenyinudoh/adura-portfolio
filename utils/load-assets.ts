@@ -171,6 +171,15 @@ export function loadAssets(): Promise<void[]> {
     'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/headshots/edward-eniang.webp',
     'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/headshots/david-yaya.webp',
     'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/headshots/samuel-babatunde.webp',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-1.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-2.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-3.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-4.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-5.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-6.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-7.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-8.png',
+    'https://res.cloudinary.com/idorenyinudoh/image/upload/f_auto,q_auto/adura-portfolio/projects/frames/frame-9.png',
   ]
 
   store.numberOfImagesToLoad = images.length
