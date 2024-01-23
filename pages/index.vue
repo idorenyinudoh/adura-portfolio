@@ -50,7 +50,7 @@ const introAnimation = () => {
     types: 'words,chars',
     tagName: 'span'
   })
-  const splitExplanation = SplitType.create('.explanation span',{
+  const splitExplanation = SplitType.create('.explanation > span',{
     types: 'lines',
     tagName: 'span'
   })
@@ -69,7 +69,7 @@ const introAnimation = () => {
   .fromTo('.last-name + svg', { y: -20, x: -20, rotate: -10 }, { y: 0, x: 0, rotate: 0, opacity: 1, duration: 1.5, ease: 'elastic.inOut' }, '-=1.5')
   .fromTo('.last-name + svg + span', { scaleX: '140%', scaleY: '140%' }, { scaleX: '100%', scaleY: '100%', opacity: 1, duration: .5, ease: 'power4.in' }, '-=1.2')
   .to('.location', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
-  .to('.explanation span', { opacity: 1, duration: .5, ease: 'power4.out' }, '<')
+  .to('.explanation > span', { opacity: 1, duration: .5, ease: 'power4.out' }, '<')
   .fromTo(splitExplanation.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
   .to('.image-button', { display: 'block', duration: .5, ease: 'power4.in' }, '-=1')
 }
@@ -89,7 +89,7 @@ const animateBackground = () => {
     types: 'words,chars',
     tagName: 'span'
   })
-  const splitExplanation = SplitType.create('.explanation span',{
+  const splitExplanation = SplitType.create('.explanation > span',{
     types: 'lines',
     tagName: 'span'
   })
@@ -116,7 +116,7 @@ const animateBackground = () => {
   .to('.last-name + svg + span', { scaleX: '80%', scaleY: '80%', opacity: 0, duration: .5, ease: 'power4.in' }, '-=3.5')
   .to('.location', { opacity: 0, duration: .5, ease: 'power4.in' }, '<')
   .to(splitExplanation.lines, { y: 100, opacity: 0, stagger: 0.05, duration: 2, ease: 'power4.out' }, '-=2')
-  .to('.explanation span', { opacity: 0, duration: .5, ease: 'power4.out' })
+  .to('.explanation > span', { opacity: 0, duration: .5, ease: 'power4.out' })
   .to('nav', { opacity: .5, duration: 1, ease: 'power4.in' }, '-=1.5')
   .to('.image-desc', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
   .fromTo(splitImageDesc.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
