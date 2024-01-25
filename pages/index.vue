@@ -149,7 +149,7 @@ const undoBackgroundAnimation = () => {
   })
 
   tl.fromTo(splitImageDesc.lines, { y: 0, opacity: 1 }, { y: 100, opacity: 0, stagger: 0.05, duration: 2, ease: 'power4.inOut' })
-  .to('.image-desc', { opacity: 0, duration: .5, ease: 'power4.out' }, '-=0.5')
+  .to('.image-desc', { opacity: 0, duration: 1, ease: 'power4.out' }, '-=1.3')
   .to('nav', { opacity: 1, duration: 1, ease: 'power4.in' }, '-=1.5')
   .to(backgroundGradientPercentage, { value: 85, duration: 3, ease: 'power4.in' }, '-=4')
 }
