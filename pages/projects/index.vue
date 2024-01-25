@@ -246,7 +246,7 @@ onMounted(() => {
                 <span>{{ desc }}</span>
               </template>
             </p>
-            <NuxtLink class="text-adura-black border-b border-solid border-adura-black font-light italic" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`">
+            <NuxtLink class="text-adura-black border-b border-solid border-adura-black font-light italic" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`" :target="project.isCaseStudy ? '_blank' : '_self'">
               {{ project.isCaseStudy ? 'See case study presentation' : 'See design process' }}
             </NuxtLink>
           </div>
