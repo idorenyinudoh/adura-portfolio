@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import SplitType from 'split-type'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const store = usePreloadImagesStore()
 const { imagesHaveLoaded } = storeToRefs(store)
@@ -180,13 +184,63 @@ const introAnimation = () => {
   .fromTo(splitHeading.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
 }
 
+const pageScrollTrigger = () => {
+  const articleContainers = gsap.utils.toArray('main article') as HTMLElement[]
+
+  articleContainers.forEach((container) => {
+    const asideElement = container.querySelector('aside') as HTMLElement
+    const headingElement = container.querySelector('h2') as HTMLElement
+    const p1Element = container.querySelector('h2 + p') as HTMLElement
+    const p2Element = container.querySelector('h2 + p + p') as HTMLElement
+    const projectDescriptionElement = container.querySelectorAll('h2 + p + p + p span') as NodeListOf<HTMLElement>
+    const projectPageURL = container.querySelector('h2 + p + p + p + a') as HTMLElement
+
+    const splitHeading = SplitType.create(headingElement, {
+      types: 'lines',
+      tagName: 'span'
+    })
+
+    const splitP1 = SplitType.create(p1Element, {
+      types: 'lines',
+      tagName: 'span'
+    })
+    
+    const splitP2 = SplitType.create(p2Element, {
+      types: 'lines',
+      tagName: 'span'
+    })
+
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: 'top 70%',
+      },
+      onComplete: () => {
+        splitHeading.revert()
+        splitP1.revert()
+        splitP2.revert()
+      }
+    })
+
+    tl.fromTo(asideElement, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: 'power4.in' })
+    .fromTo(splitHeading.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+    .fromTo(splitP1.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+    .fromTo(splitP2.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+    .fromTo(projectDescriptionElement, { opacity: 0 }, { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
+    .fromTo(projectPageURL, { opacity: 0 }, {  opacity: 1, duration: 1, ease: 'power4.in' }, '<')
+  })
+}
+
 onMounted(() => {
   if (imagesHaveLoaded.value) {
     introAnimation()
+    pageScrollTrigger()
   } else {
     watch(imagesHaveLoaded, (hasLoaded) => {
       if (hasLoaded) {
-        introAnimation()  
+        introAnimation()
+        pageScrollTrigger()
       }
     })
   }
@@ -236,17 +290,17 @@ onMounted(() => {
             </div>
           </aside>
           <div class="text-sm md:text-base lg:text-xl text-adura-black font-normal">
-            <h2 class="mt-0 mb-3 lg:mb-6 font-satoshi text-xl md:text-2xl lg:text-3xl font-bold">{{ project.title }}</h2>
-            <p class="mb-1 lg:mb-2">{{ project.tasks.join(', ')}}</p>
-            <p class="mb-4">{{ project.duration }}</p>
-            <p class="py-4 border-t border-solid border-adura-black/20">
+            <h2 class="clip-path mt-0 mb-3 lg:mb-6 font-satoshi text-xl md:text-2xl lg:text-3xl font-bold">{{ project.title }}</h2>
+            <p class="clip-path mb-1 lg:mb-2">{{ project.tasks.join(', ')}}</p>
+            <p class="clip-path mb-4">{{ project.duration }}</p>
+            <p class="clip-path py-4 border-t border-solid border-adura-black/20">
               <template v-for="(desc, index) in project.description" :key="index">
                 <br v-if="index !== 0" />
                 <br v-if="index !== 0" />
                 <span>{{ desc }}</span>
               </template>
             </p>
-            <NuxtLink class="text-adura-black border-b border-solid border-adura-black font-light italic" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`" :target="project.isCaseStudy ? '_blank' : '_self'">
+            <NuxtLink class="clip-path text-adura-black border-b border-solid border-adura-black font-light italic" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`" :target="project.isCaseStudy ? '_blank' : '_self'">
               {{ project.isCaseStudy ? 'See case study presentation' : 'See design process' }}
             </NuxtLink>
           </div>
