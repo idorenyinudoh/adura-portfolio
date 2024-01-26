@@ -190,7 +190,7 @@ const introAnimation = () => {
     onUpdate: (self) => {
       const progress = self.progress.toFixed(2)
       
-      gsap.to('.frames > div', { y: `-${(parseFloat(progress) + 4) * 1.75}%`, duration: 1, ease: 'power4.out' })
+      gsap.to('.frames > div', { y: `-${(parseFloat(progress) + 4) * (1.75 + parseFloat(progress))}%`, duration: 1, ease: 'power4.out' })
     }
   })
 }
