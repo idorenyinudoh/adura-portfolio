@@ -1,34 +1,13 @@
 <script setup lang="ts">
-const props = defineProps({
-  headshot: {
-    type: String,
-    required: true
-  },
-  name: {
-    type: String,
-    required: true
-  },
-  position: {
-    type: String,
-    required: true
-  },
-  company: {
-    type: String,
-    required: false
-  },
-  testimonial: {
-    type: String,
-    required: true
-  },
-  devPitch: {
-    type: String,
-    required: false
-  },
-  devImage: {
-    type: String,
-    required: false
-  }
-})
+const props = defineProps<{
+  headshot: string
+  name: string
+  position: string
+  company?: string
+  testimonial: string
+  devPitch?: string
+  devImage?: string
+}>()
 </script>
 
 <template>

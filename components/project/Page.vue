@@ -4,48 +4,18 @@ interface Step {
   description: string
 }
 
-defineProps({
-  projectName: {
-    type: String,
-    required: true
-  },
-  projectDescription: {
-    type: String,
-    required: true
-  },
-  deployLink: {
-    type: String,
-    required: false
-  },
-  heroImage: {
-    type: String,
-    required: true
-  },
-  projectObjectives: {
-    type: Array as PropType<Step[]>,
-    required: true
-  },
-  projectScreenshots: {
-    type: Array as PropType<string[]>,
-    required: true
-  },
-  designProcess: {
-    type: Array as PropType<Step[]>,
-    required: true
-  },
-  challenges: {
-    type: Array as PropType<Step[]>,
-    required: true
-  },
-  scrollImages: {
-    type: Array as PropType<string[]>,
-    required: true
-  },
-  lessons: {
-    type: Array as PropType<string[]>,
-    required: true
-  }
-})
+defineProps<{
+  projectName: string
+  projectDescription: string
+  deployLink?: string
+  heroImage: string
+  projectObjectives: Step[]
+  projectScreenshots: string[]
+  designProcess: Step[]
+  challenges: Step[]
+  scrollImages: string[]
+  lessons: string[]
+}>()
 </script>
 
 <template>
