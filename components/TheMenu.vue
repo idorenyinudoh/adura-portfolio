@@ -1,6 +1,4 @@
 <script setup>
-// import { gsap } from 'gsap'
-
 const links = ref([
   {
     title: 'Home',
