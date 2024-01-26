@@ -182,17 +182,6 @@ const introAnimation = () => {
   .fromTo('.frames > div:nth-of-type(even)', { y: '-17%', opacity: 0 }, { y: '-10%', opacity: 1, duration: 2, ease: 'power4.out' }, '<')
   .to('.frames + div', { opacity: 1, duration: 1, ease: 'power4.out' }, '-=2')
   .fromTo(splitHeading.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
-
-  ScrollTrigger.create({
-    trigger: '.hero',
-    start: 'top top',
-    end: 'bottom top',
-    onUpdate: (self) => {
-      const progress = self.progress.toFixed(2)
-      
-      gsap.to('.frames > div', { y: `-${(parseFloat(progress) + 4) * (1.75 + parseFloat(progress))}%`, duration: 1, ease: 'power4.out' })
-    }
-  })
 }
 
 onMounted(() => {
@@ -206,12 +195,6 @@ onMounted(() => {
     })
   }
 })
-
-onUnmounted(() => {
-  ScrollTrigger.getAll().forEach((trigger) => {
-    trigger.kill()
-  })
-})
 </script>
 
 <template>
@@ -220,20 +203,26 @@ onUnmounted(() => {
     <article>
       <div class="hero relative -mx-[8.3vw] xl:-mx-[120px] -mt-16 md:-mt-24 h-[80vh] md:h-[calc(100vh-173px)] xl:h-[calc(100vh-225px)] overflow-hidden">
         <div class="frames absolute w-[calc(100%+25vh)] -left-[12.5vh] -z-10 inset-0 grid grid-cols-3 gap-x-5 md:gap-x-8 lg:gap-x-10 xl:gap-x-12 bg-adura-black/80">
-          <div class="flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
-            <NuxtImg src="/projects/frames/frame-1.png" alt="screenshot of kólé dashboard in a frame" />
-            <NuxtImg src="/projects/frames/frame-2.png" alt="screenshot of errandpay dashboard in a frame" />
-            <NuxtImg src="/projects/frames/frame-3.png" alt="screenshot of logoipsum dashboard in a frame" />
+          <div class="flex flex-col">
+            <div v-for="(_, index) in 2" :key="index" class="scroll py-2.5 md:py-4 lg:py-5 xl:py-6 flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
+              <NuxtImg src="/projects/frames/frame-1.png" alt="screenshot of kólé dashboard in a frame" />
+              <NuxtImg src="/projects/frames/frame-2.png" alt="screenshot of errandpay dashboard in a frame" />
+              <NuxtImg src="/projects/frames/frame-3.png" alt="screenshot of logoipsum dashboard in a frame" />
+            </div>
           </div>
-          <div class="flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
-            <NuxtImg src="/projects/frames/frame-4.png" alt="screenshots from kólé dashboard in a frame" />
-            <NuxtImg src="/projects/frames/frame-5.png" alt="screenshots from betasms dashboard in a frame" />
-            <NuxtImg src="/projects/frames/frame-6.png" alt="screenshot of studio creatae's website footer in a frame" />
+          <div class="flex flex-col">
+            <div v-for="(_, index) in 2" :key="index" class="scroll py-2.5 md:py-4 lg:py-5 xl:py-6 flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
+              <NuxtImg src="/projects/frames/frame-4.png" alt="screenshots from kólé dashboard in a frame" />
+              <NuxtImg src="/projects/frames/frame-5.png" alt="screenshots from betasms dashboard in a frame" />
+              <NuxtImg src="/projects/frames/frame-6.png" alt="screenshot of studio creatae's website footer in a frame" />
+            </div>
           </div>
-          <div class="flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
-            <NuxtImg src="/projects/frames/frame-7.png" alt="screenshot of betasms dashboard in a frame" />
-            <NuxtImg src="/projects/frames/frame-8.png" alt="screenshot of studio creatae's website hero in a frame" />
-            <NuxtImg src="/projects/frames/frame-9.png" alt="screenshot of sciart finance's login page in a frame" />
+          <div class="flex flex-col">
+            <div v-for="(_, index) in 2" :key="index" class="scroll py-2.5 md:py-4 lg:py-5 xl:py-6 flex flex-col gap-y-5 md:gap-y-8 lg:gap-y-10 xl:gap-y-12">
+              <NuxtImg src="/projects/frames/frame-7.png" alt="screenshot of betasms dashboard in a frame" />
+              <NuxtImg src="/projects/frames/frame-8.png" alt="screenshot of studio creatae's website hero in a frame" />
+              <NuxtImg src="/projects/frames/frame-9.png" alt="screenshot of sciart finance's login page in a frame" />
+            </div>
           </div>
         </div>
         <div class="w-full h-full flex justify-center items-center bg-adura-black/[.87]">
@@ -308,6 +297,17 @@ onUnmounted(() => {
   }
   100% {
     transform: translateY(0);
+  }
+}
+.scroll {
+  animation: scroll 85s linear infinite forwards;
+}
+@keyframes scroll {
+  from {
+    transform: translateY(0)
+  }
+  to {
+    transform: translateY(-100%)
   }
 }
 </style>
