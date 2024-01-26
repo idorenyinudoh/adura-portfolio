@@ -33,7 +33,7 @@ onUnmounted(() => {
         <span>{{ timeOfDay }}</span>
       </p>
     </div>
-    <a href="" class="border-b border-solid border-white w-max">Resumé</a>
+    <NuxtLink to="https://drive.google.com/file/d/1YML4GsP38Ajj8c7xopaviRAqsYeYNsh7/view?usp=sharing" class="border-b border-solid border-white w-max" target="_blank">Resumé</NuxtLink>
   </header>
 </template>
 
