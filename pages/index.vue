@@ -118,6 +118,7 @@ const animateBackground = () => {
   .to(splitExplanation.lines, { y: 100, opacity: 0, stagger: 0.05, duration: 2, ease: 'power4.out' }, '-=2')
   .to('.explanation > span', { opacity: 0, duration: .5, ease: 'power4.out' })
   .to('nav', { opacity: .5, duration: 1, ease: 'power4.in' }, '-=1.5')
+  .to('nav .toast > p', { opacity: 0, duration: 1, ease: 'power4.in' }, '<')
   .to('.image-desc', { opacity: 1, duration: .5, ease: 'power4.in' }, '-=1')
   .fromTo(splitImageDesc.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
   .to(backgroundGradientPercentage, { value: 0, duration: 3, ease: 'power4.in' }, '-=4')
@@ -151,6 +152,7 @@ const undoBackgroundAnimation = () => {
   tl.fromTo(splitImageDesc.lines, { y: 0, opacity: 1 }, { y: 100, opacity: 0, stagger: 0.05, duration: 2, ease: 'power4.inOut' })
   .to('.image-desc', { opacity: 0, duration: 1, ease: 'power4.out' }, '-=1.3')
   .to('nav', { opacity: 1, duration: 1, ease: 'power4.in' }, '-=1.5')
+  .to('nav .toast > p', { opacity: 1, duration: 1, ease: 'power4.in' }, '<')
   .to(backgroundGradientPercentage, { value: 85, duration: 3, ease: 'power4.in' }, '-=4')
 }
 
