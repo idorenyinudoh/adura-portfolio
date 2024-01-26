@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import SplitType from 'split-type'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const store = usePreloadImagesStore()
 const { imagesHaveLoaded } = storeToRefs(store)
@@ -178,6 +182,17 @@ const introAnimation = () => {
   .fromTo('.frames > div:nth-of-type(even)', { y: '-17%', opacity: 0 }, { y: '-10%', opacity: 1, duration: 2, ease: 'power4.out' }, '<')
   .to('.frames + div', { opacity: 1, duration: 1, ease: 'power4.out' }, '-=2')
   .fromTo(splitHeading.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
+
+  ScrollTrigger.create({
+    trigger: '.hero',
+    start: 'top top',
+    end: 'bottom top',
+    onUpdate: (self) => {
+      const progress = self.progress.toFixed(2)
+      
+      gsap.to('.frames > div', { y: `-${(parseFloat(progress) + 4) * (1.75 + parseFloat(progress))}%`, duration: 1, ease: 'power4.out' })
+    }
+  })
 }
 
 onMounted(() => {
@@ -186,10 +201,16 @@ onMounted(() => {
   } else {
     watch(imagesHaveLoaded, (hasLoaded) => {
       if (hasLoaded) {
-        introAnimation()  
+        introAnimation()
       }
     })
   }
+})
+
+onUnmounted(() => {
+  ScrollTrigger.getAll().forEach((trigger) => {
+    trigger.kill()
+  })
 })
 </script>
 

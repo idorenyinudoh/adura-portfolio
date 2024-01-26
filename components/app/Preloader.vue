@@ -73,7 +73,7 @@ watch(counter, () => {
         opacity: 0,
         stagger: 0.05,
         duration: 1.5,
-        delay: 2,
+        delay: 1,
         ease: 'power4.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
@@ -83,7 +83,7 @@ watch(counter, () => {
       gsap.to('.loading-screen', {
         duration: 1.5,
         opacity: 0,
-        delay: 2,
+        delay: 1,
         ease: 'power3.out',
         onComplete: () => {
           store.imagesHaveLoaded = true
@@ -94,7 +94,7 @@ watch(counter, () => {
 })
 
 onMounted(() => {
-  gsap.fromTo(counter, { value: 0 }, { value: 100, duration: 10, ease: 'power1.inOut' })
+  gsap.fromTo(counter, { value: 0 }, { value: 100, duration: 7, ease: 'power1.inOut' })
 })
 </script>
 
