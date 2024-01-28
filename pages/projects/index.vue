@@ -240,7 +240,7 @@ onUnmounted(() => {
         <div class="w-full h-full flex justify-center items-center bg-adura-black/[.87]">
           <h1 class="clip-path text-white text-center mx-[15%]">RECENT WORKS OF ART</h1>
         </div>
-        <div class="scroll-indicator absolute bottom-[17%] right-[10%] w-7 h-7 md:w-10 md:h-10 border-2 border-solid border-white rounded-full flex justify-center items-center animate-bounce transition-opacity duration-300 ease-linear">
+        <div class="scroll-indicator absolute bottom-[17%] sm:bottom-[10%] md:bottom-[5%] right-[10%] md:right-[5%] w-7 h-7 md:w-10 md:h-10 border-2 border-solid border-white rounded-full flex justify-center items-center animate-bounce transition-opacity duration-300 ease-linear">
           <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="#FFF">
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
