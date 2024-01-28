@@ -184,7 +184,15 @@ const introAnimation = () => {
   .fromTo(splitHeading.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
 }
 
+const hideScrollIndicator = () => {
+  if (window.scrollY > window.innerHeight / 4) {
+    document.querySelector('.scroll-indicator')?.classList.add('opacity-0')
+  }
+}
+
 onMounted(() => {
+  window.addEventListener('scroll', hideScrollIndicator)
+
   if (imagesHaveLoaded.value) {
     introAnimation()
   } else {
@@ -194,6 +202,10 @@ onMounted(() => {
       }
     })
   }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', hideScrollIndicator)
 })
 </script>
 
@@ -227,6 +239,11 @@ onMounted(() => {
         </div>
         <div class="w-full h-full flex justify-center items-center bg-adura-black/[.87]">
           <h1 class="clip-path text-white text-center mx-[15%]">RECENT WORKS OF ART</h1>
+        </div>
+        <div class="scroll-indicator absolute bottom-[17%] right-[10%] w-7 h-7 md:w-10 md:h-10 border-2 border-solid border-white rounded-full flex justify-center items-center animate-bounce transition-opacity duration-300 ease-linear">
+          <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="#FFF">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
         </div>
       </div>
       <main class="pt-20 md:pt-28 lg:pt-36 pb-9 md:pb-14 lg:pb-8">
