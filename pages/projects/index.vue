@@ -273,7 +273,7 @@ onUnmounted(() => {
                 <span>{{ desc }}</span>
               </template>
             </p>
-            <NuxtLink class="relative text-adura-black border-b border-solid border-adura-black font-light italic before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-[1px] before:bg-white before:scale-x-0 before:origin-[100%] hover:before:scale-x-100 hover:before:origin-[0] before:transition-transform before:duration-300 before:ease-linear hover:before:ease-out" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`" :target="project.isCaseStudy ? '_blank' : '_self'">
+            <NuxtLink class="relative text-adura-black border-b border-solid border-adura-black font-light italic before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-[1px] before:bg-white before:scale-x-0 before:origin-[100%] hover:before:scale-x-100 hover:before:origin-[0] before:transition-transform before:duration-300 before:delay-200 before:ease-linear hover:before:ease-out" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`" :target="project.isCaseStudy ? '_blank' : '_self'">
               {{ project.isCaseStudy ? 'See case study presentation' : 'See design process' }}
             </NuxtLink>
           </div>

@@ -35,7 +35,7 @@ onUnmounted(() => {
     </div>
     <NuxtLink
       to="https://drive.google.com/file/d/1YML4GsP38Ajj8c7xopaviRAqsYeYNsh7/view?usp=sharing"
-      class="relative border-b border-solid border-white w-max before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-[1px] before:bg-adura-black before:scale-x-0 before:origin-[100%] hover:before:scale-x-100 hover:before:origin-[0] before:transition-transform before:duration-300 before:ease-linear hover:before:ease-out"
+      class="relative border-b border-solid border-white w-max before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-[1px] before:bg-adura-black before:scale-x-0 before:origin-[100%] hover:before:scale-x-100 hover:before:origin-[0] before:transition-transform before:duration-300 before:delay-200 before:ease-linear hover:before:ease-out"
       target="_blank"
     >
       Resumé

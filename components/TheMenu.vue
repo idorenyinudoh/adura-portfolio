@@ -88,7 +88,7 @@ onMounted(() => {
         <br class="sm:hidden">
         <NuxtLink
           to="mailto:abiolaaduragbemiaa@gmail.com?cc=idorenyinudoh10@outlook.com&subject=Hey, I really like your portfolio&body=Let's talk about making those waves!"
-          class="relative border-b border-solid border-white hover:border-white/10 before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-[1px] before:bg-adura-black before:scale-x-0 before:origin-[100%] hover:before:scale-x-100 hover:before:origin-[0] before:transition-transform before:duration-300 before:ease-linear hover:before:ease-out transition-all duration-300 ease-linear"
+          class="relative border-b border-solid border-white hover:border-white/10 before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-[1px] before:bg-adura-black before:scale-x-0 before:origin-[100%] hover:before:scale-x-100 hover:before:origin-[0] before:transition-transform before:duration-300 before:delay-200 before:ease-linear hover:before:ease-out transition-all duration-300 ease-linear"
         >
           Let's make waves together!
         </NuxtLink>
