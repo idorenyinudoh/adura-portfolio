@@ -6,7 +6,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <a :href="props.url" target="_blank" class="px-4 sm:px-6 xl:px-8 py-2 sm:py-3 xl:py-4 border border-solid border-white rounded-[48px] h-max flex justify-between items-center">
+  <a :href="props.url" target="_blank" class="px-4 sm:px-6 xl:px-8 py-2 sm:py-3 xl:py-4 border border-solid border-white rounded-[48px] h-max flex justify-between items-center hover:brightness-[.6] transition-all duration-300 ease-linear">
     <p class="text-sm md:text-base lg:text-xl text-white font-normal">
       {{ props.title }}
     </p>

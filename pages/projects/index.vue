@@ -184,7 +184,15 @@ const introAnimation = () => {
   .fromTo(splitHeading.lines, { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out' }, '<')
 }
 
+const hideScrollIndicator = () => {
+  if (window.scrollY > window.innerHeight / 4) {
+    document.querySelector('.scroll-indicator')?.classList.add('opacity-0')
+  }
+}
+
 onMounted(() => {
+  window.addEventListener('scroll', hideScrollIndicator)
+
   if (imagesHaveLoaded.value) {
     introAnimation()
   } else {
@@ -194,6 +202,10 @@ onMounted(() => {
       }
     })
   }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', hideScrollIndicator)
 })
 </script>
 
@@ -228,6 +240,11 @@ onMounted(() => {
         <div class="w-full h-full flex justify-center items-center bg-adura-black/[.87]">
           <h1 class="clip-path text-white text-center mx-[15%]">RECENT WORKS OF ART</h1>
         </div>
+        <div class="scroll-indicator absolute bottom-[17%] sm:bottom-[10%] md:bottom-[5%] right-[10%] md:right-[5%] w-7 h-7 md:w-10 md:h-10 border-2 border-solid border-white rounded-full flex justify-center items-center animate-bounce transition-opacity duration-300 ease-linear">
+          <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="#FFF">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
       <main class="pt-20 md:pt-28 lg:pt-36 pb-9 md:pb-14 lg:pb-8">
         <article v-for="(project, index) in projects" :key="index" class="py-10 md:py-14 lg:py-20 grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-12 lg:gap-x-20 items-center">
@@ -256,7 +273,7 @@ onMounted(() => {
                 <span>{{ desc }}</span>
               </template>
             </p>
-            <NuxtLink class="text-adura-black border-b border-solid border-adura-black font-light italic" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`" :target="project.isCaseStudy ? '_blank' : '_self'">
+            <NuxtLink class="relative text-adura-black border-b border-solid border-adura-black font-light italic before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-[1px] before:bg-white before:scale-x-0 before:origin-[100%] hover:before:scale-x-100 hover:before:origin-[0] before:transition-transform before:duration-300 before:delay-200 before:ease-linear hover:before:ease-out" :to="project.isCaseStudy ? project.link : `/projects/${project.link}`" :target="project.isCaseStudy ? '_blank' : '_self'">
               {{ project.isCaseStudy ? 'See case study presentation' : 'See design process' }}
             </NuxtLink>
           </div>
