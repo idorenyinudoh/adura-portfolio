@@ -93,7 +93,7 @@ onMounted(() => {
     <div class="page-transition fixed z-[60] top-full left-0 w-full h-full px-[5%] bg-adura-black hidden items-center justify-center">
       <p ref="madText" class="base-text clip-path !text-white text-center" />
     </div>
-    <div id="awwwards" class="max-md:hidden fixed z-[999] -translate-y-2/4 top-2/4 left-0">
+    <div id="awwwards" class="fixed z-[999] -translate-y-2/4 top-2/4 left-0">
       <a href="https://www.awwwards.com/sites/aduragbemi-abiola" target="_blank">
         <svg width="53.08" height="171.358">
           <path class="js-color-bg" fill="white" d="M0 0h53.08v171.358H0z" />
