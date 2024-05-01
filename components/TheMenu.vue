@@ -33,10 +33,15 @@ const introAnimation = () => {
       clearTimeout(intervalId)
 
       intervalId = setTimeout(() => {
-        gsap.to('.toast', {
+        const innerTl = gsap.timeline()
+
+        innerTl.to('.toast', {
           opacity: 0,
-          duration: 1,
+          duration: 1.5,
           ease: 'power4.out'
+        })
+        .to('.toast', {
+          display: 'none'
         })
 
         clearTimeout(intervalId)
@@ -46,6 +51,10 @@ const introAnimation = () => {
   })
 
   tl.to('.toast', {
+    display: 'block',
+    opacity: 0
+  })
+  .to('.toast', {
     opacity: 1,
     duration: .5,
     ease: 'power4.out'
@@ -62,8 +71,6 @@ const introAnimation = () => {
 }
 
 onMounted(() => {
-  gsap.set('.toast', { opacity: 0 })
-
   if (imagesHaveLoaded.value) {
     intervalId = setTimeout(() => {
       introAnimation()
@@ -82,7 +89,7 @@ onMounted(() => {
 
 <template>
   <nav class="fixed z-10 bottom-6 md:bottom-10 xl:bottom-16 left-0 right-0 mx-auto w-max bg-adura-black border-[.5px] border-[#9E9E9E] rounded-[96px] transition-opacity duration-300 ease-linear hover:!opacity-100">
-    <div class="toast absolute -top-16 sm:-top-11 md:-top-12 left-[50%] right-0 w-max -translate-x-[50%]">
+    <div class="toast hidden absolute -top-16 sm:-top-11 md:-top-12 left-[50%] right-0 w-max -translate-x-[50%]">
       <p class="px-4 py-1.5 text-center bg-adura-black rounded-[96px] text-white text-sm md:text-base">
         Drowning in a sea of creativity? 
         <br class="sm:hidden">
