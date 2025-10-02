@@ -10,10 +10,10 @@ defineProps<{
   deployLink?: string
   heroImage: string
   projectObjectives: Step[]
-  projectScreenshots: string[]
+  projectScreenshots?: string[]
   designProcess: Step[]
   challenges: Step[]
-  scrollImages: string[]
+  scrollImages?: string[]
   lessons: string[]
 }>()
 </script>
@@ -40,13 +40,13 @@ defineProps<{
           </li>
         </ul>
       </article>
-      <section class="flex flex-col md:flex-row items-center gap-y-10 md:gap-x-8 md:gap-y-0">
+      <section v-if="projectScreenshots?.length" class="flex flex-col md:flex-row items-center gap-y-10 md:gap-x-8 md:gap-y-0">
         <div v-for="(screenshot, index) in projectScreenshots" :key="index" class="relative pt-[75%] sm:pt-[60%] md:pt-[43.5%] xl:pt-[33%] w-full">
           <NuxtImg class="absolute top-0 left-0 w-full h-full object-cover rounded-lg md:rounded-2xl border-2 border-solid border-adura-black" :src="`/projects/${screenshot}.webp`" :alt="`screenshot of ${projectName}`" />
         </div>
       </section>
       <article>
-        <h2 class="mb-6 md:mb-8 lg:mb-10">DESIGN PROCESS</h2>
+        <h2 :class="!projectScreenshots?.length ? 'mt-0' : ''" class="mb-6 md:mb-8 lg:mb-10">DESIGN PROCESS</h2>
         <ul class="list-disc ml-[29px] md:ml-8 lg:ml-[39.5px] mb-24 md:mb-32 lg:mb-40 text-adura-black text-base md:text-lg lg:text-2xl font-normal">
           <li v-for="(step, index) in designProcess" :key="index">
             <span v-if="step.title" class="font-medium">{{ step.title }}: </span>
@@ -63,7 +63,7 @@ defineProps<{
           </li>
         </ul>
       </article>
-      <section class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex items-center overflow-x-hidden">
+      <section v-if="scrollImages?.length" class="scroll-group -mx-[8.3vw] xl:-mx-[120px] flex items-center overflow-x-hidden">
         <div v-for="i in 2" :key="i" class="scroll px-1 md:px-2 lg:px-3 xl:px-4 grid items-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-8 grid-cols-[repeat(3,310px)] sm:grid-cols-[repeat(3,500px)] md:grid-cols-[repeat(3,640px)] lg:grid-cols-[repeat(3,768px)] xl:grid-cols-[repeat(3,830px)]">
           <div v-for="(image, index) in scrollImages" :key="index" class="relative pt-[75%] sm:pt-[62.9%]">
             <NuxtImg class="absolute top-0 left-0 w-full h-full object-cover rounded-lg md:rounded-2xl border-2 border-solid border-adura-black" :src="`/projects/${image}.webp`" :alt="`screenshot of ${projectName}`" />
@@ -71,7 +71,7 @@ defineProps<{
         </div>
       </section>
       <article>
-        <h2 class="mb-6 md:mb-8 lg:mb-10">LESSONS LEARNED</h2>
+        <h2 :class="!scrollImages?.length ? 'mt-0' : ''" class="mb-6 md:mb-8 lg:mb-10">LESSONS LEARNED</h2>
         <ul class="list-disc ml-[29px] md:ml-8 lg:ml-[39.5px] mb-24 md:mb-32 lg:mb-40 text-adura-black text-base md:text-lg lg:text-2xl font-normal">
           <li v-for="(lesson, index) in lessons" :key="index">
             {{ lesson }}

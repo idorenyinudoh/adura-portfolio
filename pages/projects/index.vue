@@ -64,6 +64,20 @@ interface Project {
 const projects: Project[] = [
   {
     isCaseStudy: false,
+    image: 'interswitch.webp',
+    tags: ['Healthcare', 'AI'],
+    company: 'https://interswitchgroup.com',
+    title: 'Interswitch',
+    tasks: ['Web App', 'SaaS', 'Mobile App'],
+    duration: 'Feb 2025 - Present',
+    description: [
+      'Interswitch is a leading African technology company, best known for powering financial transactions across the continent. Beyond payments, the company is extending its expertise in building secure, scalable, and interoperable systems into the healthcare space through its Digital Health Platform (DHP).',
+      'DHP aims to create a unified ecosystem that securely stores and exchanges patient health data, integrates with electronic medical records, and enables services such as appointment booking, consultation payments, access to medications, and real-time information sharing among healthcare providers.',
+    ],
+    link: 'interswitch'
+  },
+  {
+    isCaseStudy: false,
     image: 'kole.webp',
     tags: ['Construction', 'AI'],
     company: 'https://getkole.co/',
