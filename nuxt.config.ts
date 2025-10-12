@@ -139,6 +139,19 @@ export default defineNuxtConfig({
         {
           rel: 'preconnect',
           href: 'https://googletagmanager.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Spline+Sans+Mono&display=swap',
         }
       ],
       htmlAttrs: {
