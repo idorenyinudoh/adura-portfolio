@@ -104,34 +104,34 @@ const projects: Project[] = [
     ],
     link: 'kole'
   },
-  {
-    isCaseStudy: false,
-    image: 'sciart-finance.webp',
-    tags: ['Fintech', 'Investment'],
-    company: 'https://sciartfinance.com/',
-    title: 'Sciart Finance',
-    tasks: ['Mobile App', 'Administrator Back-office'],
-    duration: '4 - 5 Weeks',
-    description: [
-      'Sciart Finance Company Limited offers comprehensive financial and investment services as well as savings and bill payment services. They also provide context-relevant advisory services to businesses and individuals.',
-      'They are a CBN-licensed finance company built for small and medium-sized businesses who are currently underserved by the traditional finance sector.'
-    ],
-    link: 'sciart-finance'
-  },
-  {
-    isCaseStudy: false,
-    image: 'studio-creatae.webp',
-    tags: ['Design Agency'],
-    company: 'https://www.linkedin.com/company/studio-creatae/',
-    title: 'Studio Creatae',
-    tasks: ['Website Design'],
-    duration: '3 - 4 Weeks',
-    description: [
-      'Studio Creatae is growing brands with value based experiences - using branding and marketing communications.',
-      'They focus on crafting timeless experiences that define brands while shaping brand perceptions through thoughtfully-curated experiential interactions.'
-    ],
-    link: 'studio-creatae'
-  },
+  // {
+  //   isCaseStudy: false,
+  //   image: 'sciart-finance.webp',
+  //   tags: ['Fintech', 'Investment'],
+  //   company: 'https://sciartfinance.com/',
+  //   title: 'Sciart Finance',
+  //   tasks: ['Mobile App', 'Administrator Back-office'],
+  //   duration: '4 - 5 Weeks',
+  //   description: [
+  //     'Sciart Finance Company Limited offers comprehensive financial and investment services as well as savings and bill payment services. They also provide context-relevant advisory services to businesses and individuals.',
+  //     'They are a CBN-licensed finance company built for small and medium-sized businesses who are currently underserved by the traditional finance sector.'
+  //   ],
+  //   link: 'sciart-finance'
+  // },
+  // {
+  //   isCaseStudy: false,
+  //   image: 'studio-creatae.webp',
+  //   tags: ['Design Agency'],
+  //   company: 'https://www.linkedin.com/company/studio-creatae/',
+  //   title: 'Studio Creatae',
+  //   tasks: ['Website Design'],
+  //   duration: '3 - 4 Weeks',
+  //   description: [
+  //     'Studio Creatae is growing brands with value based experiences - using branding and marketing communications.',
+  //     'They focus on crafting timeless experiences that define brands while shaping brand perceptions through thoughtfully-curated experiential interactions.'
+  //   ],
+  //   link: 'studio-creatae'
+  // },
   {
     isCaseStudy: false,
     image: 'errandpay.webp',
@@ -146,47 +146,47 @@ const projects: Project[] = [
     ],
     link: 'errandpay'
   },
-  {
-    isCaseStudy: false,
-    image: 'betasms.webp',
-    tags: ['Telecomms'],
-    company: 'https://betasms.com/',
-    title: 'BetaSMS',
-    tasks: ['Administrator Back-office'],
-    duration: 'Aug 2022 - Dec 2022',
-    description: [
-      'BetaSMS is a communication platform as a service (CPAAS) that enables businesses and individuals send bulk SMS messages to all network providers in Nigeria and international networks worldwide. BetaSMS delivers messages to all active numbers, including DND numbers with real-time delivery reports.',
-      'They also provide a large selection of marketing tools to ensure your bulk SMS messages and voice SMS messages / robocalls in Nigeria is a huge success. Furthermore, BetaSMS provides users with reliable databases. They deliver messages to all countries in the world. You can now send bulk SMS to Africa, America, Asia, Europe, etc.'
-    ],
-    link: 'betasms'
-  },
-  {
-    isCaseStudy: false,
-    image: 'hydrogen.webp',
-    tags: ['Fintech'],
-    company: 'https://hydrogenpay.com/',
-    title: 'Hydrogen',
-    tasks: ['Administrator Back-office', 'Payment gateway'],
-    duration: '3 - 4 Weeks',
-    description: [
-      'HydrogenPay aims at simplifying payments for African businesses and business owners. Business owners are able to collect payments, monitor transactions, confirm payments instantly, and grow their businesses with seamless payment solutions.',
-    ],
-    link: 'hydrogen'
-  },
-  {
-    isCaseStudy: true,
-    image: 'bridgefinance.webp',
-    tags: ['Fintech'],
-    company: '',
-    title: 'BridgeFinance',
-    tasks: ['Case Study'],
-    duration: '6 - 8 Weeks',
-    description: [
-      'In the 2021 Fintech Times report, with respect to fintech, Nigeria\'s fintech landscape consisted of 210 to 250 fintech companies, key stakeholders (banks, telecom companies and the government), enablers and funding partners (i.e universities and research institutions, investors, incubators, technology and consumers).',
-      'Thus, birthing the problem of these institutions (traditional banks, MFBs, mobile banks) wrestling for users, and while this might be a good business or profit-making strategy, it has an adverse effect on users creating problems like confusion on the path of users (as proven in Hick\'s Law) and occasional cognitive overload, to mention a few.'
-    ],
-    link: 'https://www.behance.net/gallery/189949861/BridgeFinance'
-  }
+  // {
+  //   isCaseStudy: false,
+  //   image: 'betasms.webp',
+  //   tags: ['Telecomms'],
+  //   company: 'https://betasms.com/',
+  //   title: 'BetaSMS',
+  //   tasks: ['Administrator Back-office'],
+  //   duration: 'Aug 2022 - Dec 2022',
+  //   description: [
+  //     'BetaSMS is a communication platform as a service (CPAAS) that enables businesses and individuals send bulk SMS messages to all network providers in Nigeria and international networks worldwide. BetaSMS delivers messages to all active numbers, including DND numbers with real-time delivery reports.',
+  //     'They also provide a large selection of marketing tools to ensure your bulk SMS messages and voice SMS messages / robocalls in Nigeria is a huge success. Furthermore, BetaSMS provides users with reliable databases. They deliver messages to all countries in the world. You can now send bulk SMS to Africa, America, Asia, Europe, etc.'
+  //   ],
+  //   link: 'betasms'
+  // },
+  // {
+  //   isCaseStudy: false,
+  //   image: 'hydrogen.webp',
+  //   tags: ['Fintech'],
+  //   company: 'https://hydrogenpay.com/',
+  //   title: 'Hydrogen',
+  //   tasks: ['Administrator Back-office', 'Payment gateway'],
+  //   duration: '3 - 4 Weeks',
+  //   description: [
+  //     'HydrogenPay aims at simplifying payments for African businesses and business owners. Business owners are able to collect payments, monitor transactions, confirm payments instantly, and grow their businesses with seamless payment solutions.',
+  //   ],
+  //   link: 'hydrogen'
+  // },
+  // {
+  //   isCaseStudy: true,
+  //   image: 'bridgefinance.webp',
+  //   tags: ['Fintech'],
+  //   company: '',
+  //   title: 'BridgeFinance',
+  //   tasks: ['Case Study'],
+  //   duration: '6 - 8 Weeks',
+  //   description: [
+  //     'In the 2021 Fintech Times report, with respect to fintech, Nigeria\'s fintech landscape consisted of 210 to 250 fintech companies, key stakeholders (banks, telecom companies and the government), enablers and funding partners (i.e universities and research institutions, investors, incubators, technology and consumers).',
+  //     'Thus, birthing the problem of these institutions (traditional banks, MFBs, mobile banks) wrestling for users, and while this might be a good business or profit-making strategy, it has an adverse effect on users creating problems like confusion on the path of users (as proven in Hick\'s Law) and occasional cognitive overload, to mention a few.'
+  //   ],
+  //   link: 'https://www.behance.net/gallery/189949861/BridgeFinance'
+  // }
 ]
 
 const introAnimation = () => {
