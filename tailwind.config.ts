@@ -6,7 +6,8 @@ export default <Partial<Config>> {
     extend: {
       fontFamily: {
         'satoshi': ['Satoshi', ...defaultTheme.fontFamily.sans],
-        'monument-extended': ['Monument Extended', ...defaultTheme.fontFamily.sans]
+        'monument-extended': ['Monument Extended', ...defaultTheme.fontFamily.sans],
+        'spline': ['Spline Sans Mono', ...defaultTheme.fontFamily.mono]
       },
       colors: {
         'adura-purple': '#B0ABCB',

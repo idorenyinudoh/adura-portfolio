@@ -42,7 +42,7 @@ definePageMeta({
 const props = {
   projectName: 'Interswitch',
   projectDescription: 'Interswitch is a leading African integrated payments and digital commerce company, best known for powering financial transactions across the continent. Through its Digital Health Platform (DHP), Interswitch in partnership with the Lagos state government is creating a unified ecosystem that securely stores and exchanges patient health data, integrates with electronic medical records, and enables services such as appointment booking, consultation payments, access to medications, and real-time information sharing among healthcare providers.',
-  deployLink: 'https://interswitchgroup.com',
+  deployLink: 'mailto:abiolaaduragbemiaa@gmail.com?subject=Request for Demo&body=Hi Adura,%0D%0A%0D%0AI came across your work and I\'m interested in seeing a demo of the product you built. Please let me know the next steps or a convenient time to schedule it.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0A%0D%0ABest.',
   heroImage: 'interswitch-hero',
   projectObjectives: [
     {
