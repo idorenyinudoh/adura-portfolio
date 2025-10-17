@@ -334,7 +334,7 @@ onUnmounted(() => {
           <div v-else key="side" class="mt-8 lg:mt-16 grid grid-cols-1 grid-rows-[repeat(9,300px)] lg:grid-cols-3 lg:grid-rows-[repeat(4,400px)] 2xl:grid-rows-[repeat(4,500px)] gap-4 lg:gap-8">
           <article class="relative group rounded-2xl md:rounded-3xl lg:col-span-2 overflow-hidden">
             <img src="~/assets/images/quests/quantity.png" alt="quantity ai website mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#663F254D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#663F254D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
               <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                 <h2 class="m-0 text-2xl md:text-4xl text-white">QUOTING</h2>
                 <p class="rounded-[40px] px-3 md:px-4 py-0.5 md:py-1 font-spline text-sm md:text-base text-[#667085] font-normal leading-[18px] antialiased tracking-tighter bg-white">Product design</p>
@@ -354,7 +354,7 @@ onUnmounted(() => {
           </article>
           <article class="relative group rounded-2xl md:rounded-3xl overflow-hidden">
             <img src="~/assets/images/quests/sciart.png" alt="sciart app mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#255E4B4D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#255E4B4D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
               <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                 <h2 class="m-0 text-2xl md:text-4xl text-white">SCIART</h2>
                 <p class="rounded-[40px] px-3 md:px-4 py-0.5 md:py-1 font-spline text-sm md:text-base text-[#667085] font-normal leading-[18px] antialiased tracking-tighter bg-white">Mobile app</p>
@@ -373,7 +373,7 @@ onUnmounted(() => {
           <div class="lg:col-span-3 grid grid-cols-1 grid-rows-[repeat(2,300px)] lg:grid-cols-2 lg:grid-rows-1 gap-4 lg:gap-x-8 lg:items-center">
             <article class="h-full relative group rounded-2xl md:rounded-3xl overflow-hidden">
               <img src="~/assets/images/quests/wa.png" alt="workflow architects website mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-              <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#574A0C4D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+              <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#574A0C4D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
                 <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                   <h2 class="m-0 text-2xl md:text-4xl text-white">WA</h2>
                   <p class="rounded-[40px] px-3 md:px-4 py-0.5 md:py-1 font-spline text-sm md:text-base text-[#667085] font-normal leading-[18px] antialiased tracking-tighter bg-white">Website</p>
@@ -391,7 +391,7 @@ onUnmounted(() => {
             </article>
             <article class="h-full relative group rounded-2xl md:rounded-3xl overflow-hidden">
               <img src="~/assets/images/quests/share.png" alt="share app mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-              <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#346EA34D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+              <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#346EA34D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
                 <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                   <h2 class="m-0 text-2xl md:text-4xl text-white">SHARE!</h2>
                   <p class="rounded-[40px] px-3 md:px-4 py-0.5 md:py-1 font-spline text-sm md:text-base text-[#667085] font-normal leading-[18px] antialiased tracking-tighter bg-white">Mobile app</p>
@@ -408,7 +408,7 @@ onUnmounted(() => {
           </div>
           <article class="relative group rounded-2xl md:rounded-3xl overflow-hidden">
             <img src="~/assets/images/quests/bp.png" alt="bp dashboard mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
               <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                 <h2 class="m-0 text-2xl md:text-4xl text-white">BP</h2>
                 <p class="rounded-[40px] px-3 md:px-4 py-0.5 md:py-1 font-spline text-sm md:text-base text-[#667085] font-normal leading-[18px] antialiased tracking-tighter bg-white">Web app</p>
@@ -427,7 +427,7 @@ onUnmounted(() => {
           </article>
           <article class="relative group rounded-2xl md:rounded-3xl lg:col-span-2 overflow-hidden">
             <img src="~/assets/images/quests/tanwa.png" alt="tanwa mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#451FB24D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#451FB24D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
               <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                 <h2 class="m-0 text-2xl md:text-4xl text-white">TANWA</h2>
                 <p class="rounded-[40px] px-3 md:px-4 py-0.5 md:py-1 font-spline text-sm md:text-base text-[#667085] font-normal leading-[18px] antialiased tracking-tighter bg-white">Mobile app</p>
@@ -443,11 +443,11 @@ onUnmounted(() => {
           </article>
           <article class="relative group rounded-2xl md:rounded-3xl overflow-hidden">
             <img src="~/assets/images/quests/website-1.png" alt="website-1 app mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
               <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                 <h2 class="m-0 text-2xl md:text-4xl text-white">FULL NAV</h2>
               </div>
-              <button @click="openVideoModal('https://player.vimeo.com/video/1126638912?h=bbfd9d0773')" class="mt-auto py-1.5 md:py-2 pl-3 md:pl-4 pr-3 md:pr-3.5 rounded-2xl md:rounded-3xl w-max flex gap-x-1 md:gap-x-[5px] items-center bg-white hover:brightness-95 hover:scale-105 transition-all duration-200 ease-out">
+              <button @click="openVideoModal('https://player.vimeo.com/video/1128061844?h=62201f505b')" class="mt-auto py-1.5 md:py-2 pl-3 md:pl-4 pr-3 md:pr-3.5 rounded-2xl md:rounded-3xl w-max flex gap-x-1 md:gap-x-[5px] items-center bg-white hover:brightness-95 hover:scale-105 transition-all duration-200 ease-out">
                 <p class="text-base md:text-lg font-normal text-[#848484] tracking-tight">Preview</p>
                 <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16.998 8.05C16.998 7.78478 16.8926 7.53043 16.7051 7.34289C16.5176 7.15536 16.2632 7.05 15.998 7.05L7.99799 7C7.73277 7 7.47842 7.10536 7.29088 7.29289C7.10334 7.48043 6.99799 7.73478 6.99799 8C6.99799 8.26522 7.10334 8.51957 7.29088 8.70711C7.47842 8.89464 7.73277 9 7.99799 9H13.558L5.28799 17.29C5.19426 17.383 5.11986 17.4936 5.06909 17.6154C5.01833 17.7373 4.99219 17.868 4.99219 18C4.99219 18.132 5.01833 18.2627 5.06909 18.3846C5.11986 18.5064 5.19426 18.617 5.28799 18.71C5.38095 18.8037 5.49155 18.8781 5.61341 18.9289C5.73527 18.9797 5.86597 19.0058 5.99799 19.0058C6.13 19.0058 6.2607 18.9797 6.38256 18.9289C6.50442 18.8781 6.61502 18.8037 6.70799 18.71L14.998 10.42V16C14.998 16.2652 15.1033 16.5196 15.2909 16.7071C15.4784 16.8946 15.7328 17 15.998 17C16.2632 17 16.5176 16.8946 16.7051 16.7071C16.8926 16.5196 16.998 16.2652 16.998 16V8.05Z" fill="#AAAAAA"/>
@@ -457,7 +457,7 @@ onUnmounted(() => {
           </article>
           <article class="relative group rounded-2xl md:rounded-3xl overflow-hidden">
             <img src="~/assets/images/quests/website-2.png" alt="website-2 app mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
               <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                 <h2 class="m-0 text-2xl md:text-4xl text-white">WEBSITE</h2>
               </div>
@@ -471,7 +471,7 @@ onUnmounted(() => {
           </article>
           <article class="relative group rounded-2xl md:rounded-3xl overflow-hidden">
             <img src="~/assets/images/quests/website-3.png" alt="website-3 app mockup" class="w-full h-full object-cover rounded-2xl md:rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105">
-            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur-sm p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-3xl bg-[#082B4B4D] backdrop-blur p-4 md:p-8 flex flex-col gap-y-1.5 md:gap-y-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
               <div class="-ml-1 md:-ml-2 flex flex-wrap gap-1.5 items-center">
                 <h2 class="m-0 text-2xl md:text-4xl text-white">WEBSITE</h2>
               </div>
